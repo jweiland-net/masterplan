@@ -1,0 +1,67 @@
+{namespace mp=JWeiland\Masterplan\ViewHelpers}
+
+<f:layout name="Default"/>
+
+<f:section name="main">
+	<aside class="floatright grid_4">
+		<f:form action="list" noCache="1">
+			<div class="marginbottom nobreakinside">
+				<label class="width100"><f:translate key="sortBy" />:</label>
+				<f:form.select class="width100" name="areaOfActivity" value="{areaOfActivity}" options="{mp:getAreasOfActivity()}" optionLabelField="title" optionValueField="uid" prependOptionLabel="" prependOptionValue="0" additionalAttributes="{onChange: 'this.form.submit()'}"/>
+			</div>
+			<div class="marginbottom nobreakinside">
+				<label class="width100"><f:translate key="ordering" />:</label>
+				<f:form.select class="width100 marginbottom" name="sortBy" value="{sortBy}" options="{title: '{f:translate(key: \'tx_masterplan_domain_model_project.title\')}', start_date: '{f:translate(key: \'tx_masterplan_domain_model_project.start_date\')}', citizen_participation: '{f:translate(key: \'tx_masterplan_domain_model_project.citizen_participation\')}', area_of_activity: '{f:translate(key: \'tx_masterplan_domain_model_project.area_of_activity\')}'}" additionalAttributes="{onChange: 'this.form.submit()'}" />
+				<f:form.select class="width100" name="direction" value="{direction}" options="{asc: '{f:translate(key: \'asc\')}', desc: '{f:translate(key: \'desc\')}'}" additionalAttributes="{onChange: 'this.form.submit()'}" />
+			</div>
+		</f:form>
+	</aside>
+
+	<div class="floatleft grid_8">
+		<f:if condition="{projects}">
+			<f:then>
+				<div class="list scroll-container gridright">
+					<mp:widget.paginate objects="{projects}" as="paginatedProjects" configuration="{itemsPerPage: settings.pageBrowser.itemsPerPage, insertAbove: settings.pageBrowser.insertAbove, insertBelow: settings.pageBrowser.insertBelow, maximumNumberOfLinks: settings.pageBrowser.maximumNumberOfLinks}">
+						<f:for each="{paginatedProjects}" as="project">
+							<div class="marginbottom scroll-item clearfix">
+								<div class="thumbnail grid_2 floatleft">
+									<figure class="gridrightstd">ICON</figure>
+								</div>
+								<div class="grid_10 floatleft rulerafter">
+									<h2 class="noborder nomargin">
+										<f:link.action pageUid="{settings.pidOfDetailPage}" action="show" arguments="{project: project}">
+											{project.title}
+										</f:link.action>
+									</h2>
+									<dl class="nomargin">
+										<dd>
+											<f:translate key="tx_masterplan_domain_model_project.start_date"/>: {project.startDate}
+										</dd>
+										<dd>
+											<f:translate key="tx_masterplan_domain_model_project.citizen_participation"/>:
+											<f:translate key="tx_masterplan_domain_model_project.citizen_participation.{f:if(condition: project.citizenParticipation, then: 'yes', else: 'no')}"/>
+										</dd>
+										<dd>
+											<f:if condition="{project.areaOfActivity}">
+												<f:translate key="tx_masterplan_domain_model_project.area_of_activity"/>:
+												<f:for each="{mp:getAreasOfActivity(areasOfActivity: project.areaOfActivity)}" as="activity">
+													<br/>{activity.title}
+												</f:for>
+											</f:if>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</f:for>
+					</mp:widget.paginate>
+				</div>
+			</f:then>
+			<f:else>
+				<div class="noResults">
+					<f:translate key="noResults" />
+				</div>
+			</f:else>
+		</f:if>
+	</div>
+
+</f:section>

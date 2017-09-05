@@ -1,0 +1,46 @@
+config.tx_extbase {
+	objects {
+		TYPO3\CMS\Extbase\Persistence\Generic\Storage\BackendInterface {
+			className = JWeiland\Masterplan\Persistence\Generic\Storage\Typo3DbBackend
+		}
+	}
+}
+
+plugin.tx_masterplan {
+	view {
+		templateRootPath = {$plugin.tx_masterplan.view.templateRootPath}
+		partialRootPath = {$plugin.tx_masterplan.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_masterplan.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_masterplan.persistence.storagePid}
+		classes {
+			JWeiland\Masterplan\Domain\Model\Category {
+				mapping {
+					tableName = sys_category
+				}
+			}
+		}
+	}
+	settings {
+		pidOfListPage = {$plugin.tx_masterplan.settings.pidOfListPage}
+		pidOfDetailPage = {$plugin.tx_masterplan.settings.pidOfDetailPage}
+		pidOfLocationPage = {$plugin.tx_masterplan.settings.pidOfLocationPage}
+		list {
+			image {
+				width = 50c
+				height= 50c
+				minWidth = 50
+				maxWidth = 50
+				minHeight = 50
+				maxHeight = 50
+			}
+		}
+		pageBrowser {
+			itemsPerPage = {$plugin.tx_masterplan.settings.pageBrowser.itemsPerPage}
+			insertAbove = {$plugin.tx_masterplan.settings.pageBrowser.insertAbove}
+			insertBelow = {$plugin.tx_masterplan.settings.pageBrowser.insertBelow}
+			maximumNumberOfLinks = {$plugin.tx_masterplan.settings.pageBrowser.maximumNumberOfLinks}
+		}
+	}
+}

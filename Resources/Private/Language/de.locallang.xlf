@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-16T10:21:45Z" product-name="masterplan">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_masterplan_domain_model_project">
+				<source>Project</source>
+				<target>Projekt</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.title">
+				<source>Title</source>
+				<target>Projekttitel</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.number">
+				<source>Number</source>
+				<target>Projektnummer</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.contact_person">
+				<source>Contact Person</source>
+				<target>Ansprechpartner/in</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.trade_office">
+				<source>Trade Office</source>
+				<target>Fachamt</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.start_date">
+				<source>Start Date</source>
+				<target>Projektstart</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.end_date">
+				<source>End Date</source>
+				<target>Projektende</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.costs">
+				<source>Costs</source>
+				<target>Projektkosten</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.citizen_participation">
+				<source>Citizen Participation</source>
+				<target>Bürgerbeteiligung</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.citizen_participation.yes">
+				<source>Yes</source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.citizen_participation.no">
+				<source>Not provided</source>
+				<target>Nicht vorgesehen</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.images">
+				<source>Images</source>
+				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.further_informations">
+				<source>Further Informations</source>
+				<target>Weitere Informationen</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.area_of_activity">
+				<source>Area of Activity</source>
+				<target>Handlungsfeld</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.tx_maps2_uid">
+				<source>Map</source>
+				<target>Kartenausschnitt</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.files">
+				<source>Files</source>
+				<target>Datei(en)</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.links">
+				<source>Links</source>
+				<target>Links</target>
+			</trans-unit>
+
+			<trans-unit id="tx_masterplan_domain_model_link">
+				<source>Link</source>
+				<target>Link</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_link.title">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_link.link">
+				<source>Link</source>
+				<target>Link</target>
+			</trans-unit>
+
+			<trans-unit id="backToList">
+				<source>Back to list</source>
+				<target>Zurück zur Listenansicht</target>
+			</trans-unit>
+			<trans-unit id="backToDetails">
+				<source>Back to detail view</source>
+				<target>Zurück zur Detailansicht</target>
+			</trans-unit>
+			<trans-unit id="targets">
+				<source>Targets</source>
+				<target>Ziele</target>
+			</trans-unit>
+			<trans-unit id="noResults">
+				<source>No results</source>
+				<target>Keine Ergebnisse gefunden</target>
+			</trans-unit>
+			<trans-unit id="asc">
+				<source>Ascending</source>
+				<target>Aufsteigend</target>
+			</trans-unit>
+			<trans-unit id="desc">
+				<source>Descending</source>
+				<target>Absteigend</target>
+			</trans-unit>
+			<trans-unit id="sortBy">
+				<source>Sort by</source>
+				<target>Filtern nach</target>
+			</trans-unit>
+			<trans-unit id="ordering">
+				<source>Ordering</source>
+				<target>Sortieren nach</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>
