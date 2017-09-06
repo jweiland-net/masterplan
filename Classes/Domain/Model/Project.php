@@ -52,12 +52,12 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $contactPerson = '';
 
-	/**
+	/*
 	 * tradeOffice
-	 *
+	 * @todo replace tx_wesgovernment with service_bw (do not forget getter/setter!)
 	 * @var \Tx_WesEgovernment_Domain_Model_Department
 	 */
-	protected $tradeOffice = NULL;
+	//protected $tradeOffice = NULL;
 
 	/**
 	 * startDate
@@ -203,24 +203,24 @@ class Project extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->contactPerson = (string) $contactPerson;
 	}
 
-	/**
-	 * Returns the tradeOffice
-	 *
-	 * @return \Tx_WesEgovernment_Domain_Model_Department $tradeOffice
-	 */
-	public function getTradeOffice() {
-		return $this->tradeOffice;
-	}
-
-	/**
-	 * Sets the tradeOffice
-	 *
-	 * @param \Tx_WesEgovernment_Domain_Model_Department $tradeOffice
-	 * @return void
-	 */
-	public function setTradeOffice(\Tx_WesEgovernment_Domain_Model_Department $tradeOffice = NULL) {
-		$this->tradeOffice = $tradeOffice;
-	}
+//	/**
+//	 * Returns the tradeOffice
+//	 *
+//	 * @return \Tx_WesEgovernment_Domain_Model_Department $tradeOffice
+//	 */
+//	public function getTradeOffice() {
+//		return $this->tradeOffice;
+//	}
+//
+//	/**
+//	 * Sets the tradeOffice
+//	 *
+//	 * @param \Tx_WesEgovernment_Domain_Model_Department $tradeOffice
+//	 * @return void
+//	 */
+//	public function setTradeOffice(\Tx_WesEgovernment_Domain_Model_Department $tradeOffice = NULL) {
+//		$this->tradeOffice = $tradeOffice;
+//	}
 
 	/**
 	 * Returns the startDate

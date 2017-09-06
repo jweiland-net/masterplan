@@ -16,13 +16,13 @@
 
 <div><span><f:translate key="tx_masterplan_domain_model_project.citizen_participation" />:</span><f:translate key="tx_masterplan_domain_model_project.citizen_participation.{f:if(condition: project.citizenParticipation, then: 'yes', else: 'no')}" /></div>
 
-<f:render partial="Project/Field" arguments="{value: project.description, languageField: 'description'}" />
+<f:render partial="Project/Field" arguments="{value: project.description, languageField: 'description', formatRaw: 1}" />
 
 <f:if condition="{project.txMaps2Uid}">
 	<f:link.action action="show" pageUid="{settings.pidOfLocationPage}" controller="Location" arguments="{project: project}">[MAP]</f:link.action>
 </f:if>
 
-<f:render partial="Project/Field" arguments="{value: project.furtherInformations, languageField: 'furtherInformations'}" />
+<f:render partial="Project/Field" arguments="{value: project.furtherInformations, languageField: 'furtherInformations', formatRaw: 1}" />
 
 <f:render partial="Project/Images" arguments="{images: project.images}" />
 

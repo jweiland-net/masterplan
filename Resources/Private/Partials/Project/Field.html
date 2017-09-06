@@ -1,3 +1,13 @@
 <f:if condition="{value}">
-	<div><f:if condition="{languageField}"><span><f:translate key="tx_masterplan_domain_model_project.{languageField}" />:</span></f:if>{value}</div>
+	<div>
+		<f:if condition="{languageField}"><span><f:translate key="tx_masterplan_domain_model_project.{languageField}"/>:</span></f:if>
+		<f:if condition="{formatRaw}">
+			<f:then>
+				<f:format.raw>{value}</f:format.raw>
+			</f:then>
+			<f:else>
+				{value}
+			</f:else>
+		</f:if>
+	</div>
 </f:if>

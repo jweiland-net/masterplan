@@ -26,7 +26,6 @@ $EM_CONF[$_EXTKEY] = array(
 		'depends' => array(
 			'typo3' => '6.2',
 			'maps2' => '1.0.0-1.0.99',
-			'wes_egovernment' => '1.0.0-1.0.99'
 		),
 		'conflicts' => array(
 		),
