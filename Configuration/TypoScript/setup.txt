@@ -1,8 +1,8 @@
 plugin.tx_masterplan {
   view {
-    templateRootPath = {$plugin.tx_masterplan.view.templateRootPath}
-    partialRootPath = {$plugin.tx_masterplan.view.partialRootPath}
-    layoutRootPath = {$plugin.tx_masterplan.view.layoutRootPath}
+    templateRootPaths.100 = {$plugin.tx_masterplan.view.templateRootPath}
+    partialRootPaths.100 = {$plugin.tx_masterplan.view.partialRootPath}
+    layoutRootPaths.100 = {$plugin.tx_masterplan.view.layoutRootPath}
   }
 
   persistence {
