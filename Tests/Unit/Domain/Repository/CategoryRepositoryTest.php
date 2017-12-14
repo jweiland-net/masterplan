@@ -64,9 +64,9 @@ class CategoryRepositoryTest extends UnitTestCase {
 	 * @test
 	 */
 	public function categoriesAreSortedByTitleAsDefault() {
-		$expectedResult = array(
+		$expectedResult = [
 			'title' => QueryInterface::ORDER_ASCENDING
-		);
+        ];
 		$this->assertSame(
 			$expectedResult,
 			$this->subject->createQuery()->getOrderings()

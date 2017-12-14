@@ -1,50 +1,49 @@
-<?php
+<?php declare(strict_types=1);
 namespace JWeiland\Masterplan\Controller;
 
-/***************************************************************
- *  Copyright notice
- *  (c) 2014 Stefan Froemken <projects@jweiland.net>, www.jweiland.net
- *  All rights reserved
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
+/*
+ * This file is part of the TYPO3 CMS project.
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * The TYPO3 project - inspiring people to share!
+ */
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * ProjectController
  */
-class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ProjectController extends ActionController
 {
 
     /**
      * projectRepository
      *
-     * @var \JWeiland\Masterplan\Domain\Repository\ProjectRepository
+     * @var ProjectRepository
      */
     protected $projectRepository;
 
     /**
      * inject project repository
      *
-     * @param \JWeiland\Masterplan\Domain\Repository\ProjectRepository $projectRepository
+     * @param ProjectRepository $projectRepository
      * @return void
      */
-    public function injectProjectRepository(\JWeiland\Masterplan\Domain\Repository\ProjectRepository $projectRepository)
+    public function injectProjectRepository(ProjectRepository $projectRepository)
     {
         $this->projectRepository = $projectRepository;
     }
 
+    /**
+     * @return void
+     */
     public function initializeAction()
     {
         // if this value was not set, then it will be filled with 0
@@ -63,14 +62,14 @@ class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * action list
      *
-     * @param integer $areaOfActivity
+     * @param int $areaOfActivity
      * @param string $sortBy
      * @param string $direction
      * @validate $sortBy RegularExpression(regularExpression=/title|start_date|citizen_participation|area_of_activity/)
      * @validate $direction RegularExpression(regularExpression=/asc|desc/)
      * @return void
      */
-    public function listAction($areaOfActivity = 0, $sortBy = 'title', $direction = 'asc')
+    public function listAction(int $areaOfActivity = 0, string $sortBy = 'title', string $direction = 'asc')
     {
         $projects = $this->projectRepository->findAllSorted($areaOfActivity, $sortBy, $direction);
         $this->view->assign('projects', $projects);
@@ -82,10 +81,10 @@ class ProjectController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * action show
      *
-     * @param integer $project
+     * @param int $project
      * @return void
      */
-    public function showAction($project)
+    public function showAction(int $project)
     {
         $projectObject = $this->projectRepository->findByIdentifier($project);
         $this->view->assign('project', $projectObject);

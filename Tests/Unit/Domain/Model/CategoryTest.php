@@ -5,7 +5,7 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  *  Copyright notice
  *
  *  (c) 2013 Stefan Froemken <projects@jweiland.net>, jweiland.net
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -62,11 +62,11 @@ class CategoryTest extends UnitTestCase {
 	 * @return array
 	 */
 	public function propertiesForCategoryObjectDataProvider() {
-		$properties = array();
-		$properties['property title exists in category object'] = array('title', 'getTitle', 'setTitle');
-		$properties['property description exists in category object'] = array('description', 'getDescription', 'setDescription');
-		$properties['property icon exists in category object'] = array('icon', 'getIcon', 'setIcon');
-		$properties['property parent exists in category object'] = array('parent', 'getParent', 'setParent');
+		$properties = [];
+		$properties['property title exists in category object'] = ['title', 'getTitle', 'setTitle'];
+		$properties['property description exists in category object'] = ['description', 'getDescription', 'setDescription'];
+		$properties['property icon exists in category object'] = ['icon', 'getIcon', 'setIcon'];
+		$properties['property parent exists in category object'] = ['parent', 'getParent', 'setParent'];
 		return $properties;
 	}
 
@@ -91,5 +91,5 @@ class CategoryTest extends UnitTestCase {
 			method_exists($this->subject, $setter)
 		);
 	}
-	
+
 }

@@ -8,7 +8,7 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['masterplan'] = [
     'title' => 'Masterplan',
     'description' => 'Masterplan',
     'category' => 'plugin',
@@ -23,7 +23,7 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '8.7.0-8.7.99',
-            'maps2' => '2.9.0-2.9.99',
+            'maps2' => '3.0.0-3.9.99',
         ],
         'conflicts' => [],
         'suggests' => [],

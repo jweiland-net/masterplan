@@ -16,20 +16,21 @@ namespace JWeiland\Masterplan\ViewHelpers\Widget\Controller;
 
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController;
 
 /**
  * @package masterplan
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController
+class PaginateController extends AbstractWidgetController
 {
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper
-     * @inject
-     */
+     * @var DataMapper
+     * */
     protected $dataMapper;
 
     /**
@@ -60,12 +61,12 @@ class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetCont
     protected $objects;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $currentPage = 1;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $maximumNumberOfLinks = 99;
 
@@ -77,17 +78,17 @@ class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetCont
     protected $query;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $numberOfPages = 0;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $displayRangeStart = 0;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $displayRangeEnd = 0;
 
@@ -98,9 +99,21 @@ class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetCont
      * @param ConfigurationManagerInterface $configurationManager
      * @return void
      */
-    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager) {
+    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
+    {
         $this->configurationManager = $configurationManager;
-        $this->settings = $this->configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS);
+        $this->settings = $this->configurationManager->getConfiguration(
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
+        );
+    }
+
+    /**
+     * @param DataMapper $dataMapper
+     * @return void
+     */
+    public function injectDataMapper(DataMapper $dataMapper)
+    {
+        $this->dataMapper = $dataMapper;
     }
 
     /**
@@ -121,7 +134,7 @@ class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetCont
     /**
      * Index action
      *
-     * @param integer $currentPage
+     * @param int $currentPage
      * @return void
      */
     public function indexAction($currentPage = 1)
@@ -185,7 +198,7 @@ class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetCont
      *
      * @return array
      */
-    protected function buildPagination() : array
+    protected function buildPagination(): array
     {
         $this->calculateDisplayRange();
         $pages = [];
@@ -215,13 +228,12 @@ class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetCont
      *
      * @return int
      */
-    protected function getCount() : int
+    protected function getCount(): int
     {
         if ($this->widgetConfiguration['maxRecords']) {
             return (int)$this->widgetConfiguration['maxRecords'];
-        } else {
-            return $this->query->count();
         }
+        return $this->query->count();
     }
 
     /**
@@ -231,7 +243,7 @@ class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetCont
      * @param int $offset
      * @return QueryResultInterface
      */
-    protected function getModifiedObjects(int $limit = 0, int $offset = 0) : QueryResultInterface
+    protected function getModifiedObjects(int $limit = 0, int $offset = 0): QueryResultInterface
     {
         $this->query->setLimit($limit);
         $this->query->setOffset($offset);

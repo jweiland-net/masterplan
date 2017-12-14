@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace JWeiland\Masterplan\Controller;
 
 /*
@@ -14,23 +14,26 @@ namespace JWeiland\Masterplan\Controller;
  * The TYPO3 project - inspiring people to share!
  */
 
+use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
 /**
  * LocationController
  */
-class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class LocationController extends ActionController
 {
     /**
-     * @var \JWeiland\Masterplan\Domain\Repository\ProjectRepository
+     * @var ProjectRepository
      */
     protected $projectRepository;
 
     /**
      * inject project repository
      *
-     * @param \JWeiland\Masterplan\Domain\Repository\ProjectRepository $projectRepository
+     * @param ProjectRepository $projectRepository
      * @return void
      */
-    public function injectProjectRepository(\JWeiland\Masterplan\Domain\Repository\ProjectRepository $projectRepository)
+    public function injectProjectRepository(ProjectRepository $projectRepository)
     {
         $this->projectRepository = $projectRepository;
     }
@@ -38,10 +41,10 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     /**
      * action show
      *
-     * @param integer $project
+     * @param int $project
      * @return void
      */
-    public function showAction($project)
+    public function showAction(int $project)
     {
         $projectObject = $this->projectRepository->findByIdentifier($project);
         $this->view->assign('project', $projectObject);

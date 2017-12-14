@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace JWeiland\Masterplan\Domain\Model;
 
 /*
@@ -14,11 +14,9 @@ namespace JWeiland\Masterplan\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 
-use JWeiland\ServiceBw2\Domain\Repository\OrganisationseinheitenRepository;
+use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\ServiceBw2\Utility\ModelUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 /**
  * Projects
@@ -107,7 +105,7 @@ class Project extends AbstractEntity
     /**
      * txMaps2Uid
      *
-     * @var \JWeiland\Maps2\Domain\Model\PoiCollection
+     * @var PoiCollection
      */
     protected $txMaps2Uid;
 
@@ -366,7 +364,7 @@ class Project extends AbstractEntity
     /**
      * Returns TxMaps2Uid
      *
-     * @return \JWeiland\Maps2\Domain\Model\PoiCollection
+     * @return PoiCollection
      */
     public function getTxMaps2Uid()
     {
@@ -376,9 +374,9 @@ class Project extends AbstractEntity
     /**
      * Sets TxMaps2Uid
      *
-     * @param \JWeiland\Maps2\Domain\Model\PoiCollection $txMaps2Uid
+     * @param PoiCollection $txMaps2Uid
      */
-    public function setTxMaps2Uid(\JWeiland\Maps2\Domain\Model\PoiCollection $txMaps2Uid)
+    public function setTxMaps2Uid(PoiCollection $txMaps2Uid)
     {
         $this->txMaps2Uid = $txMaps2Uid;
     }

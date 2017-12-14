@@ -4,14 +4,14 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'JWeiland.' . $_EXTKEY,
+	'JWeiland.masterplan',
 	'Masterplan',
-	array(
+	[
 		'Project' => 'list, show',
 		'Location' => 'show'
-	),
+    ],
 	// non-cacheable actions
-	array(
+	[
 		'Project' => '',
-	)
+    ]
 );
