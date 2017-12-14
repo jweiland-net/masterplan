@@ -20,10 +20,10 @@
 				<source>Contact Person</source>
 				<target>Ansprechpartner/in</target>
 			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.trade_office">
-				<source>Trade Office</source>
-				<target>Fachamt</target>
-			</trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.organisationseinheiten">
+        <source>Organisationseinheiten</source>
+        <target>Fachamt</target>
+      </trans-unit>
 			<trans-unit id="tx_masterplan_domain_model_project.start_date">
 				<source>Start Date</source>
 				<target>Projektstart</target>

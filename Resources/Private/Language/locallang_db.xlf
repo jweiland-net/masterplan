@@ -16,8 +16,8 @@
 			<trans-unit id="tx_masterplan_domain_model_project.contact_person">
 				<source>Contact Person</source>
 			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.trade_office">
-				<source>Trade Office</source>
+			<trans-unit id="tx_masterplan_domain_model_project.organisationseinheiten">
+				<source>Organisationseinheiten</source>
 			</trans-unit>
 			<trans-unit id="tx_masterplan_domain_model_project.start_date">
 				<source>Start Date</source>

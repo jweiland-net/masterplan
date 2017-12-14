@@ -9,7 +9,7 @@ CREATE TABLE tx_masterplan_domain_model_project (
 	title varchar(255) DEFAULT '' NOT NULL,
 	number varchar(255) DEFAULT '' NOT NULL,
 	contact_person varchar(255) DEFAULT '' NOT NULL,
-	trade_office int(11) unsigned NOT NULL default '0',
+	organisationseinheiten int(11) unsigned NOT NULL default '0',
 	start_date varchar(50) DEFAULT '' NOT NULL,
 	end_date varchar(50) DEFAULT '' NOT NULL,
 	costs varchar(255) DEFAULT '' NOT NULL,
