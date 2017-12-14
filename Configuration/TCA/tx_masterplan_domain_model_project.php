@@ -24,7 +24,7 @@ return [
         'iconfile' => 'EXT:masterplan/Resources/Public/Icons/tx_masterplan_domain_model_project.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, number, contact_person' /*, trade_office */ . ', start_date, end_date, costs, citizen_participation, images, description, further_informations, tx_maps2_uid, files, links',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, number, contact_person, organisationseinheiten, start_date, end_date, costs, citizen_participation, images, description, further_informations, tx_maps2_uid, files, links',
     ],
     'columns' => [
         'sys_language_uid' => [
