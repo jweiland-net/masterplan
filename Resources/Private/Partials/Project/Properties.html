@@ -1,5 +1,4 @@
 {namespace mp=JWeiland\Masterplan\ViewHelpers}
-
 <f:render partial="Project/Field" arguments="{value: project.title, languageField: 'title'}" />
 <f:render partial="Project/Field" arguments="{value: project.number, languageField: 'number'}" />
 <f:render partial="Project/Field" arguments="{value: project.contactPerson, languageField: 'contact_person'}" />
@@ -7,7 +6,7 @@
 <f:if condition="{project.organisationseinheiten}">
 	<f:for each="{project.organisationseinheiten}" as="organisationseinheit">
     <f:if condition="{organisationseinheit.name}">
-      <div><span><f:translate key="tx_masterplan_domain_model_project.organisationseinheit" />:</span>{organisationseinheit.name}</div>
+      <div><span><f:translate key="tx_masterplan_domain_model_project.organisationseinheiten" />:</span> {organisationseinheit.name}</div>
     </f:if>
   </f:for>
 </f:if>
