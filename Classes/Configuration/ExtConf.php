@@ -55,7 +55,7 @@ class ExtConf implements SingletonInterface
      */
     public function getRootCategory(): int
     {
-        return $this->rootCategory;
+        return (int)$this->rootCategory;
     }
 
     /**
