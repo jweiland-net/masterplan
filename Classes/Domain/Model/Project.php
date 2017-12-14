@@ -105,7 +105,7 @@ class Project extends AbstractEntity
     /**
      * txMaps2Uid
      *
-     * @var PoiCollection
+     * @var \JWeiland\Maps2\Domain\Model\PoiCollection
      */
     protected $txMaps2Uid;
 
