@@ -1,72 +1,91 @@
 {namespace mp=JWeiland\Masterplan\ViewHelpers}
-<f:render partial="Project/Field" arguments="{value: project.title, languageField: 'title'}" />
-<f:render partial="Project/Field" arguments="{value: project.number, languageField: 'number'}" />
-<f:render partial="Project/Field" arguments="{value: project.contactPerson, languageField: 'contact_person'}" />
 
-<f:if condition="{project.organisationseinheiten}">
-	<f:for each="{project.organisationseinheiten}" as="organisationseinheit">
-    <f:if condition="{organisationseinheit.name}">
-      <div><span><f:translate key="tx_masterplan_domain_model_project.organisationseinheiten" />:</span> {organisationseinheit.name}</div>
+
+<div class="grid_6 floatleft">
+  <div class="gridright">
+    <f:render partial="Project/Images" arguments="{images: project.images}"/>
+    <f:format.html>{project.description}</f:format.html>
+    <f:format.html>{project.furtherInformations}</f:format.html>
+    <f:alias map="{activities: '{mp:getAreasOfActivity(areasOfActivity: \'{project.areaOfActivity}\')}'}">
+      <f:if condition="{activities}">
+        <h3><f:translate key="tx_masterplan_domain_model_project.area_of_activity"/>:</h3>
+        <ul class="extul">
+          <f:for each="{activities}" as="activity">
+            <li>{activity.title}
+              <f:alias map="{targets: '{mp:getTargets(parent: \'{activity.uid}\', areasOfActivity: \'{project.areaOfActivity}\')}'}">
+                <f:if condition="{targets}">
+                  <ul class="extul">
+                    <li><b><f:translate key="targets"/>:</b></li>
+                    <f:for each="{targets}" as="target">
+                      <li>{target.title}</li>
+                    </f:for>
+                  </ul>
+                </f:if>
+              </f:alias>
+            </li>
+          </f:for>
+        </ul>
+      </f:if>
+    </f:alias>
+  </div>
+</div>
+
+<div class="grid_6 floatleft">
+  <div class="gridleft clearfix rulerbefore4">
+    <dl class="extdl clearfix rulerafter">
+      <dd class="floatleft noborder{f:if(condition: project.txMaps2Uid, then: ' grid_8', else: '')}">
+        <b><f:translate key="tx_masterplan_domain_model_project.number"/>:</b><br/>{project.number}
+      </dd>
+      <f:if condition="{project.txMaps2Uid}">
+        <dd class="grid_4 floatleft noborder">
+          <figure>
+            <f:link.action action="show" pageUid="{settings.pidOfLocationPage}" controller="Location" arguments="{project: project}">
+              <f:image class="floatright" src="EXT:masterplan/Resources/Public/Icons/thumbmaps.png" alt="{f:translate(key: 'altTextMapImg')}"/>
+            </f:link.action>
+          </figure>
+        </dd>
+      </f:if>
+    </dl>
+    <dl class="extdl">
+      <f:render partial="Project/Field" arguments="{value: '{project.startDate}', languageField: 'start_date'}"/>
+      <f:render partial="Project/Field" arguments="{value: '{project.endDate}', languageField: 'end_date'}"/>
+      <f:render partial="Project/Field" arguments="{value: '{project.costs}', languageField: 'costs'}"/>
+      <f:render partial="Project/Field" arguments="{value: project.contactPerson, languageField: 'contact_person'}"/>
+
+      <f:if condition="{project.organisationseinheiten}">
+        <f:for each="{project.organisationseinheiten}" as="organisationseinheit">
+          <f:if condition="{organisationseinheit.name}">
+            <dt><f:translate key="tx_masterplan_domain_model_project.organisationseinheiten" />:</dt>
+            <dd>{organisationseinheit.name}</dd>
+          </f:if>
+        </f:for>
+      </f:if>
+    </dl>
+
+    <dl class="extdl">
+      <dt><f:translate key="tx_masterplan_domain_model_project.citizen_participation"/>:</dt>
+      <dd>
+        <f:translate key="tx_masterplan_domain_model_project.citizen_participation.{f:if(condition: project.citizenParticipation, then: 'yes', else: 'no')}"/>
+      </dd>
+    </dl>
+    <f:if condition="{project.files}">
+      <dl class="extdl">
+        <dt><f:translate key="tx_masterplan_domain_model_project.files"/>:</dt>
+        <f:for each="{project.files}" as="file">
+          <dd><span aria-hidden="true" class="icon-download"></span><a href="{file.originalResource.publicUrl}" target="_blank">{file.originalResource.originalFile.name}</a></dd>
+        </f:for>
+      </dl>
     </f:if>
-  </f:for>
-</f:if>
-
-<f:render partial="Project/Field" arguments="{value: '{project.startDate}', languageField: 'start_date'}" />
-<f:render partial="Project/Field" arguments="{value: '{project.endDate}', languageField: 'end_date'}" />
-<f:render partial="Project/Field" arguments="{value: '{project.costs}', languageField: 'costs'}" />
-
-<div><span><f:translate key="tx_masterplan_domain_model_project.citizen_participation" />:</span><f:translate key="tx_masterplan_domain_model_project.citizen_participation.{f:if(condition: project.citizenParticipation, then: 'yes', else: 'no')}" /></div>
-
-<f:render partial="Project/Field" arguments="{value: project.description, languageField: 'description', formatRaw: 1}" />
-
-<f:if condition="{project.txMaps2Uid}">
-	<f:link.action action="show" pageUid="{settings.pidOfLocationPage}" controller="Location" arguments="{project: project}">[MAP]</f:link.action>
-</f:if>
-
-<f:render partial="Project/Field" arguments="{value: project.furtherInformations, languageField: 'furtherInformations', formatRaw: 1}" />
-
-<f:render partial="Project/Images" arguments="{images: project.images}" />
-
-<f:if condition="{project.files}">
-	<div><span><f:translate key="tx_masterplan_domain_model_project.files" />:</span>
-		<ul>
-			<f:for each="{project.files}" as="file">
-				<li><a href="{file.originalResource.publicUrl}" target="_blank">{file.originalResource.publicUrl}</a></li>
-			</f:for>
-		</ul>
-	</div>
-</f:if>
-
-<f:if condition="{project.links}">
-	<div><span><f:translate key="tx_masterplan_domain_model_project.links" />:</span>
-		<ul>
-			<f:for each="{project.links}" as="link">
-				<li><f:link.external uri="{link.link}" target="_blank">{link.title}</f:link.external></li>
-			</f:for>
-		</ul>
-	</div>
-</f:if>
-
-<f:alias map="{activities: '{mp:getAreasOfActivity(areasOfActivity: \'{project.areaOfActivity}\')}'}">
-	<f:if condition="{activities}">
-		<div><span><f:translate key="tx_masterplan_domain_model_project.area_of_activity" />:</span>
-			<ul>
-				<f:for each="{activities}" as="activity">
-					<li>{activity.title}
-						<f:alias map="{targets: '{mp:getTargets(parent: \'{activity.uid}\', areasOfActivity: \'{project.areaOfActivity}\')}'}">
-							<f:if condition="{targets}">
-								<div><span><f:translate key="targets" />:</span>
-									<ul>
-										<f:for each="{targets}" as="target">
-											<li>{target.title}</li>
-										</f:for>
-									</ul>
-								</div>
-							</f:if>
-						</f:alias>
-					</li>
-				</f:for>
-			</ul>
-		</div>
-	</f:if>
-</f:alias>
+    <f:if condition="{project.links}">
+      <dl class="extdl">
+        <dt><f:translate key="tx_masterplan_domain_model_project.links"/>:
+        </dt>
+        <f:for each="{project.links}" as="link">
+          <dd>
+            <f:link.external uri="{link.link}" target="_blank">{link.title}</f:link.external>
+          </dd>
+        </f:for>
+      </dl>
+    </f:if>
+  </div>
+</div>

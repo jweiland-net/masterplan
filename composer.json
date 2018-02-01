@@ -2,7 +2,7 @@
     "name": "jweiland/masterplan",
     "type": "typo3-cms-extension",
     "description": "masterplan",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "keywords": ["typo3", "TYPO3 CMS", "masterplan"],
     "homepage": "http://www.jweiland.net",
     "authors": [

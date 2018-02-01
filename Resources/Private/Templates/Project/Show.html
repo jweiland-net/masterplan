@@ -1,9 +1,9 @@
-<f:layout name="Default" />
+<f:layout name="Default"/>
 
 <f:section name="main">
-	<h1>{project.title}</h1>
+  <h1>{project.title}</h1>
 
-	<f:flashMessages />
-	<f:render partial="Project/Properties" arguments="{project: project}" />
-	<f:link.action action="list" pageUid="{settings.pidOfListPage}"><f:translate key="backToList" /></f:link.action><br />
+  <f:flashMessages />
+
+  <f:render partial="Project/Properties" arguments="{project: project}"/>
 </f:section>

@@ -1,4 +1,4 @@
-<?php
+gi<?php
 
 /***************************************************************
  * Extension Manager/Repository config file for ext: "masterplan"
@@ -19,7 +19,7 @@ $EM_CONF['masterplan'] = [
     'uploadfolder' => '1',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '1.0.1',
+    'version' => '1.1.0',
     'constraints' => [
         'depends' => [
             'typo3' => '8.7.0-8.7.99',
