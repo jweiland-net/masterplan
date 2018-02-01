@@ -2,7 +2,6 @@
     "name": "jweiland/masterplan",
     "type": "typo3-cms-extension",
     "description": "masterplan",
-    "version": "1.0.0",
     "license": "GPL-2.0+",
     "keywords": ["typo3", "TYPO3 CMS", "masterplan"],
     "homepage": "http://www.jweiland.net",
@@ -19,8 +18,8 @@
       "source": "https://github.com/jweiland-net/checkfaluploads"
     },
     "require": {
-      "typo3/cms-core": "~8.7",
-      "jweiland/maps2": "~3.0",
+      "typo3/cms-core": "^8.7",
+      "jweiland/maps2": "^3.0",
       "jweiland/service-bw2": "<2.0"
     },
     "autoload": {
