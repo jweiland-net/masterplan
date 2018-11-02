@@ -17,7 +17,6 @@ CREATE TABLE tx_masterplan_domain_model_project (
 	images int(11) unsigned NOT NULL default '0',
 	description text NOT NULL,
 	further_informations text NOT NULL,
-	tx_maps2_uid int(11) unsigned NOT NULL default '0',
 	files int(11) unsigned NOT NULL default '0',
 	links int(11) unsigned NOT NULL default '0',
 

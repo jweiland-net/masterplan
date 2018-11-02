@@ -13,4 +13,12 @@ call_user_func(function($extConf) {
             ]
         ]
     );
+
+    // Add tx_maps2_uid column to project table
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('maps2')) {
+        $result = \JWeiland\Maps2\Tca\Maps2Registry::getInstance()->add(
+            'masterplan',
+            'tx_masterplan_domain_model_project'
+        );
+    }
 }, unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['masterplan']));
