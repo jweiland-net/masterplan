@@ -24,7 +24,7 @@ $EM_CONF['masterplan'] = [
         'depends' => [
             'typo3' => '8.7.0-8.7.99',
             'maps2' => '4.1.0-4.99.99',
-            'service_bw2' => '0.0.1-1.99.99'
+            'service_bw2' => '1.4.0-1.99.99'
         ],
         'conflicts' => [],
         'suggests' => [],
