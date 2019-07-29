@@ -22,98 +22,108 @@ use Nimut\TestingFramework\TestCase\UnitTestCase;
  */
 class LinkTest extends UnitTestCase
 {
-	/**
-	 * @var \JWeiland\Masterplan\Domain\Model\Link
-	 */
-	protected $subject;
+    /**
+     * @var \JWeiland\Masterplan\Domain\Model\Link
+     */
+    protected $subject;
 
-	/**
-	 * set up class
-	 */
-	public function setUp() {
-		$this->subject = new Link();
-	}
+    /**
+     * set up class
+     */
+    public function setUp()
+    {
+        $this->subject = new Link();
+    }
 
-	/**
-	 * tear down class
-	 */
-	public function tearDown() {
-		unset($this->subject);
-	}
+    /**
+     * tear down class
+     */
+    public function tearDown()
+    {
+        unset($this->subject);
+    }
 
-	/**
-	 * @test
-	 */
-	public function getLinkInitiallyReturnsEmptyString() {
-		$this->assertSame(
-			'',
-			$this->subject->getLink()
-		);
-	}
+    /**
+     * @test
+     */
+    public function getLinkInitiallyReturnsEmptyString()
+    {
+        $this->assertSame(
+            '',
+            $this->subject->getLink()
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function setLinkSetsLink() {
-		$this->subject->setLink('foo bar');
+    /**
+     * @test
+     */
+    public function setLinkSetsLink()
+    {
+        $this->subject->setLink('foo bar');
 
-		$this->assertSame(
-			'foo bar',
-			$this->subject->getLink()
-		);
-	}
+        $this->assertSame(
+            'foo bar',
+            $this->subject->getLink()
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function setLinkWithIntegerResultsInString() {
-		$this->subject->setLink(123);
-		$this->assertSame('123', $this->subject->getLink());
-	}
+    /**
+     * @test
+     */
+    public function setLinkWithIntegerResultsInString()
+    {
+        $this->subject->setLink(123);
+        $this->assertSame('123', $this->subject->getLink());
+    }
 
-	/**
-	 * @test
-	 */
-	public function setLinkWithBooleanResultsInString() {
-		$this->subject->setLink(TRUE);
-		$this->assertSame('1', $this->subject->getLink());
-	}
+    /**
+     * @test
+     */
+    public function setLinkWithBooleanResultsInString()
+    {
+        $this->subject->setLink(TRUE);
+        $this->assertSame('1', $this->subject->getLink());
+    }
 
-	/**
-	 * @test
-	 */
-	public function getTitleInitiallyReturnsEmptyString() {
-		$this->assertSame(
-			'',
-			$this->subject->getTitle()
-		);
-	}
+    /**
+     * @test
+     */
+    public function getTitleInitiallyReturnsEmptyString()
+    {
+        $this->assertSame(
+            '',
+            $this->subject->getTitle()
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function setTitleSetsTitle() {
-		$this->subject->setTitle('foo bar');
+    /**
+     * @test
+     */
+    public function setTitleSetsTitle()
+    {
+        $this->subject->setTitle('foo bar');
 
-		$this->assertSame(
-			'foo bar',
-			$this->subject->getTitle()
-		);
-	}
+        $this->assertSame(
+            'foo bar',
+            $this->subject->getTitle()
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function setTitleWithIntegerResultsInString() {
-		$this->subject->setTitle(123);
-		$this->assertSame('123', $this->subject->getTitle());
-	}
+    /**
+     * @test
+     */
+    public function setTitleWithIntegerResultsInString()
+    {
+        $this->subject->setTitle(123);
+        $this->assertSame('123', $this->subject->getTitle());
+    }
 
-	/**
-	 * @test
-	 */
-	public function setTitleWithBooleanResultsInString() {
-		$this->subject->setTitle(TRUE);
-		$this->assertSame('1', $this->subject->getTitle());
-	}
+    /**
+     * @test
+     */
+    public function setTitleWithBooleanResultsInString()
+    {
+        $this->subject->setTitle(TRUE);
+        $this->assertSame('1', $this->subject->getTitle());
+    }
 }
