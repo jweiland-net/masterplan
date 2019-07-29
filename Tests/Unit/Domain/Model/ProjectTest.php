@@ -15,16 +15,14 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  */
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
-use TYPO3\CMS\Core\Tests\UnitTestCase;
 use JWeiland\Masterplan\Domain\Model\Project;
+use Nimut\TestingFramework\TestCase\UnitTestCase;
 
 /**
  * Test case for class \JWeiland\Masterplan\Domain\Model\Category.
- *
- * @subpackage masterplan
  */
-class ProjectTest extends UnitTestCase {
-
+class ProjectTest extends UnitTestCase
+{
 	/**
 	 * @var \JWeiland\Masterplan\Domain\Model\Project
 	 */

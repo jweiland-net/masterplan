@@ -14,16 +14,14 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 
-use TYPO3\CMS\Core\Tests\UnitTestCase;
 use JWeiland\Masterplan\Domain\Model\Link;
+use Nimut\TestingFramework\TestCase\UnitTestCase;
 
 /**
  * Test case for class \JWeiland\Masterplan\Domain\Model\Category.
- *
- * @subpackage masterplan
  */
-class LinkTest extends UnitTestCase {
-
+class LinkTest extends UnitTestCase
+{
 	/**
 	 * @var \JWeiland\Masterplan\Domain\Model\Link
 	 */
