@@ -19,26 +19,20 @@ use JWeiland\Masterplan\Domain\Model\Project;
 use Nimut\TestingFramework\TestCase\UnitTestCase;
 
 /**
- * Test case for class \JWeiland\Masterplan\Domain\Model\Category.
+ * Test case for class \JWeiland\Masterplan\Domain\Model\Project.
  */
 class ProjectTest extends UnitTestCase
 {
     /**
-     * @var \JWeiland\Masterplan\Domain\Model\Project
+     * @var Project
      */
     protected $subject;
 
-    /**
-     * set up class
-     */
     public function setUp()
     {
         $this->subject = new Project();
     }
 
-    /**
-     * tear down class
-     */
     public function tearDown()
     {
         unset($this->subject);
@@ -82,7 +76,7 @@ class ProjectTest extends UnitTestCase
      */
     public function setTitleWithBooleanResultsInString()
     {
-        $this->subject->setTitle(TRUE);
+        $this->subject->setTitle(true);
         $this->assertSame('1', $this->subject->getTitle());
     }
 
@@ -124,7 +118,7 @@ class ProjectTest extends UnitTestCase
      */
     public function setNumberWithBooleanResultsInString()
     {
-        $this->subject->setNumber(TRUE);
+        $this->subject->setNumber(true);
         $this->assertSame('1', $this->subject->getNumber());
     }
 
@@ -166,30 +160,8 @@ class ProjectTest extends UnitTestCase
      */
     public function setContactPersonWithBooleanResultsInString()
     {
-        $this->subject->setContactPerson(TRUE);
+        $this->subject->setContactPerson(true);
         $this->assertSame('1', $this->subject->getContactPerson());
-    }
-
-    /**
-     * @test
-     */
-    public function getTradeOfficeInitiallyReturnsNull()
-    {
-        $this->assertNull($this->subject->getTradeOffice());
-    }
-
-    /**
-     * @test
-     */
-    public function setTradeOfficeSetsTradeOffice()
-    {
-        $instance = new \Tx_WesEgovernment_Domain_Model_Department;
-        $this->subject->setTradeOffice($instance);
-
-        $this->assertSame(
-            $instance,
-            $this->subject->getTradeOffice()
-        );
     }
 
     /**
@@ -230,7 +202,7 @@ class ProjectTest extends UnitTestCase
      */
     public function setStartDateWithBooleanResultsInString()
     {
-        $this->subject->setStartDate(TRUE);
+        $this->subject->setStartDate(true);
         $this->assertSame('1', $this->subject->getStartDate());
     }
 
@@ -272,7 +244,7 @@ class ProjectTest extends UnitTestCase
      */
     public function setEndDateWithBooleanResultsInString()
     {
-        $this->subject->setEndDate(TRUE);
+        $this->subject->setEndDate(true);
         $this->assertSame('1', $this->subject->getEndDate());
     }
 
@@ -314,7 +286,7 @@ class ProjectTest extends UnitTestCase
      */
     public function setCostsWithBooleanResultsInString()
     {
-        $this->subject->setCosts(TRUE);
+        $this->subject->setCosts(true);
         $this->assertSame('1', $this->subject->getCosts());
     }
 
@@ -323,9 +295,8 @@ class ProjectTest extends UnitTestCase
      */
     public function getCitizenParticipationInitiallyReturnsFalse()
     {
-        $this->assertSame(
-            FALSE,
-            $this->subject->getCitizenParticipation()
+        $this->assertFalse(
+            $this->subject->isCitizenParticipation()
         );
     }
 
@@ -334,10 +305,9 @@ class ProjectTest extends UnitTestCase
      */
     public function setCitizenParticipationSetsCitizenParticipation()
     {
-        $this->subject->setCitizenParticipation(TRUE);
-        $this->assertSame(
-            TRUE,
-            $this->subject->getCitizenParticipation()
+        $this->subject->setCitizenParticipation(true);
+        $this->assertTrue(
+            $this->subject->isCitizenParticipation()
         );
     }
 
@@ -347,7 +317,9 @@ class ProjectTest extends UnitTestCase
     public function setCitizenParticipationWithStringReturnsTrue()
     {
         $this->subject->setCitizenParticipation('foo bar');
-        $this->assertTrue($this->subject->getCitizenParticipation());
+        $this->assertTrue(
+            $this->subject->isCitizenParticipation()
+        );
     }
 
     /**
@@ -356,7 +328,9 @@ class ProjectTest extends UnitTestCase
     public function setCitizenParticipationWithZeroReturnsFalse()
     {
         $this->subject->setCitizenParticipation(0);
-        $this->assertFalse($this->subject->getCitizenParticipation());
+        $this->assertFalse(
+            $this->subject->isCitizenParticipation()
+        );
     }
 
     /**
@@ -422,7 +396,7 @@ class ProjectTest extends UnitTestCase
      */
     public function setDescriptionWithBooleanResultsInString()
     {
-        $this->subject->setDescription(TRUE);
+        $this->subject->setDescription(true);
         $this->assertSame('1', $this->subject->getDescription());
     }
 
@@ -464,7 +438,7 @@ class ProjectTest extends UnitTestCase
      */
     public function setFurtherInformationsWithBooleanResultsInString()
     {
-        $this->subject->setFurtherInformations(TRUE);
+        $this->subject->setFurtherInformations(true);
         $this->assertSame('1', $this->subject->getFurtherInformations());
     }
 

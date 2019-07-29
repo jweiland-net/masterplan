@@ -46,7 +46,6 @@ class ProjectRepository extends Repository
                 $query->matching($query->contains('areaOfActivity', $areaOfActivity));
             }
             $query->setOrderings([$sortBy => strtoupper($direction)]);
-
         } else {
             // if something went wrong, then return all records
             return $this->findAll();

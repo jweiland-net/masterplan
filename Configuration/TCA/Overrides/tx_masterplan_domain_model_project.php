@@ -1,5 +1,5 @@
 <?php
-call_user_func(function($extConf) {
+call_user_func(function ($extConf) {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
         'masterplan',
         'tx_masterplan_domain_model_project',
