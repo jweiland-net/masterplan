@@ -18,6 +18,7 @@ namespace JWeiland\Masterplan\ViewHelpers;
 use JWeiland\Masterplan\Configuration\ExtConf;
 use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use TYPO3\CMS\Extbase\Domain\Model\Category;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -54,28 +55,41 @@ class GetAreasOfActivityViewHelper extends AbstractViewHelper
     }
 
     /**
+     * Initialize all VH arguments
+     */
+    public function initializeArguments()
+    {
+        $this->registerArgument(
+            'areasOfActivity',
+            'array',
+            'Predefined list of available categories to filter for',
+            false,
+            []
+        );
+    }
+
+    /**
      * Get direct child categories of defined root category in extConf
      *
-     * @param array $areasOfActivity
      * @return array
      */
-    public function render(array $areasOfActivity = []): array
+    public function render(): array
     {
         $rootCategory = $this->extConf->getRootCategory();
         $categories = [];
         // make sure to have only categories which are direct children of rootCategory
-        if ($areasOfActivity !== []) {
-            /** @var \TYPO3\CMS\Extbase\Domain\Model\Category $areaOfActivity */
-            foreach ($areasOfActivity as $areaOfActivity) {
+        if (!empty($this->arguments['areasOfActivity'])) {
+            /** @var Category $areaOfActivity */
+            foreach ($this->arguments['areasOfActivity'] as $areaOfActivity) {
                 $parentCategory = $areaOfActivity->getParent();
                 if ($parentCategory instanceof Category && $parentCategory->getUid() === $rootCategory) {
                     $categories[] = $areaOfActivity;
                 }
             }
         } else {
-            /** @var \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult $categoryResult */
+            /** @var QueryResultInterface $categoryResult */
             $categoryResult = $this->categoryRepository->findByParent($rootCategory);
-            // we need an Array as collection for usort and not an ObjectStorage
+            // we need an Array as collection for usort
             $categories = $categoryResult->toArray();
         }
         usort($categories, ['self', 'sortCategoriesByTitle']);
