@@ -40,7 +40,6 @@ class GetAreasOfActivityViewHelper extends AbstractViewHelper
      * inject category repository
      *
      * @param CategoryRepository $categoryRepository
-     * @return void
      */
     public function injectCategoryRepository(CategoryRepository $categoryRepository)
     {
@@ -51,7 +50,6 @@ class GetAreasOfActivityViewHelper extends AbstractViewHelper
      * inject extension configuration
      *
      * @param ExtConf $extConf
-     * @return void
      */
     public function injectExtConf(ExtConf $extConf)
     {

@@ -61,7 +61,6 @@ class ExtConf implements SingletonInterface
      * setter for rootCategory
      *
      * @param int $rootCategory
-     * @return void
      */
     public function setRootCategory($rootCategory)
     {

@@ -34,7 +34,6 @@ class ProjectController extends ActionController
      * inject project repository
      *
      * @param ProjectRepository $projectRepository
-     * @return void
      */
     public function injectProjectRepository(ProjectRepository $projectRepository)
     {
@@ -42,7 +41,6 @@ class ProjectController extends ActionController
     }
 
     /**
-     * @return void
      */
     public function initializeAction()
     {
@@ -67,7 +65,6 @@ class ProjectController extends ActionController
      * @param string $direction
      * @validate $sortBy RegularExpression(regularExpression=/title|start_date|citizen_participation|area_of_activity/)
      * @validate $direction RegularExpression(regularExpression=/asc|desc/)
-     * @return void
      */
     public function listAction(int $areaOfActivity = 0, string $sortBy = 'title', string $direction = 'asc')
     {
@@ -82,7 +79,6 @@ class ProjectController extends ActionController
      * action show
      *
      * @param int $project
-     * @return void
      */
     public function showAction(int $project)
     {

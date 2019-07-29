@@ -41,8 +41,6 @@ class LinkTest extends UnitTestCase {
 
 	/**
 	 * set up class
-	 *
-	 * @return void
 	 */
 	public function setUp() {
 		$this->subject = new Link();
@@ -50,8 +48,6 @@ class LinkTest extends UnitTestCase {
 
 	/**
 	 * tear down class
-	 *
-	 * @return void
 	 */
 	public function tearDown() {
 		unset($this->subject);
