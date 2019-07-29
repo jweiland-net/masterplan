@@ -19,7 +19,7 @@ use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Projects
+ * Main domain model for projects.
  */
 class Project extends AbstractEntity
 {

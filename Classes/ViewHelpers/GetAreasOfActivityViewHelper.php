@@ -20,7 +20,9 @@ use TYPO3\CMS\Extbase\Domain\Model\Category;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- * A ViewHelper to get a sorting array
+ * With this VH you get all direct child categories of a given parent category.
+ * Seems to be the same as GetTargetsViewHelper:
+ * Additionally this VH can retrieve child categories directly from CategoryRepository
  */
 class GetAreasOfActivityViewHelper extends AbstractViewHelper
 {

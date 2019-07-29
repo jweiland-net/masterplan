@@ -17,7 +17,7 @@ namespace JWeiland\Masterplan\ViewHelpers;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- * A ViewHelper to get a sorting array
+ * A ViewHelper to get a sorted array
  */
 class GetSortingViewHelper extends AbstractViewHelper
 {

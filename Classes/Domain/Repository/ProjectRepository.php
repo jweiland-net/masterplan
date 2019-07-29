@@ -18,7 +18,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * The repository for Projects
+ * Main repository to retrieve project records.
  */
 class ProjectRepository extends Repository
 {
