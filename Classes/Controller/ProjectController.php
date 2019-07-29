@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types = 1);
 namespace JWeiland\Masterplan\Controller;
 
 /*
@@ -22,7 +23,6 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
  */
 class ProjectController extends ActionController
 {
-
     /**
      * projectRepository
      *
@@ -31,8 +31,6 @@ class ProjectController extends ActionController
     protected $projectRepository;
 
     /**
-     * inject project repository
-     *
      * @param ProjectRepository $projectRepository
      */
     public function injectProjectRepository(ProjectRepository $projectRepository)
@@ -41,6 +39,7 @@ class ProjectController extends ActionController
     }
 
     /**
+     * Initializes the controller before invoking an action method.
      */
     public function initializeAction()
     {
@@ -58,7 +57,7 @@ class ProjectController extends ActionController
     }
 
     /**
-     * action list
+     * Action list
      *
      * @param int $areaOfActivity
      * @param string $sortBy
@@ -76,7 +75,7 @@ class ProjectController extends ActionController
     }
 
     /**
-     * action show
+     * Action show
      *
      * @param int $project
      */

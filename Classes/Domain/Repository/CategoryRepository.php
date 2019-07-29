@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types = 1);
 namespace JWeiland\Masterplan\Domain\Repository;
 
 /*
@@ -21,11 +22,6 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
  */
 class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository
 {
-    /**
-     * Default orderings
-     *
-     * @var array
-     */
     protected $defaultOrderings = [
         'title' => QueryInterface::ORDER_ASCENDING
     ];

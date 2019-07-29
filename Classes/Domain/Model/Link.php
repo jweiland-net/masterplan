@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Masterplan\Domain\Model;
 
 /*
@@ -22,22 +23,16 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Link extends AbstractEntity
 {
     /**
-     * Link
-     *
      * @var string
      */
     protected $link = '';
 
     /**
-     * Title
-     *
      * @var string
      */
     protected $title = '';
 
     /**
-     * Returns Link
-     *
      * @return string
      */
     public function getLink(): string
@@ -46,8 +41,6 @@ class Link extends AbstractEntity
     }
 
     /**
-     * Sets Link
-     *
      * @param string $link
      */
     public function setLink(string $link)
@@ -56,8 +49,6 @@ class Link extends AbstractEntity
     }
 
     /**
-     * Returns Title
-     *
      * @return string
      */
     public function getTitle(): string
@@ -66,8 +57,6 @@ class Link extends AbstractEntity
     }
 
     /**
-     * Sets Title
-     *
      * @param string $title
      */
     public function setTitle(string $title)

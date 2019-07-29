@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types = 1);
 namespace JWeiland\Masterplan\ViewHelpers;
 
 /*
@@ -14,7 +15,7 @@ namespace JWeiland\Masterplan\ViewHelpers;
  * The TYPO3 project - inspiring people to share!
  */
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * A ViewHelper to get a sorted array
@@ -22,7 +23,7 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 class GetSortingViewHelper extends AbstractViewHelper
 {
     /**
-     * get sorting parameters as array
+     * Get sorting parameters as array
      *
      * @param string $currentSortBy
      * @param string $sortBy

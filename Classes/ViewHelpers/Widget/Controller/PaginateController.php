@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Masterplan\ViewHelpers\Widget\Controller;
 
 /*
@@ -25,7 +26,6 @@ use TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController;
  */
 class PaginateController extends AbstractWidgetController
 {
-
     /**
      * @var DataMapper
      * */
@@ -89,7 +89,6 @@ class PaginateController extends AbstractWidgetController
      * @var int
      */
     protected $displayRangeEnd = 0;
-
 
     /**
      * Inject ConfigurationManagerInterface

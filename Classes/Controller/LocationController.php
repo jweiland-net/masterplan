@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types = 1);
 namespace JWeiland\Masterplan\Controller;
 
 /*
@@ -28,8 +29,6 @@ class LocationController extends ActionController
     protected $projectRepository;
 
     /**
-     * inject project repository
-     *
      * @param ProjectRepository $projectRepository
      */
     public function injectProjectRepository(ProjectRepository $projectRepository)
@@ -38,7 +37,7 @@ class LocationController extends ActionController
     }
 
     /**
-     * action show
+     * Action show
      *
      * @param int $project
      */
