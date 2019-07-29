@@ -15,5 +15,6 @@ namespace JWeiland\Masterplan\Domain\Model;
  */
 
 /**
+ * Domain Model for: sys_category
  */
 class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category {}

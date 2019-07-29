@@ -18,7 +18,7 @@ use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * ProjectController
+ * The main controller to show and list projects
  */
 class ProjectController extends ActionController
 {

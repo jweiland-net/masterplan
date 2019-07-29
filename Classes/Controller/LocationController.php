@@ -18,7 +18,7 @@ use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * LocationController
+ * The main controller to transfer location records from DB to View
  */
 class LocationController extends ActionController
 {
