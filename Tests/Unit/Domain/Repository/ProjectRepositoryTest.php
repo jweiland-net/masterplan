@@ -14,17 +14,14 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 
+use Nimut\TestingFramework\TestCase\UnitTestCase;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Core\Tests\UnitTestCase;
 
 /**
  * Test case for class \JWeiland\Masterplan\Domain\Repository\ProjectRepository.
- *
- * @subpackage masterplan
  */
-class ProjectRepositoryTest extends UnitTestCase {
-
+class ProjectRepositoryTest extends UnitTestCase
+{
 	/**
 	 * @var \JWeiland\Masterplan\Domain\Repository\ProjectRepository
 	 */
@@ -51,5 +48,4 @@ class ProjectRepositoryTest extends UnitTestCase {
 	public function findAllSortedWithEmptyArgumentsReturnsResultOfFindAll() {
 		$this->subject->findAllSorted(0, '', '');
 	}
-
 }

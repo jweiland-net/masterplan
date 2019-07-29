@@ -14,17 +14,15 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 
+use Nimut\TestingFramework\TestCase\UnitTestCase;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Core\Tests\UnitTestCase;
 
 /**
  * Test case for class \JWeiland\Masterplan\Domain\Repository\CategoryRepository.
- *
- * @subpackage masterplan
  */
-class CategoryRepositoryTest extends UnitTestCase {
-
+class CategoryRepositoryTest extends UnitTestCase
+{
 	/**
 	 * @var \JWeiland\Masterplan\Domain\Repository\CategoryRepository
 	 */
@@ -57,5 +55,4 @@ class CategoryRepositoryTest extends UnitTestCase {
 			$this->subject->createQuery()->getOrderings()
 		);
 	}
-
 }
