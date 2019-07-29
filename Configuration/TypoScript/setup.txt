@@ -5,16 +5,7 @@ plugin.tx_masterplan {
     layoutRootPaths.100 = {$plugin.tx_masterplan.view.layoutRootPath}
   }
 
-  persistence {
-    storagePid = {$plugin.tx_masterplan.persistence.storagePid}
-    classes {
-      JWeiland\Masterplan\Domain\Model\Category {
-        mapping {
-          tableName = sys_category
-        }
-      }
-    }
-  }
+  persistence.storagePid = {$plugin.tx_masterplan.persistence.storagePid}
 
   settings {
     pidOfListPage = {$plugin.tx_masterplan.settings.pidOfListPage}
