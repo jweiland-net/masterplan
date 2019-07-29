@@ -30,8 +30,7 @@
     <f:if condition="{projects}">
       <f:then>
         <div class="list scroll-container gridright">
-          <mp:widget.paginate objects="{projects}" as="paginatedProjects"
-                              configuration="{itemsPerPage: settings.pageBrowser.itemsPerPage, insertAbove: settings.pageBrowser.insertAbove, insertBelow: settings.pageBrowser.insertBelow, maximumNumberOfLinks: settings.pageBrowser.maximumNumberOfLinks}">
+          <f:widget.paginate objects="{projects}" as="paginatedProjects" configuration="{itemsPerPage: settings.pageBrowser.itemsPerPage, insertAbove: settings.pageBrowser.insertAbove, insertBelow: settings.pageBrowser.insertBelow, maximumNumberOfLinks: settings.pageBrowser.maximumNumberOfLinks}">
             <f:for each="{paginatedProjects}" as="project">
               <div class="marginbottom scroll-item clearfix">
                 <div class="thumbnail grid_2 floatleft">
@@ -64,7 +63,7 @@
                 </div>
               </div>
             </f:for>
-          </mp:widget.paginate>
+          </f:widget.paginate>
         </div>
       </f:then>
       <f:else>
@@ -74,5 +73,4 @@
       </f:else>
     </f:if>
   </div>
-
 </f:section>
