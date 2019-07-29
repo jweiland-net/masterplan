@@ -30,7 +30,6 @@ use JWeiland\Masterplan\Domain\Model\Category;
 /**
  * Test case for class \JWeiland\Masterplan\Domain\Model\Category.
  *
- * @package TYPO3
  * @subpackage masterplan
  */
 class CategoryTest extends UnitTestCase {
