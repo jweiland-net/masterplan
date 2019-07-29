@@ -23,23 +23,50 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 class GetSortingViewHelper extends AbstractViewHelper
 {
     /**
+     * Initialize all VH arguments
+     */
+    public function initializeArguments()
+    {
+        $this->registerArgument(
+            'currentSortBy',
+            'string',
+            'Set the column name where the resultset is currently sorted by',
+            true
+        );
+        $this->registerArgument(
+            'sortBy',
+            'string',
+            'Set the column name where the resultset should be sorted by',
+            true
+        );
+        $this->registerArgument(
+            'direction',
+            'string',
+            'Set direction of sorting. Should be ASC or DESC.',
+            true
+        );
+        $this->registerArgument(
+            'areaOfActivity',
+            'int',
+            'Set the area of activity',
+            true
+        );
+    }
+
+    /**
      * Get sorting parameters as array
      *
-     * @param string $currentSortBy
-     * @param string $sortBy
-     * @param string $direction
-     * @param int $areaOfActivity
      * @return array
      */
-    public function render(string $currentSortBy, string $sortBy, string $direction, int $areaOfActivity): array
+    public function render(): array
     {
-        if ($currentSortBy === $sortBy) {
-            $direction = $direction === 'asc' ? 'desc' : 'asc';
+        if ($this->arguments['currentSortBy'] === $this->arguments['sortBy']) {
+            $direction = $this->arguments['direction'] === 'asc' ? 'desc' : 'asc';
         }
         return [
-            'sortBy' => $sortBy,
-            'direction' => $direction,
-            'areaOfActivity' => $areaOfActivity
+            'sortBy' => $this->arguments['sortBy'],
+            'direction' => $this->arguments['direction'],
+            'areaOfActivity' => $this->arguments['areaOfActivity']
         ];
     }
 }
