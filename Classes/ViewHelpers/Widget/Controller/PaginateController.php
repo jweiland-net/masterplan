@@ -95,7 +95,6 @@ class PaginateController extends AbstractWidgetController
      * Inject ConfigurationManagerInterface
      *
      * @param ConfigurationManagerInterface $configurationManager
-     * @return void
      */
     public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
     {
@@ -107,7 +106,6 @@ class PaginateController extends AbstractWidgetController
 
     /**
      * @param DataMapper $dataMapper
-     * @return void
      */
     public function injectDataMapper(DataMapper $dataMapper)
     {
@@ -116,8 +114,6 @@ class PaginateController extends AbstractWidgetController
 
     /**
      * Init
-     *
-     * @return void
      */
     public function initializeAction()
     {
@@ -133,7 +129,6 @@ class PaginateController extends AbstractWidgetController
      * Index action
      *
      * @param int $currentPage
-     * @return void
      */
     public function indexAction($currentPage = 1)
     {
@@ -169,8 +164,6 @@ class PaginateController extends AbstractWidgetController
     /**
      * If a certain number of links should be displayed, adjust before and after
      * amounts accordingly.
-     *
-     * @return void
      */
     protected function calculateDisplayRange()
     {

@@ -42,8 +42,6 @@ class CategoryRepositoryTest extends UnitTestCase {
 
 	/**
 	 * set up class
-	 *
-	 * @return void
 	 */
 	public function setUp() {
 		$objectManager = new ObjectManager();
@@ -52,8 +50,6 @@ class CategoryRepositoryTest extends UnitTestCase {
 
 	/**
 	 * tear down class
-	 *
-	 * @return void
 	 */
 	public function tearDown() {
 		unset($this->subject);

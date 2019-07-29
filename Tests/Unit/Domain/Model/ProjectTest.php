@@ -42,8 +42,6 @@ class ProjectTest extends UnitTestCase {
 
 	/**
 	 * set up class
-	 *
-	 * @return void
 	 */
 	public function setUp() {
 		$this->subject = new Project();
@@ -51,8 +49,6 @@ class ProjectTest extends UnitTestCase {
 
 	/**
 	 * tear down class
-	 *
-	 * @return void
 	 */
 	public function tearDown() {
 		unset($this->subject);

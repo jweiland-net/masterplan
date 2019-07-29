@@ -31,7 +31,6 @@ class PaginateViewHelper extends AbstractWidgetViewHelper
      * inject controller
      *
      * @param PaginateController $controller
-     * @return void
      */
     public function injectController(PaginateController $controller)
     {

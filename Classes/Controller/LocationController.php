@@ -31,7 +31,6 @@ class LocationController extends ActionController
      * inject project repository
      *
      * @param ProjectRepository $projectRepository
-     * @return void
      */
     public function injectProjectRepository(ProjectRepository $projectRepository)
     {
@@ -42,7 +41,6 @@ class LocationController extends ActionController
      * action show
      *
      * @param int $project
-     * @return void
      */
     public function showAction(int $project)
     {
