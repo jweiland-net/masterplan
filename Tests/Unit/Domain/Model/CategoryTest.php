@@ -22,56 +22,60 @@ use Nimut\TestingFramework\TestCase\UnitTestCase;
  */
 class CategoryTest extends UnitTestCase
 {
-	/**
-	 * @var \JWeiland\Masterplan\Domain\Model\Category
-	 */
-	protected $subject;
+    /**
+     * @var \JWeiland\Masterplan\Domain\Model\Category
+     */
+    protected $subject;
 
-	/**
-	 * set up class
-	 */
-	public function setUp() {
-		$this->subject = new Category();
-	}
+    /**
+     * set up class
+     */
+    public function setUp()
+    {
+        $this->subject = new Category();
+    }
 
-	/**
-	 * tear down class
-	 */
-	public function tearDown() {
-		unset($this->subject);
-	}
+    /**
+     * tear down class
+     */
+    public function tearDown()
+    {
+        unset($this->subject);
+    }
 
-	/**
-	 * @return array
-	 */
-	public function propertiesForCategoryObjectDataProvider() {
-		$properties = [];
-		$properties['property title exists in category object'] = ['title', 'getTitle', 'setTitle'];
-		$properties['property description exists in category object'] = ['description', 'getDescription', 'setDescription'];
-		$properties['property icon exists in category object'] = ['icon', 'getIcon', 'setIcon'];
-		$properties['property parent exists in category object'] = ['parent', 'getParent', 'setParent'];
-		return $properties;
-	}
+    /**
+     * @return array
+     */
+    public function propertiesForCategoryObjectDataProvider()
+    {
+        $properties = [];
+        $properties['property title exists in category object'] = ['title', 'getTitle', 'setTitle'];
+        $properties['property description exists in category object'] = ['description', 'getDescription', 'setDescription'];
+        $properties['property icon exists in category object'] = ['icon', 'getIcon', 'setIcon'];
+        $properties['property parent exists in category object'] = ['parent', 'getParent', 'setParent'];
+        return $properties;
+    }
 
-	/**
-	 * There already exists a test in extbase extension
-	 * Here we only test if everything is available
-	 *
-	 * @test
-	 * @dataProvider propertiesForCategoryObjectDataProvider
-	 */
-	public function propertiesAndItsGetterAndSetterAreDefinedInCategoryModel($property, $getter, $setter) {
-		$this->assertSame(
-			TRUE,
-			property_exists($this->subject, $property)
-		);
-		$this->assertSame(
-			TRUE,
-			method_exists($this->subject, $getter)
-		);
-		$this->assertSame(
-			TRUE,
-			method_exists($this->subject, $setter)
-		);
-	}
+    /**
+     * There already exists a test in extbase extension
+     * Here we only test if everything is available
+     *
+     * @test
+     * @dataProvider propertiesForCategoryObjectDataProvider
+     */
+    public function propertiesAndItsGetterAndSetterAreDefinedInCategoryModel($property, $getter, $setter)
+    {
+        $this->assertSame(
+            TRUE,
+            property_exists($this->subject, $property)
+        );
+        $this->assertSame(
+            TRUE,
+            method_exists($this->subject, $getter)
+        );
+        $this->assertSame(
+            TRUE,
+            method_exists($this->subject, $setter)
+        );
+    }
 }

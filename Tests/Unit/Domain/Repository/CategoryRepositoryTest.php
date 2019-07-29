@@ -23,36 +23,39 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
  */
 class CategoryRepositoryTest extends UnitTestCase
 {
-	/**
-	 * @var \JWeiland\Masterplan\Domain\Repository\CategoryRepository
-	 */
-	protected $subject;
+    /**
+     * @var \JWeiland\Masterplan\Domain\Repository\CategoryRepository
+     */
+    protected $subject;
 
-	/**
-	 * set up class
-	 */
-	public function setUp() {
-		$objectManager = new ObjectManager();
-		$this->subject = $objectManager->get('JWeiland\\Masterplan\\Domain\\Repository\\CategoryRepository');
-	}
+    /**
+     * set up class
+     */
+    public function setUp()
+    {
+        $objectManager = new ObjectManager();
+        $this->subject = $objectManager->get('JWeiland\\Masterplan\\Domain\\Repository\\CategoryRepository');
+    }
 
-	/**
-	 * tear down class
-	 */
-	public function tearDown() {
-		unset($this->subject);
-	}
+    /**
+     * tear down class
+     */
+    public function tearDown()
+    {
+        unset($this->subject);
+    }
 
-	/**
-	 * @test
-	 */
-	public function categoriesAreSortedByTitleAsDefault() {
-		$expectedResult = [
-			'title' => QueryInterface::ORDER_ASCENDING
+    /**
+     * @test
+     */
+    public function categoriesAreSortedByTitleAsDefault()
+    {
+        $expectedResult = [
+            'title' => QueryInterface::ORDER_ASCENDING
         ];
-		$this->assertSame(
-			$expectedResult,
-			$this->subject->createQuery()->getOrderings()
-		);
-	}
+        $this->assertSame(
+            $expectedResult,
+            $this->subject->createQuery()->getOrderings()
+        );
+    }
 }

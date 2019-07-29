@@ -22,30 +22,33 @@ use TYPO3\CMS\Extbase\Object\ObjectManager;
  */
 class ProjectRepositoryTest extends UnitTestCase
 {
-	/**
-	 * @var \JWeiland\Masterplan\Domain\Repository\ProjectRepository
-	 */
-	protected $subject;
+    /**
+     * @var \JWeiland\Masterplan\Domain\Repository\ProjectRepository
+     */
+    protected $subject;
 
-	/**
-	 * set up class
-	 */
-	public function setUp() {
-		$objectManager = new ObjectManager();
-		$this->subject = $objectManager->get('JWeiland\\Masterplan\\Domain\\Repository\\ProjectRepository');
-	}
+    /**
+     * set up class
+     */
+    public function setUp()
+    {
+        $objectManager = new ObjectManager();
+        $this->subject = $objectManager->get('JWeiland\\Masterplan\\Domain\\Repository\\ProjectRepository');
+    }
 
-	/**
-	 * tear down class
-	 */
-	public function tearDown() {
-		unset($this->subject);
-	}
+    /**
+     * tear down class
+     */
+    public function tearDown()
+    {
+        unset($this->subject);
+    }
 
-	/**
-	 * @test
-	 */
-	public function findAllSortedWithEmptyArgumentsReturnsResultOfFindAll() {
-		$this->subject->findAllSorted(0, '', '');
-	}
+    /**
+     * @test
+     */
+    public function findAllSortedWithEmptyArgumentsReturnsResultOfFindAll()
+    {
+        $this->subject->findAllSorted(0, '', '');
+    }
 }
