@@ -66,15 +66,15 @@ class CategoryTest extends UnitTestCase
     public function propertiesAndItsGetterAndSetterAreDefinedInCategoryModel($property, $getter, $setter)
     {
         $this->assertSame(
-            TRUE,
+            true,
             property_exists($this->subject, $property)
         );
         $this->assertSame(
-            TRUE,
+            true,
             method_exists($this->subject, $getter)
         );
         $this->assertSame(
-            TRUE,
+            true,
             method_exists($this->subject, $setter)
         );
     }

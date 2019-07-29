@@ -63,7 +63,7 @@ class Project extends AbstractEntity
     protected $costs = '';
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $citizenParticipation = false;
 
@@ -95,7 +95,7 @@ class Project extends AbstractEntity
     /**
      * @var \SplObjectStorage<\JWeiland\Masterplan\Domain\Model\Link>
      */
-    protected $links ;
+    protected $links;
 
     /**
      * @var \SplObjectStorage<\JWeiland\Masterplan\Domain\Model\Category>

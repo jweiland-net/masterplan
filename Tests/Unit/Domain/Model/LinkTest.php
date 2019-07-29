@@ -81,7 +81,7 @@ class LinkTest extends UnitTestCase
      */
     public function setLinkWithBooleanResultsInString()
     {
-        $this->subject->setLink(TRUE);
+        $this->subject->setLink(true);
         $this->assertSame('1', $this->subject->getLink());
     }
 
@@ -123,7 +123,7 @@ class LinkTest extends UnitTestCase
      */
     public function setTitleWithBooleanResultsInString()
     {
-        $this->subject->setTitle(TRUE);
+        $this->subject->setTitle(true);
         $this->assertSame('1', $this->subject->getTitle());
     }
 }

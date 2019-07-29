@@ -14,8 +14,14 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 
+use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use Nimut\TestingFramework\TestCase\UnitTestCase;
+use Prophecy\Argument;
+use Prophecy\Prophecy\ObjectProphecy;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
+use TYPO3\CMS\Extbase\Persistence\Generic\Query;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**
@@ -24,17 +30,31 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 class CategoryRepositoryTest extends UnitTestCase
 {
     /**
-     * @var \JWeiland\Masterplan\Domain\Repository\CategoryRepository
+     * @var CategoryRepository
      */
     protected $subject;
+
+    /**
+     * @var PersistenceManager|ObjectProphecy
+     */
+    protected $persistenceManagerProphecy;
 
     /**
      * set up class
      */
     public function setUp()
     {
-        $objectManager = new ObjectManager();
-        $this->subject = $objectManager->get('JWeiland\\Masterplan\\Domain\\Repository\\CategoryRepository');
+        $query = new Query('type');
+
+        $this->persistenceManagerProphecy = $this->prophesize(PersistenceManager::class);
+        $this->persistenceManagerProphecy
+            ->createQueryForType(Argument::cetera())
+            ->shouldBeCalled()
+            ->willReturn($query);
+
+        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+        $this->subject = new CategoryRepository($objectManager);
+        $this->subject->injectPersistenceManager($this->persistenceManagerProphecy->reveal());
     }
 
     /**
@@ -42,7 +62,10 @@ class CategoryRepositoryTest extends UnitTestCase
      */
     public function tearDown()
     {
-        unset($this->subject);
+        unset(
+            $this->subject,
+            $this->persistenceManagerProphecy
+        );
     }
 
     /**
