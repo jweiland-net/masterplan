@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types = 1);
 namespace JWeiland\Masterplan\Domain\Model;
 
 /*
@@ -17,4 +18,6 @@ namespace JWeiland\Masterplan\Domain\Model;
 /**
  * Domain Model for: sys_category
  */
-class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category {}
+class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
+{
+}

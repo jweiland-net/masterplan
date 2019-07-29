@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 namespace JWeiland\Masterplan\Domain\Repository;
 
 /*
@@ -15,6 +16,7 @@ namespace JWeiland\Masterplan\Domain\Repository;
  */
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
@@ -23,12 +25,12 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 class ProjectRepository extends Repository
 {
     /**
-     * find all records sorted by given parameters
+     * Find all records sorted by given parameters
      *
      * @param int $areaOfActivity
      * @param string $sortBy
      * @param string $direction
-     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @return QueryResultInterface
      */
     public function findAllSorted(int $areaOfActivity, string $sortBy, string $direction)
     {

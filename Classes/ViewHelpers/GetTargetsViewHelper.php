@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types = 1);
 namespace JWeiland\Masterplan\ViewHelpers;
 
 /*
@@ -15,7 +16,7 @@ namespace JWeiland\Masterplan\ViewHelpers;
  */
 
 use TYPO3\CMS\Extbase\Domain\Model\Category;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * With this VH you get all direct child categories of a given parent category.
@@ -24,7 +25,7 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 class GetTargetsViewHelper extends AbstractViewHelper
 {
     /**
-     * get direct child categories of defined root category in extConf
+     * Get direct child categories of defined root category in extConf
      *
      * @param int $parent
      * @param array $areasOfActivity
@@ -47,7 +48,7 @@ class GetTargetsViewHelper extends AbstractViewHelper
     }
 
     /**
-     * sort categories
+     * Sort categories
      *
      * @param Category $categoryA
      * @param Category $categoryB
@@ -63,5 +64,4 @@ class GetTargetsViewHelper extends AbstractViewHelper
         }
         return -1;
     }
-
 }

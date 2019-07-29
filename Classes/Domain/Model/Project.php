@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 namespace JWeiland\Masterplan\Domain\Model;
 
 /*
@@ -24,29 +25,22 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Project extends AbstractEntity
 {
     /**
-     * title
-     *
      * @var string
      */
     protected $title = '';
 
     /**
-     * number
-     *
      * @var string
      */
     protected $number = '';
 
     /**
-     * contactPerson
-     *
      * @var string
      */
     protected $contactPerson = '';
 
     /**
-     * Organisationseinheiten
-     * Initially a string but will be converted to an array with records when
+     * Initially a string, but will be converted to an array with records when
      * calling getter the first time!
      *
      * @var string
@@ -54,85 +48,60 @@ class Project extends AbstractEntity
     protected $organisationseinheiten = '';
 
     /**
-     * startDate
-     *
      * @var string
      */
     protected $startDate = '';
 
     /**
-     * endDate
-     *
      * @var string
      */
     protected $endDate = '';
 
     /**
-     * costs
-     *
      * @var string
      */
     protected $costs = '';
 
     /**
-     * citizenParticipation
-     *
      * @var boolean
      */
     protected $citizenParticipation = false;
 
     /**
-     * images
-     *
      * @var \SplObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
     protected $images;
 
     /**
-     * description
-     *
      * @var string
      */
     protected $description = '';
 
     /**
-     * furtherInformation
-     *
      * @var string
      */
     protected $furtherInformations = '';
 
     /**
-     * txMaps2Uid
-     *
      * @var \JWeiland\Maps2\Domain\Model\PoiCollection
      */
     protected $txMaps2Uid;
 
     /**
-     * files
-     *
      * @var \SplObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
     protected $files;
 
     /**
-     * links
-     *
      * @var \SplObjectStorage<\JWeiland\Masterplan\Domain\Model\Link>
      */
     protected $links ;
 
     /**
-     * areaOfActivity
-     *
      * @var \SplObjectStorage<\JWeiland\Masterplan\Domain\Model\Category>
      */
     protected $areaOfActivity;
 
-    /**
-     * Constructor of this class
-     */
     public function __construct()
     {
         $this->images = new \SplObjectStorage();
@@ -142,8 +111,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Title
-     *
      * @return string
      */
     public function getTitle(): string
@@ -152,8 +119,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Title
-     *
      * @param string $title
      */
     public function setTitle(string $title)
@@ -162,8 +127,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Number
-     *
      * @return string
      */
     public function getNumber(): string
@@ -172,8 +135,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Number
-     *
      * @param string $number
      */
     public function setNumber(string $number)
@@ -182,8 +143,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns ContactPerson
-     *
      * @return string
      */
     public function getContactPerson(): string
@@ -192,8 +151,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets ContactPerson
-     *
      * @param string $contactPerson
      */
     public function setContactPerson(string $contactPerson)
@@ -202,8 +159,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Organisationseinheiten
-     *
      * @return array
      */
     public function getOrganisationseinheiten(): array
@@ -212,8 +167,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Organisationseinheiten
-     *
      * @param array $organisationseinheiten
      */
     public function setOrganisationseinheiten(array $organisationseinheiten)
@@ -222,8 +175,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns StartDate
-     *
      * @return string
      */
     public function getStartDate(): string
@@ -232,8 +183,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets StartDate
-     *
      * @param string $startDate
      */
     public function setStartDate(string $startDate)
@@ -242,8 +191,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns EndDate
-     *
      * @return string
      */
     public function getEndDate(): string
@@ -252,8 +199,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets EndDate
-     *
      * @param string $endDate
      */
     public function setEndDate(string $endDate)
@@ -262,8 +207,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Costs
-     *
      * @return string
      */
     public function getCosts(): string
@@ -272,8 +215,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Costs
-     *
      * @param string $costs
      */
     public function setCosts(string $costs)
@@ -282,8 +223,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns CitizenParticipation
-     *
      * @return bool
      */
     public function isCitizenParticipation(): bool
@@ -292,8 +231,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets CitizenParticipation
-     *
      * @param bool $citizenParticipation
      */
     public function setCitizenParticipation(bool $citizenParticipation)
@@ -302,8 +239,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Images
-     *
      * @return \SplObjectStorage
      */
     public function getImages()
@@ -312,8 +247,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Images
-     *
      * @param \SplObjectStorage $images
      */
     public function setImages(\SplObjectStorage $images)
@@ -322,8 +255,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Description
-     *
      * @return string
      */
     public function getDescription(): string
@@ -332,8 +263,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Description
-     *
      * @param string $description
      */
     public function setDescription(string $description)
@@ -342,8 +271,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns FurtherInformations
-     *
      * @return string
      */
     public function getFurtherInformations(): string
@@ -352,8 +279,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets FurtherInformations
-     *
      * @param string $furtherInformations
      */
     public function setFurtherInformations(string $furtherInformations)
@@ -362,8 +287,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns TxMaps2Uid
-     *
      * @return PoiCollection
      */
     public function getTxMaps2Uid()
@@ -372,8 +295,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets TxMaps2Uid
-     *
      * @param PoiCollection $txMaps2Uid
      */
     public function setTxMaps2Uid(PoiCollection $txMaps2Uid)
@@ -382,8 +303,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Files
-     *
      * @return \SplObjectStorage
      */
     public function getFiles()
@@ -392,8 +311,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Files
-     *
      * @param \SplObjectStorage $files
      */
     public function setFiles(\SplObjectStorage $files)
@@ -402,8 +319,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns Links
-     *
      * @return \SplObjectStorage
      */
     public function getLinks()
@@ -412,8 +327,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets Links
-     *
      * @param \SplObjectStorage $links
      */
     public function setLinks(\SplObjectStorage $links)
@@ -422,8 +335,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Returns AreaOfActivity
-     *
      * @return \SplObjectStorage
      */
     public function getAreaOfActivity()
@@ -432,8 +343,6 @@ class Project extends AbstractEntity
     }
 
     /**
-     * Sets AreaOfActivity
-     *
      * @param \SplObjectStorage $areaOfActivity
      */
     public function setAreaOfActivity(\SplObjectStorage $areaOfActivity)

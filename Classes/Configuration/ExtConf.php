@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types = 1);
 namespace JWeiland\Masterplan\Configuration;
 
 /*
@@ -22,34 +23,31 @@ use TYPO3\CMS\Core\SingletonInterface;
 class ExtConf implements SingletonInterface
 {
     /**
-     * root category
-     *
      * @var int
      */
     protected $rootCategory = 0;
 
-    /**
-     * constructor of this class
-     * This method reads the global configuration and calls the setter methods
-     */
     public function __construct()
     {
-        // get global configuration
-        $extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['masterplan']);
-        if (is_array($extConf) && count($extConf)) {
-            // call setter method foreach configuration entry
-            foreach ($extConf as $key => $value) {
-                $methodName = 'set' . ucfirst($key);
-                if (method_exists($this, $methodName)) {
-                    $this->$methodName($value);
+        if (isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['masterplan'])) {
+            // get global configuration
+            $extConf = unserialize(
+                $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['masterplan'],
+                ['allowed_classes' => false]
+            );
+            if (is_array($extConf) && count($extConf)) {
+                // call setter method foreach configuration entry
+                foreach ($extConf as $key => $value) {
+                    $methodName = 'set' . ucfirst($key);
+                    if (method_exists($this, $methodName)) {
+                        $this->$methodName($value);
+                    }
                 }
             }
         }
     }
 
     /**
-     * getter for rootCategory
-     *
      * @return int
      */
     public function getRootCategory(): int
@@ -58,13 +56,10 @@ class ExtConf implements SingletonInterface
     }
 
     /**
-     * setter for rootCategory
-     *
      * @param int $rootCategory
      */
     public function setRootCategory($rootCategory)
     {
         $this->rootCategory = (int)$rootCategory;
     }
-
 }
