@@ -5,7 +5,7 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  *  Copyright notice
  *
  *  (c) 2013 Stefan Froemken <projects@jweiland.net>, jweiland.net
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -31,7 +31,6 @@ use JWeiland\Masterplan\Domain\Model\Project;
 /**
  * Test case for class \JWeiland\Masterplan\Domain\Model\Category.
  *
- * @package TYPO3
  * @subpackage masterplan
  */
 class ProjectTest extends UnitTestCase {

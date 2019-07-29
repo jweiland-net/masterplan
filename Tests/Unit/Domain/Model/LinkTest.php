@@ -5,7 +5,7 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  *  Copyright notice
  *
  *  (c) 2013 Stefan Froemken <projects@jweiland.net>, jweiland.net
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -30,7 +30,6 @@ use JWeiland\Masterplan\Domain\Model\Link;
 /**
  * Test case for class \JWeiland\Masterplan\Domain\Model\Category.
  *
- * @package TYPO3
  * @subpackage masterplan
  */
 class LinkTest extends UnitTestCase {
@@ -67,19 +66,19 @@ class LinkTest extends UnitTestCase {
 			$this->subject->getLink()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
 	public function setLinkSetsLink() {
 		$this->subject->setLink('foo bar');
-	
+
 		$this->assertSame(
 			'foo bar',
 			$this->subject->getLink()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -87,7 +86,7 @@ class LinkTest extends UnitTestCase {
 		$this->subject->setLink(123);
 		$this->assertSame('123', $this->subject->getLink());
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -105,19 +104,19 @@ class LinkTest extends UnitTestCase {
 			$this->subject->getTitle()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
 	public function setTitleSetsTitle() {
 		$this->subject->setTitle('foo bar');
-	
+
 		$this->assertSame(
 			'foo bar',
 			$this->subject->getTitle()
 		);
 	}
-	
+
 	/**
 	 * @test
 	 */
@@ -125,7 +124,7 @@ class LinkTest extends UnitTestCase {
 		$this->subject->setTitle(123);
 		$this->assertSame('123', $this->subject->getTitle());
 	}
-	
+
 	/**
 	 * @test
 	 */

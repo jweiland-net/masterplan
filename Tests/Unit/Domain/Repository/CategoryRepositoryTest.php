@@ -5,7 +5,7 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  *  Copyright notice
  *
  *  (c) 2013 Stefan Froemken <projects@jweiland.net>, jweiland.net
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -31,7 +31,6 @@ use TYPO3\CMS\Core\Tests\UnitTestCase;
 /**
  * Test case for class \JWeiland\Masterplan\Domain\Repository\CategoryRepository.
  *
- * @package TYPO3
  * @subpackage masterplan
  */
 class CategoryRepositoryTest extends UnitTestCase {
@@ -72,5 +71,5 @@ class CategoryRepositoryTest extends UnitTestCase {
 			$this->subject->createQuery()->getOrderings()
 		);
 	}
-	
+
 }
