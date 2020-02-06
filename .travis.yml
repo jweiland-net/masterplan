@@ -1,5 +1,7 @@
-
 language: php
+
+os:
+  - linux
 
 jobs:
   include:
@@ -19,8 +21,6 @@ jobs:
       php: "7.2"
       env:
         - TYPO3_VERSION=^9
-
-sudo: false
 
 addons:
   apt:
