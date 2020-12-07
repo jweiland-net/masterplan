@@ -71,7 +71,7 @@ class CategoryRepositoryTest extends UnitTestCase
         $expectedResult = [
             'title' => QueryInterface::ORDER_ASCENDING
         ];
-        $this->assertSame(
+        self::assertSame(
             $expectedResult,
             $this->subject->createQuery()->getOrderings()
         );
