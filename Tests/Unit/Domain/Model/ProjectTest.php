@@ -1,7 +1,5 @@
 <?php
 
-namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
-
 /*
  * This file is part of the package jweiland/masterplan.
  *
@@ -9,12 +7,14 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  * LICENSE file that was distributed with this source code.
  */
 
+namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
+
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Masterplan\Domain\Model\Project;
 use Nimut\TestingFramework\TestCase\UnitTestCase;
 
 /**
- * Test case for class \JWeiland\Masterplan\Domain\Model\Project.
+ * Test case.
  */
 class ProjectTest extends UnitTestCase
 {
