@@ -261,7 +261,16 @@ class Project extends AbstractEntity
         $this->links = $links;
     }
 
-    public function getAreaOfActivity(): \SplObjectStorage
+    public function getAreaOfActivity(): array
+    {
+        $areaOfActivities = [];
+        foreach ($this->areaOfActivity as $areaOfActivity) {
+            $areaOfActivities[] = $areaOfActivity;
+        }
+        return $areaOfActivities;
+    }
+
+    public function getOriginalAreaOfActivity(): \SplObjectStorage
     {
         return $this->areaOfActivity;
     }
