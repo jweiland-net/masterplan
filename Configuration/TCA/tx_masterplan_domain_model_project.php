@@ -26,7 +26,7 @@ return [
     'types' => [
         '1' => [
             'showitem' => '--palette--;;languageHidden, --palette--;;titleNumber, path_segment,
-            contact_person, organisationseinheiten, --palette--;;languageHidden, costs, citizen_participation,
+            contact_person, organisationseinheiten, --palette--;;startEndDate, costs, citizen_participation,
             images, description, further_informations, files, links,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
