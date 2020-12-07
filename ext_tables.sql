@@ -25,10 +25,3 @@ CREATE TABLE tx_masterplan_domain_model_link (
 	link varchar(255) DEFAULT '' NOT NULL,
 	project int(11) DEFAULT '0' NOT NULL
 );
-
-#
-# Table structure for table 'sys_category'
-#
-CREATE TABLE sys_category (
-	icon varchar(255) DEFAULT '' NOT NULL
-);
