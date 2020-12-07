@@ -1,6 +1,11 @@
+<html lang="en"
+			xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
 <f:if condition="{value}">
 	<f:if condition="{languageField}">
-		<dt><f:translate key="tx_masterplan_domain_model_project.{languageField}" />:</dt>
+		<dt>{f:translate(key: 'tx_masterplan_domain_model_project.{languageField}')}:</dt>
 	</f:if>
 	<dd>{value}</dd>
 </f:if>
+</html>
