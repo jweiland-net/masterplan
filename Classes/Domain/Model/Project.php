@@ -111,18 +111,12 @@ class Project extends AbstractEntity
         $this->areaOfActivity = new \SplObjectStorage();
     }
 
-    /**
-     * @return string
-     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $title
-     */
-    public function setTitle(string $title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -137,226 +131,142 @@ class Project extends AbstractEntity
         $this->pathSegment = $pathSegment;
     }
 
-    /**
-     * @return string
-     */
     public function getNumber(): string
     {
         return $this->number;
     }
 
-    /**
-     * @param string $number
-     */
-    public function setNumber(string $number)
+    public function setNumber(string $number): void
     {
         $this->number = $number;
     }
 
-    /**
-     * @return string
-     */
     public function getContactPerson(): string
     {
         return $this->contactPerson;
     }
 
-    /**
-     * @param string $contactPerson
-     */
-    public function setContactPerson(string $contactPerson)
+    public function setContactPerson(string $contactPerson): void
     {
         $this->contactPerson = $contactPerson;
     }
 
-    /**
-     * @return array
-     */
     public function getOrganisationseinheiten(): array
     {
         return $this->organisationseinheiten = ModelUtility::getOrganisationseinheiten($this->organisationseinheiten);
     }
 
-    /**
-     * @param array $organisationseinheiten
-     */
-    public function setOrganisationseinheiten(array $organisationseinheiten)
+    public function setOrganisationseinheiten(array $organisationseinheiten): void
     {
         $this->organisationseinheiten = $organisationseinheiten;
     }
 
-    /**
-     * @return string
-     */
     public function getStartDate(): string
     {
         return $this->startDate;
     }
 
-    /**
-     * @param string $startDate
-     */
-    public function setStartDate(string $startDate)
+    public function setStartDate(string $startDate): void
     {
         $this->startDate = $startDate;
     }
 
-    /**
-     * @return string
-     */
     public function getEndDate(): string
     {
         return $this->endDate;
     }
 
-    /**
-     * @param string $endDate
-     */
-    public function setEndDate(string $endDate)
+    public function setEndDate(string $endDate): void
     {
         $this->endDate = $endDate;
     }
 
-    /**
-     * @return string
-     */
     public function getCosts(): string
     {
         return $this->costs;
     }
 
-    /**
-     * @param string $costs
-     */
-    public function setCosts(string $costs)
+    public function setCosts(string $costs): void
     {
         $this->costs = $costs;
     }
 
-    /**
-     * @return bool
-     */
     public function isCitizenParticipation(): bool
     {
         return $this->citizenParticipation;
     }
 
-    /**
-     * @param bool $citizenParticipation
-     */
-    public function setCitizenParticipation(bool $citizenParticipation)
+    public function setCitizenParticipation(bool $citizenParticipation): void
     {
         $this->citizenParticipation = $citizenParticipation;
     }
 
-    /**
-     * @return \SplObjectStorage
-     */
-    public function getImages()
+    public function getImages(): \SplObjectStorage
     {
         return $this->images;
     }
 
-    /**
-     * @param \SplObjectStorage $images
-     */
-    public function setImages(\SplObjectStorage $images)
+    public function setImages(\SplObjectStorage $images): void
     {
         $this->images = $images;
     }
 
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     */
-    public function setDescription(string $description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @return string
-     */
     public function getFurtherInformations(): string
     {
         return $this->furtherInformations;
     }
 
-    /**
-     * @param string $furtherInformations
-     */
-    public function setFurtherInformations(string $furtherInformations)
+    public function setFurtherInformations(string $furtherInformations): void
     {
         $this->furtherInformations = $furtherInformations;
     }
 
-    /**
-     * @return PoiCollection
-     */
     public function getTxMaps2Uid()
     {
         return $this->txMaps2Uid;
     }
 
-    /**
-     * @param PoiCollection $txMaps2Uid
-     */
-    public function setTxMaps2Uid(PoiCollection $txMaps2Uid)
+    public function setTxMaps2Uid(PoiCollection $txMaps2Uid): void
     {
         $this->txMaps2Uid = $txMaps2Uid;
     }
 
-    /**
-     * @return \SplObjectStorage
-     */
-    public function getFiles()
+    public function getFiles(): \SplObjectStorage
     {
         return $this->files;
     }
 
-    /**
-     * @param \SplObjectStorage $files
-     */
-    public function setFiles(\SplObjectStorage $files)
+    public function setFiles(\SplObjectStorage $files): void
     {
         $this->files = $files;
     }
 
-    /**
-     * @return \SplObjectStorage
-     */
-    public function getLinks()
+    public function getLinks(): \SplObjectStorage
     {
         return $this->links;
     }
 
-    /**
-     * @param \SplObjectStorage $links
-     */
-    public function setLinks(\SplObjectStorage $links)
+    public function setLinks(\SplObjectStorage $links): void
     {
         $this->links = $links;
     }
 
-    /**
-     * @return \SplObjectStorage
-     */
-    public function getAreaOfActivity()
+    public function getAreaOfActivity(): \SplObjectStorage
     {
         return $this->areaOfActivity;
     }
 
-    /**
-     * @param \SplObjectStorage $areaOfActivity
-     */
-    public function setAreaOfActivity(\SplObjectStorage $areaOfActivity)
+    public function setAreaOfActivity(\SplObjectStorage $areaOfActivity): void
     {
         $this->areaOfActivity = $areaOfActivity;
     }

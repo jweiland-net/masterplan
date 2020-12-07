@@ -18,10 +18,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class GetSortingViewHelper extends AbstractViewHelper
 {
-    /**
-     * Initialize all VH arguments
-     */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument(
             'currentSortBy',
@@ -49,11 +46,6 @@ class GetSortingViewHelper extends AbstractViewHelper
         );
     }
 
-    /**
-     * Get sorting parameters as array
-     *
-     * @return array
-     */
     public function render(): array
     {
         if ($this->arguments['currentSortBy'] === $this->arguments['sortBy']) {

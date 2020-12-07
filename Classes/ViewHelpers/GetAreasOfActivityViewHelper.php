@@ -34,26 +34,17 @@ class GetAreasOfActivityViewHelper extends AbstractViewHelper
      */
     protected $extConf;
 
-    /**
-     * @param CategoryRepository $categoryRepository
-     */
-    public function injectCategoryRepository(CategoryRepository $categoryRepository)
+    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
     {
         $this->categoryRepository = $categoryRepository;
     }
 
-    /**
-     * @param ExtConf $extConf
-     */
-    public function injectExtConf(ExtConf $extConf)
+    public function injectExtConf(ExtConf $extConf): void
     {
         $this->extConf = $extConf;
     }
 
-    /**
-     * Initialize all VH arguments
-     */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument(
             'areasOfActivity',
@@ -64,11 +55,6 @@ class GetAreasOfActivityViewHelper extends AbstractViewHelper
         );
     }
 
-    /**
-     * Get direct child categories of defined root category in extConf
-     *
-     * @return array
-     */
     public function render(): array
     {
         $rootCategory = $this->extConf->getRootCategory();
@@ -92,13 +78,6 @@ class GetAreasOfActivityViewHelper extends AbstractViewHelper
         return $categories;
     }
 
-    /**
-     * Sort categories
-     *
-     * @param Category $categoryA
-     * @param Category $categoryB
-     * @return int
-     */
     protected function sortCategoriesByTitle(Category $categoryA, Category $categoryB): int
     {
         if ($categoryA->getTitle() === $categoryB->getTitle()) {

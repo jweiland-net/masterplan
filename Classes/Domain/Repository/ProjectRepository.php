@@ -20,20 +20,12 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  */
 class ProjectRepository extends Repository
 {
-    /**
-     * Find all records sorted by given parameters
-     *
-     * @param int $areaOfActivity
-     * @param string $sortBy
-     * @param string $direction
-     * @return QueryResultInterface
-     */
-    public function findAllSorted(int $areaOfActivity, string $sortBy, string $direction)
+    public function findAllSorted(int $areaOfActivity, string $sortBy, string $direction): QueryResultInterface
     {
         // check if values are valid and process query
         if (
-            GeneralUtility::inList('title,start_date,citizen_participation,area_of_activity', $sortBy) &&
-            GeneralUtility::inList('asc,desc', $direction)
+            GeneralUtility::inList('title,start_date,citizen_participation,area_of_activity', $sortBy)
+            && GeneralUtility::inList('asc,desc', $direction)
         ) {
             $sortBy = $sortBy === 'area_of_activity' ? 'sys_category.title' : $sortBy;
             $query = $this->createQuery();
@@ -43,7 +35,6 @@ class ProjectRepository extends Repository
             }
             $query->setOrderings([$sortBy => strtoupper($direction)]);
         } else {
-            // if something went wrong, then return all records
             return $this->findAll();
         }
         return $query->execute();
