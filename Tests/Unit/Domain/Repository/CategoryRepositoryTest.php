@@ -1,13 +1,13 @@
 <?php
 
-namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
-
 /*
  * This file is part of the package jweiland/masterplan.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Masterplan\Tests\Unit\Domain\Repository;
 
 use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use Nimut\TestingFramework\TestCase\UnitTestCase;
@@ -20,7 +20,7 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Query;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**
- * Test case for class \JWeiland\Masterplan\Domain\Repository\CategoryRepository.
+ * Test case.
  */
 class CategoryRepositoryTest extends UnitTestCase
 {

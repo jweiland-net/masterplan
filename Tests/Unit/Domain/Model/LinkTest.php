@@ -1,7 +1,5 @@
 <?php
 
-namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
-
 /*
  * This file is part of the package jweiland/masterplan.
  *
@@ -9,11 +7,13 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
  * LICENSE file that was distributed with this source code.
  */
 
+namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
+
 use JWeiland\Masterplan\Domain\Model\Link;
 use Nimut\TestingFramework\TestCase\UnitTestCase;
 
 /**
- * Test case for class \JWeiland\Masterplan\Domain\Model\Category.
+ * Test case.
  */
 class LinkTest extends UnitTestCase
 {
