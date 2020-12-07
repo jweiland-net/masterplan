@@ -22,9 +22,9 @@ $EM_CONF['masterplan'] = [
     'version' => '2.0.3',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.7.0-9.5.99',
-            'maps2' => '8.0.0-0.0.0',
-            'service_bw2' => '3.0.0-3.99.99'
+            'typo3' => '9.5.0-10.4.99',
+            'maps2' => '9.3.0-0.0.0',
+            'service_bw2' => '4.0.0-4.99.99'
         ],
         'conflicts' => [],
         'suggests' => [],
