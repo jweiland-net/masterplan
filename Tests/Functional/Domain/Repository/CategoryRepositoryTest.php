@@ -10,7 +10,7 @@
 namespace JWeiland\Masterplan\Tests\Unit\Domain\Repository;
 
 use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
-use Nimut\TestingFramework\TestCase\UnitTestCase;
+use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -22,7 +22,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 /**
  * Test case.
  */
-class CategoryRepositoryTest extends UnitTestCase
+class CategoryRepositoryTest extends FunctionalTestCase
 {
     /**
      * @var CategoryRepository
@@ -35,10 +35,16 @@ class CategoryRepositoryTest extends UnitTestCase
     protected $persistenceManagerProphecy;
 
     /**
-     * set up class
+     * @var array
      */
+    protected $testExtensionsToLoad = [
+        'typo3conf/ext/masterplan'
+    ];
+
     public function setUp()
     {
+        parent::setUp();
+
         $query = new Query('type');
 
         $this->persistenceManagerProphecy = $this->prophesize(PersistenceManager::class);
@@ -52,11 +58,10 @@ class CategoryRepositoryTest extends UnitTestCase
         $this->subject->injectPersistenceManager($this->persistenceManagerProphecy->reveal());
     }
 
-    /**
-     * tear down class
-     */
     public function tearDown()
     {
+        parent::tearDown();
+
         unset(
             $this->subject,
             $this->persistenceManagerProphecy

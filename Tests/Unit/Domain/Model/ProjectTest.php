@@ -7,11 +7,14 @@
  * LICENSE file that was distributed with this source code.
  */
 
-namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
+namespace JWeiland\Masterplan\Tests\Functional\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
+use JWeiland\Masterplan\Configuration\ExtConf;
+use JWeiland\Masterplan\Domain\Model\Category;
 use JWeiland\Masterplan\Domain\Model\Project;
 use Nimut\TestingFramework\TestCase\UnitTestCase;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Test case.
@@ -30,7 +33,9 @@ class ProjectTest extends UnitTestCase
 
     public function tearDown()
     {
-        unset($this->subject);
+        unset(
+            $this->subject
+        );
     }
 
     /**
@@ -506,31 +511,6 @@ class ProjectTest extends UnitTestCase
         self::assertSame(
             $instance,
             $this->subject->getLinks()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function getAreaOfActivityInitiallyReturnsObjectStorage()
-    {
-        self::assertEquals(
-            new \SplObjectStorage(),
-            $this->subject->getAreaOfActivity()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function setAreaOfActivitySetsAreaOfActivity()
-    {
-        $instance = new \SplObjectStorage();
-        $this->subject->setAreaOfActivity($instance);
-
-        self::assertSame(
-            $instance,
-            $this->subject->getAreaOfActivity()
         );
     }
 }
