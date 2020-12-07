@@ -27,7 +27,8 @@ class ProjectRepository extends Repository
             GeneralUtility::inList('title,start_date,citizen_participation,area_of_activity', $sortBy)
             && GeneralUtility::inList('asc,desc', $direction)
         ) {
-            $sortBy = $sortBy === 'area_of_activity' ? 'sys_category.title' : $sortBy;
+            $sortBy = GeneralUtility::underscoredToLowerCamelCase($sortBy);
+            $sortBy = $sortBy === 'areaOfActivity' ? 'areaOfActivity.title' : $sortBy;
             $query = $this->createQuery();
             // reduce result to a given area of activity
             if ($areaOfActivity > 0) {
