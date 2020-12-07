@@ -43,7 +43,7 @@ class LinkTest extends UnitTestCase
      */
     public function getLinkInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getLink()
         );
@@ -56,7 +56,7 @@ class LinkTest extends UnitTestCase
     {
         $this->subject->setLink('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getLink()
         );
@@ -68,7 +68,7 @@ class LinkTest extends UnitTestCase
     public function setLinkWithIntegerResultsInString()
     {
         $this->subject->setLink(123);
-        $this->assertSame('123', $this->subject->getLink());
+        self::assertSame('123', $this->subject->getLink());
     }
 
     /**
@@ -77,7 +77,7 @@ class LinkTest extends UnitTestCase
     public function setLinkWithBooleanResultsInString()
     {
         $this->subject->setLink(true);
-        $this->assertSame('1', $this->subject->getLink());
+        self::assertSame('1', $this->subject->getLink());
     }
 
     /**
@@ -85,7 +85,7 @@ class LinkTest extends UnitTestCase
      */
     public function getTitleInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getTitle()
         );
@@ -98,7 +98,7 @@ class LinkTest extends UnitTestCase
     {
         $this->subject->setTitle('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getTitle()
         );
@@ -110,7 +110,7 @@ class LinkTest extends UnitTestCase
     public function setTitleWithIntegerResultsInString()
     {
         $this->subject->setTitle(123);
-        $this->assertSame('123', $this->subject->getTitle());
+        self::assertSame('123', $this->subject->getTitle());
     }
 
     /**
@@ -119,6 +119,6 @@ class LinkTest extends UnitTestCase
     public function setTitleWithBooleanResultsInString()
     {
         $this->subject->setTitle(true);
-        $this->assertSame('1', $this->subject->getTitle());
+        self::assertSame('1', $this->subject->getTitle());
     }
 }

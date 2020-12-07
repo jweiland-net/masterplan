@@ -38,7 +38,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getTitleInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getTitle()
         );
@@ -51,7 +51,7 @@ class ProjectTest extends UnitTestCase
     {
         $this->subject->setTitle('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getTitle()
         );
@@ -63,7 +63,7 @@ class ProjectTest extends UnitTestCase
     public function setTitleWithIntegerResultsInString()
     {
         $this->subject->setTitle(123);
-        $this->assertSame('123', $this->subject->getTitle());
+        self::assertSame('123', $this->subject->getTitle());
     }
 
     /**
@@ -72,7 +72,7 @@ class ProjectTest extends UnitTestCase
     public function setTitleWithBooleanResultsInString()
     {
         $this->subject->setTitle(true);
-        $this->assertSame('1', $this->subject->getTitle());
+        self::assertSame('1', $this->subject->getTitle());
     }
 
     /**
@@ -80,7 +80,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getNumberInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getNumber()
         );
@@ -93,7 +93,7 @@ class ProjectTest extends UnitTestCase
     {
         $this->subject->setNumber('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getNumber()
         );
@@ -105,7 +105,7 @@ class ProjectTest extends UnitTestCase
     public function setNumberWithIntegerResultsInString()
     {
         $this->subject->setNumber(123);
-        $this->assertSame('123', $this->subject->getNumber());
+        self::assertSame('123', $this->subject->getNumber());
     }
 
     /**
@@ -114,7 +114,7 @@ class ProjectTest extends UnitTestCase
     public function setNumberWithBooleanResultsInString()
     {
         $this->subject->setNumber(true);
-        $this->assertSame('1', $this->subject->getNumber());
+        self::assertSame('1', $this->subject->getNumber());
     }
 
     /**
@@ -122,7 +122,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getContactPersonInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getContactPerson()
         );
@@ -135,7 +135,7 @@ class ProjectTest extends UnitTestCase
     {
         $this->subject->setContactPerson('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getContactPerson()
         );
@@ -147,7 +147,7 @@ class ProjectTest extends UnitTestCase
     public function setContactPersonWithIntegerResultsInString()
     {
         $this->subject->setContactPerson(123);
-        $this->assertSame('123', $this->subject->getContactPerson());
+        self::assertSame('123', $this->subject->getContactPerson());
     }
 
     /**
@@ -156,7 +156,7 @@ class ProjectTest extends UnitTestCase
     public function setContactPersonWithBooleanResultsInString()
     {
         $this->subject->setContactPerson(true);
-        $this->assertSame('1', $this->subject->getContactPerson());
+        self::assertSame('1', $this->subject->getContactPerson());
     }
 
     /**
@@ -164,7 +164,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getStartDateInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getStartDate()
         );
@@ -177,7 +177,7 @@ class ProjectTest extends UnitTestCase
     {
         $this->subject->setStartDate('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getStartDate()
         );
@@ -189,7 +189,7 @@ class ProjectTest extends UnitTestCase
     public function setStartDateWithIntegerResultsInString()
     {
         $this->subject->setStartDate(123);
-        $this->assertSame('123', $this->subject->getStartDate());
+        self::assertSame('123', $this->subject->getStartDate());
     }
 
     /**
@@ -198,7 +198,7 @@ class ProjectTest extends UnitTestCase
     public function setStartDateWithBooleanResultsInString()
     {
         $this->subject->setStartDate(true);
-        $this->assertSame('1', $this->subject->getStartDate());
+        self::assertSame('1', $this->subject->getStartDate());
     }
 
     /**
@@ -206,7 +206,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getEndDateInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getEndDate()
         );
@@ -219,7 +219,7 @@ class ProjectTest extends UnitTestCase
     {
         $this->subject->setEndDate('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getEndDate()
         );
@@ -231,7 +231,7 @@ class ProjectTest extends UnitTestCase
     public function setEndDateWithIntegerResultsInString()
     {
         $this->subject->setEndDate(123);
-        $this->assertSame('123', $this->subject->getEndDate());
+        self::assertSame('123', $this->subject->getEndDate());
     }
 
     /**
@@ -240,7 +240,7 @@ class ProjectTest extends UnitTestCase
     public function setEndDateWithBooleanResultsInString()
     {
         $this->subject->setEndDate(true);
-        $this->assertSame('1', $this->subject->getEndDate());
+        self::assertSame('1', $this->subject->getEndDate());
     }
 
     /**
@@ -248,7 +248,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getCostsInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getCosts()
         );
@@ -261,7 +261,7 @@ class ProjectTest extends UnitTestCase
     {
         $this->subject->setCosts('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getCosts()
         );
@@ -273,7 +273,7 @@ class ProjectTest extends UnitTestCase
     public function setCostsWithIntegerResultsInString()
     {
         $this->subject->setCosts(123);
-        $this->assertSame('123', $this->subject->getCosts());
+        self::assertSame('123', $this->subject->getCosts());
     }
 
     /**
@@ -282,7 +282,7 @@ class ProjectTest extends UnitTestCase
     public function setCostsWithBooleanResultsInString()
     {
         $this->subject->setCosts(true);
-        $this->assertSame('1', $this->subject->getCosts());
+        self::assertSame('1', $this->subject->getCosts());
     }
 
     /**
@@ -290,7 +290,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getCitizenParticipationInitiallyReturnsFalse()
     {
-        $this->assertFalse(
+        self::assertFalse(
             $this->subject->isCitizenParticipation()
         );
     }
@@ -301,7 +301,7 @@ class ProjectTest extends UnitTestCase
     public function setCitizenParticipationSetsCitizenParticipation()
     {
         $this->subject->setCitizenParticipation(true);
-        $this->assertTrue(
+        self::assertTrue(
             $this->subject->isCitizenParticipation()
         );
     }
@@ -312,7 +312,7 @@ class ProjectTest extends UnitTestCase
     public function setCitizenParticipationWithStringReturnsTrue()
     {
         $this->subject->setCitizenParticipation('foo bar');
-        $this->assertTrue(
+        self::assertTrue(
             $this->subject->isCitizenParticipation()
         );
     }
@@ -323,7 +323,7 @@ class ProjectTest extends UnitTestCase
     public function setCitizenParticipationWithZeroReturnsFalse()
     {
         $this->subject->setCitizenParticipation(0);
-        $this->assertFalse(
+        self::assertFalse(
             $this->subject->isCitizenParticipation()
         );
     }
@@ -333,7 +333,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getImagesInitiallyReturnsObjectStorage()
     {
-        $this->assertEquals(
+        self::assertEquals(
             new \SplObjectStorage(),
             $this->subject->getImages()
         );
@@ -347,7 +347,7 @@ class ProjectTest extends UnitTestCase
         $instance = new \SplObjectStorage();
         $this->subject->setImages($instance);
 
-        $this->assertSame(
+        self::assertSame(
             $instance,
             $this->subject->getImages()
         );
@@ -358,7 +358,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getDescriptionInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getDescription()
         );
@@ -371,7 +371,7 @@ class ProjectTest extends UnitTestCase
     {
         $this->subject->setDescription('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getDescription()
         );
@@ -383,7 +383,7 @@ class ProjectTest extends UnitTestCase
     public function setDescriptionWithIntegerResultsInString()
     {
         $this->subject->setDescription(123);
-        $this->assertSame('123', $this->subject->getDescription());
+        self::assertSame('123', $this->subject->getDescription());
     }
 
     /**
@@ -392,7 +392,7 @@ class ProjectTest extends UnitTestCase
     public function setDescriptionWithBooleanResultsInString()
     {
         $this->subject->setDescription(true);
-        $this->assertSame('1', $this->subject->getDescription());
+        self::assertSame('1', $this->subject->getDescription());
     }
 
     /**
@@ -400,7 +400,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getFurtherInformationsInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getFurtherInformations()
         );
@@ -413,7 +413,7 @@ class ProjectTest extends UnitTestCase
     {
         $this->subject->setFurtherInformations('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getFurtherInformations()
         );
@@ -425,7 +425,7 @@ class ProjectTest extends UnitTestCase
     public function setFurtherInformationsWithIntegerResultsInString()
     {
         $this->subject->setFurtherInformations(123);
-        $this->assertSame('123', $this->subject->getFurtherInformations());
+        self::assertSame('123', $this->subject->getFurtherInformations());
     }
 
     /**
@@ -434,7 +434,7 @@ class ProjectTest extends UnitTestCase
     public function setFurtherInformationsWithBooleanResultsInString()
     {
         $this->subject->setFurtherInformations(true);
-        $this->assertSame('1', $this->subject->getFurtherInformations());
+        self::assertSame('1', $this->subject->getFurtherInformations());
     }
 
     /**
@@ -442,7 +442,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getTxMaps2UidInitiallyReturnsNull()
     {
-        $this->assertNull($this->subject->getTxMaps2Uid());
+        self::assertNull($this->subject->getTxMaps2Uid());
     }
 
     /**
@@ -453,7 +453,7 @@ class ProjectTest extends UnitTestCase
         $instance = new PoiCollection();
         $this->subject->setTxMaps2Uid($instance);
 
-        $this->assertSame(
+        self::assertSame(
             $instance,
             $this->subject->getTxMaps2Uid()
         );
@@ -464,7 +464,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getFilesInitiallyReturnsObjectStorage()
     {
-        $this->assertEquals(
+        self::assertEquals(
             new \SplObjectStorage(),
             $this->subject->getFiles()
         );
@@ -478,7 +478,7 @@ class ProjectTest extends UnitTestCase
         $instance = new \SplObjectStorage();
         $this->subject->setFiles($instance);
 
-        $this->assertSame(
+        self::assertSame(
             $instance,
             $this->subject->getFiles()
         );
@@ -489,7 +489,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getLinksInitiallyReturnsObjectStorage()
     {
-        $this->assertEquals(
+        self::assertEquals(
             new \SplObjectStorage(),
             $this->subject->getLinks()
         );
@@ -503,7 +503,7 @@ class ProjectTest extends UnitTestCase
         $instance = new \SplObjectStorage();
         $this->subject->setLinks($instance);
 
-        $this->assertSame(
+        self::assertSame(
             $instance,
             $this->subject->getLinks()
         );
@@ -514,7 +514,7 @@ class ProjectTest extends UnitTestCase
      */
     public function getAreaOfActivityInitiallyReturnsObjectStorage()
     {
-        $this->assertEquals(
+        self::assertEquals(
             new \SplObjectStorage(),
             $this->subject->getAreaOfActivity()
         );
@@ -528,7 +528,7 @@ class ProjectTest extends UnitTestCase
         $instance = new \SplObjectStorage();
         $this->subject->setAreaOfActivity($instance);
 
-        $this->assertSame(
+        self::assertSame(
             $instance,
             $this->subject->getAreaOfActivity()
         );
