@@ -33,8 +33,6 @@ class LocationController extends ActionController
     }
 
     /**
-     * Action show
-     *
      * @param int $project
      */
     public function showAction(int $project)

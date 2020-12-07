@@ -23,7 +23,7 @@ class GetTargetsViewHelper extends AbstractViewHelper
     /**
      * Initialize all VH arguments
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument(
             'parent',
