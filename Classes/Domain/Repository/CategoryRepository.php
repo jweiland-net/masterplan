@@ -11,6 +11,8 @@ declare(strict_types = 1);
 
 namespace JWeiland\Masterplan\Domain\Repository;
 
+use JWeiland\Masterplan\Configuration\ExtConf;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**
@@ -21,4 +23,15 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRe
     protected $defaultOrderings = [
         'title' => QueryInterface::ORDER_ASCENDING
     ];
+
+    /**
+     * Returns the child categories (area of activities) of configured root category
+     *
+     * @return array
+     */
+    public function getAreaOfActivities(): array
+    {
+        $extConf = GeneralUtility::makeInstance(ExtConf::class);
+        return $this->findByParent($extConf->getRootCategory())->toArray();
+    }
 }

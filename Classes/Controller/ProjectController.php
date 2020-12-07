@@ -11,6 +11,7 @@ declare(strict_types = 1);
 
 namespace JWeiland\Masterplan\Controller;
 
+use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -25,9 +26,17 @@ class ProjectController extends ActionController
      */
     protected $projectRepository;
 
-    public function injectProjectRepository(ProjectRepository $projectRepository): void
-    {
+    /**
+     * @var CategoryRepository
+     */
+    protected $categoryRepository;
+
+    public function __construct(
+        ProjectRepository $projectRepository,
+        CategoryRepository $categoryRepository
+    ) {
         $this->projectRepository = $projectRepository;
+        $this->categoryRepository = $categoryRepository;
     }
 
     public function initializeAction(): void
@@ -54,11 +63,13 @@ class ProjectController extends ActionController
      */
     public function listAction(int $areaOfActivity = 0, string $sortBy = 'title', string $direction = 'asc'): void
     {
-        $projects = $this->projectRepository->findAllSorted($areaOfActivity, $sortBy, $direction);
-        $this->view->assign('projects', $projects);
-        $this->view->assign('areaOfActivity', $areaOfActivity);
-        $this->view->assign('sortBy', $sortBy);
-        $this->view->assign('direction', $direction);
+        $this->view->assignMultiple([
+            'projects' => $this->projectRepository->findAllSorted($areaOfActivity, $sortBy, $direction),
+            'areaOfActivities' => $this->categoryRepository->getAreaOfActivities(),
+            'areaOfActivity' => $areaOfActivity,
+            'sortBy' => $sortBy,
+            'direction' => $direction,
+        ]);
     }
 
     /**

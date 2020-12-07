@@ -8,27 +8,23 @@
 		<f:render partial="Project/Images" arguments="{images: project.images}"/>
 		<f:format.html>{project.description}</f:format.html>
 		<f:format.html>{project.furtherInformations}</f:format.html>
-		<f:alias map="{activities: '{mp:getAreasOfActivity(areasOfActivity: \'{project.areaOfActivity}\')}'}">
-			<f:if condition="{activities}">
-				<h3><f:translate key="tx_masterplan_domain_model_project.area_of_activity"/>:</h3>
-				<ul class="extul">
-					<f:for each="{activities}" as="activity">
-						<li>{activity.title}
-							<f:alias map="{targets: '{mp:getTargets(parent: \'{activity.uid}\', areasOfActivity: \'{project.areaOfActivity}\')}'}">
-								<f:if condition="{targets}">
-									<ul class="extul">
-										<li><b><f:translate key="targets"/>:</b></li>
-										<f:for each="{targets}" as="target">
-											<li>{target.title}</li>
-										</f:for>
-									</ul>
-								</f:if>
-							</f:alias>
-						</li>
-					</f:for>
-				</ul>
-			</f:if>
-		</f:alias>
+		<f:if condition="{project.areaOfActivities}">
+			<h3>{f:translate(key: 'tx_masterplan_domain_model_project.area_of_activity')}:</h3>
+			<ul class="extul">
+				<f:for each="{project.areaOfActivities}" as="areaOfActivity">
+					<li>{areaOfActivity.title}
+						<f:if condition="{areaOfActivity.targets}">
+							<ul class="extul">
+								<li><strong>{f:translate(key: 'targets')}:</strong></li>
+								<f:for each="{areaOfActivity.targets}" as="target">
+									<li>{target.title}</li>
+								</f:for>
+							</ul>
+						</f:if>
+					</li>
+				</f:for>
+			</ul>
+		</f:if>
 	</div>
 </div>
 

@@ -12,8 +12,11 @@ declare(strict_types=1);
 namespace JWeiland\Masterplan\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
+use JWeiland\Masterplan\Configuration\ExtConf;
 use JWeiland\ServiceBw2\Utility\ModelUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Main domain model for projects.
@@ -261,18 +264,63 @@ class Project extends AbstractEntity
         $this->links = $links;
     }
 
+    /**
+     * Returns all areaOfActivity
+     * This includes the 1st level: areaOfActivity
+     * and the 2nd level: target
+     *
+     * @return array
+     */
     public function getAreaOfActivity(): array
     {
         $areaOfActivities = [];
+        $extConf = GeneralUtility::makeInstance(ExtConf::class);
+
+        /** @var Category $areaOfActivity */
         foreach ($this->areaOfActivity as $areaOfActivity) {
-            $areaOfActivities[] = $areaOfActivity;
+            $parentCategory = $areaOfActivity->getParent();
+            if ($parentCategory->getUid() === $extConf->getRootCategory()) {
+                $areaOfActivities[$areaOfActivity->getUid()] = $areaOfActivity;
+                continue;
+            }
+
+            // Check, if looped category should be handled as target.
+            // Update variables for better understanding
+            $target = $areaOfActivity;
+            $areaOfActivity = $persistedAreaOfActivity = $target->getParent();
+            $parentCategory = $areaOfActivity->getParent();
+
+            if ($parentCategory->getUid() === $extConf->getRootCategory()) {
+                // Override $persistedAreaOfActivity, if exists
+                if (array_key_exists($areaOfActivity->getUid(), $areaOfActivities)) {
+                    $persistedAreaOfActivity = $areaOfActivities[$areaOfActivity->getUid()];
+                }
+
+                $persistedAreaOfActivity->addTarget($target);
+                $areaOfActivities[$areaOfActivity->getUid()] = $persistedAreaOfActivity;
+            }
         }
         return $areaOfActivities;
     }
 
-    public function getOriginalAreaOfActivity(): \SplObjectStorage
+    /**
+     * Returns just the direct child categories of configured parent (ExtConf: rootCategory)
+     * Used for areaOfActivity selectbox in frontend
+     *
+     * @return array
+     */
+    public function getAreaOfActivityFirstLevel(): array
     {
-        return $this->areaOfActivity;
+        $extConf = GeneralUtility::makeInstance(ExtConf::class);
+        $areaOfActivities = [];
+
+        /** @var Category $areaOfActivity */
+        foreach ($this->areaOfActivity as $areaOfActivity) {
+            if ($areaOfActivity->getParent()->getUid() === $extConf->getRootCategory()) {
+                $areaOfActivities[] = $areaOfActivity;
+            }
+        }
+        return $areaOfActivities;
     }
 
     public function setAreaOfActivity(\SplObjectStorage $areaOfActivity): void
