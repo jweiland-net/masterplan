@@ -37,8 +37,7 @@
 		}
 	},
 	"config": {
-		"vendor-dir": ".build/vendor",
-		"bin-dir": ".build/bin"
+		"vendor-dir": ".build/vendor"
 	},
 	"extra": {
 		"typo3/cms": {
