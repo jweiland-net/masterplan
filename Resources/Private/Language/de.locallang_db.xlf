@@ -3,12 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-16T10:21:45Z" product-name="masterplan">
 		<header/>
 		<body>
-
-			<trans-unit id="sys_category.icon" xml:space="preserve">
-				<source>Icon</source>
-				<target>Icon</target>
-			</trans-unit>
-
 			<trans-unit id="tx_masterplan_domain_model_project">
 				<source>Project</source>
 				<target>Projekt</target>
@@ -94,7 +88,6 @@
 				<source>Link</source>
 				<target>Link</target>
 			</trans-unit>
-
 		</body>
 	</file>
 </xliff>
