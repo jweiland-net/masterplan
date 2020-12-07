@@ -10,11 +10,8 @@
 namespace JWeiland\Masterplan\Tests\Functional\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
-use JWeiland\Masterplan\Configuration\ExtConf;
-use JWeiland\Masterplan\Domain\Model\Category;
 use JWeiland\Masterplan\Domain\Model\Project;
 use Nimut\TestingFramework\TestCase\UnitTestCase;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Test case.
