@@ -12,6 +12,7 @@ declare(strict_types = 1);
 namespace JWeiland\Masterplan\Controller;
 
 use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -58,8 +59,8 @@ class ProjectController extends ActionController
      * @param int $areaOfActivity
      * @param string $sortBy
      * @param string $direction
-     * @validate $sortBy RegularExpression(regularExpression=/title|start_date|citizen_participation|area_of_activity/)
-     * @validate $direction RegularExpression(regularExpression=/asc|desc/)
+     * @Extbase\Validate(param="sortBy", validator="RegularExpression", options={"regularExpression": "/title|start_date|citizen_participation|area_of_activity/"})
+     * @Extbase\Validate(param="sortBy", validator="RegularExpression", options={"regularExpression": "/asc|desc/"})
      */
     public function listAction(int $areaOfActivity = 0, string $sortBy = 'title', string $direction = 'asc')
     {
