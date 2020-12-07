@@ -3,6 +3,7 @@
 #
 CREATE TABLE tx_masterplan_domain_model_project (
 	title varchar(255) DEFAULT '' NOT NULL,
+	path_segment varchar(2048) DEFAULT '' NOT NULL,
 	number varchar(255) DEFAULT '' NOT NULL,
 	contact_person varchar(255) DEFAULT '' NOT NULL,
 	organisationseinheiten int(11) unsigned NOT NULL default '0',

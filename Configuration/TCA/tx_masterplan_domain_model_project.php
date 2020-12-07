@@ -21,11 +21,11 @@ return [
         'iconfile' => 'EXT:masterplan/Resources/Public/Icons/tx_masterplan_domain_model_project.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, number, contact_person, organisationseinheiten, start_date, end_date, costs, citizen_participation, images, description, further_informations, files, links',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, path_segment, number, contact_person, organisationseinheiten, start_date, end_date, costs, citizen_participation, images, description, further_informations, files, links',
     ],
     'types' => [
         '1' => [
-            'showitem' => '--palette--;;languageHidden, --palette--;;titleNumber,
+            'showitem' => '--palette--;;languageHidden, --palette--;;titleNumber, path_segment,
             contact_person, organisationseinheiten, --palette--;;languageHidden, costs, citizen_participation,
             images, description, further_informations, files, links,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
@@ -154,6 +154,26 @@ return [
                 'size' => 30,
                 'eval' => 'trim'
             ],
+        ],
+        'path_segment' => [
+            'label' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_project.path_segment',
+            'displayCond' => 'VERSION:IS:false',
+            'config' => [
+                'type' => 'slug',
+                'size' => 50,
+                'generatorOptions' => [
+                    'fields' => ['title'],
+                    // Do not add pageSlug, as we add pageSlug on our own in RouteEnhancer
+                    'prefixParentPageSlug' => false,
+                    'fieldSeparator' => '-',
+                    'replacements' => [
+                        '/' => '-'
+                    ],
+                ],
+                'fallbackCharacter' => '-',
+                'eval' => 'uniqueInSite',
+                'default' => ''
+            ]
         ],
         'number' => [
             'exclude' => true,

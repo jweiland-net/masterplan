@@ -25,6 +25,10 @@
 				<source>Title</source>
 				<target>Projekttitel</target>
 			</trans-unit>
+			<trans-unit id="tx_masterplan_domain_model_project.path_segment">
+				<source>Segment for URL</source>
+				<target>Abschnitt für URL</target>
+			</trans-unit>
 			<trans-unit id="tx_masterplan_domain_model_project.number">
 				<source>Number</source>
 				<target>Projektnummer</target>

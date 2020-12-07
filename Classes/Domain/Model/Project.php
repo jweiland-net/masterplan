@@ -28,6 +28,11 @@ class Project extends AbstractEntity
     /**
      * @var string
      */
+    protected $pathSegment = '';
+
+    /**
+     * @var string
+     */
     protected $number = '';
 
     /**
@@ -120,6 +125,16 @@ class Project extends AbstractEntity
     public function setTitle(string $title)
     {
         $this->title = $title;
+    }
+
+    public function getPathSegment(): string
+    {
+        return $this->pathSegment;
+    }
+
+    public function setPathSegment(string $pathSegment): void
+    {
+        $this->pathSegment = $pathSegment;
     }
 
     /**
@@ -344,5 +359,20 @@ class Project extends AbstractEntity
     public function setAreaOfActivity(\SplObjectStorage $areaOfActivity)
     {
         $this->areaOfActivity = $areaOfActivity;
+    }
+
+    /**
+     * Helper method to build a baseRecord for path_segment
+     * Needed in PathSegmentHelper
+     *
+     * @return array
+     */
+    public function getBaseRecordForPathSegment(): array
+    {
+        return [
+            'uid' => $this->getUid(),
+            'pid' => $this->getPid(),
+            'title' => $this->getTitle()
+        ];
     }
 }
