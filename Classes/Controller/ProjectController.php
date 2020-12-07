@@ -50,7 +50,7 @@ class ProjectController extends ActionController
      * @param string $sortBy
      * @param string $direction
      * @Extbase\Validate(param="sortBy", validator="RegularExpression", options={"regularExpression": "/title|start_date|citizen_participation|area_of_activity/"})
-     * @Extbase\Validate(param="sortBy", validator="RegularExpression", options={"regularExpression": "/asc|desc/"})
+     * @Extbase\Validate(param="direction", validator="RegularExpression", options={"regularExpression": "/asc|desc/"})
      */
     public function listAction(int $areaOfActivity = 0, string $sortBy = 'title', string $direction = 'asc'): void
     {
