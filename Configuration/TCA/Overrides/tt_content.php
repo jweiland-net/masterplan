@@ -6,5 +6,5 @@ if (!defined('TYPO3_MODE')) {
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
     'JWeiland.masterplan',
     'Masterplan',
-    'Masterplan'
+    'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:plugin.masterplan.title'
 );
