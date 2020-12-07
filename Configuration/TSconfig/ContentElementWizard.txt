@@ -1,0 +1,16 @@
+mod.wizards.newContentElement.wizardItems.plugins {
+  elements {
+    masterplan-masterplan {
+      iconIdentifier = ext-masterplan-masterplan-wizard-icon
+      title = LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:plugin.masterplan.title
+      description = LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:plugin.masterplan.description
+      tt_content_defValues {
+        CType = list
+        list_type = masterplan_masterplan
+      }
+    }
+  }
+}
+
+# Add CType Preview
+mod.web_layout.tt_content.preview.list.masterplan_masterplan = EXT:masterplan/Resources/Private/Templates/PluginPreview/TableView.html

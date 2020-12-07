@@ -3,6 +3,17 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-16T10:21:45Z" product-name="masterplan">
 		<header/>
 		<body>
+			<trans-unit id="plugin.title">
+				<source>Masterplan</source>
+			</trans-unit>
+
+			<trans-unit id="plugin.masterplan.title">
+				<source>Masterplan</source>
+			</trans-unit>
+			<trans-unit id="plugin.masterplan.description">
+				<source>Inserts a project overview. Website visitors can see current projects and its costs.</source>
+			</trans-unit>
+
 			<trans-unit id="tx_masterplan_domain_model_project">
 				<source>Project</source>
 			</trans-unit>
