@@ -11,6 +11,7 @@ plugin.tx_masterplan {
     pidOfListPage = {$plugin.tx_masterplan.settings.pidOfListPage}
     pidOfDetailPage = {$plugin.tx_masterplan.settings.pidOfDetailPage}
     pidOfLocationPage = {$plugin.tx_masterplan.settings.pidOfLocationPage}
+
     list {
       image {
         width = 50c
@@ -19,6 +20,13 @@ plugin.tx_masterplan {
         maxWidth = 50
         minHeight = 50
         maxHeight = 50
+      }
+    }
+
+    show {
+      image {
+        width = 240c
+        height = 180c
       }
     }
 
