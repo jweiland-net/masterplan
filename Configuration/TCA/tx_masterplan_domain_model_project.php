@@ -18,7 +18,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'title,number,contact_person,citizen_participation,description,further_informations',
-        'iconfile' => 'EXT:masterplan/Resources/Public/Icons/tx_masterplan_domain_model_project.gif'
+        'iconfile' => 'EXT:masterplan/Resources/Public/Icons/tx_masterplan_domain_model_project.svg'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, path_segment, number, contact_person, organisationseinheiten, start_date, end_date, costs, citizen_participation, images, description, further_informations, files, links',
