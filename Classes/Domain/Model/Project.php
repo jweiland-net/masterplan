@@ -16,6 +16,7 @@ use JWeiland\Masterplan\Configuration\ExtConf;
 use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Main domain model for projects.
@@ -71,7 +72,7 @@ class Project extends AbstractEntity
     protected $citizenParticipation = false;
 
     /**
-     * @var \SplObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
     protected $images;
 
@@ -91,26 +92,26 @@ class Project extends AbstractEntity
     protected $txMaps2Uid;
 
     /**
-     * @var \SplObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
     protected $files;
 
     /**
-     * @var \SplObjectStorage<\JWeiland\Masterplan\Domain\Model\Link>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Masterplan\Domain\Model\Link>
      */
     protected $links;
 
     /**
-     * @var \SplObjectStorage<\JWeiland\Masterplan\Domain\Model\Category>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Masterplan\Domain\Model\Category>
      */
     protected $areaOfActivity;
 
     public function __construct()
     {
-        $this->images = new \SplObjectStorage();
-        $this->files = new \SplObjectStorage();
-        $this->links = new \SplObjectStorage();
-        $this->areaOfActivity = new \SplObjectStorage();
+        $this->images = new ObjectStorage();
+        $this->files = new ObjectStorage();
+        $this->links = new ObjectStorage();
+        $this->areaOfActivity = new ObjectStorage();
     }
 
     public function getTitle(): string
@@ -203,12 +204,12 @@ class Project extends AbstractEntity
         $this->citizenParticipation = $citizenParticipation;
     }
 
-    public function getImages(): \SplObjectStorage
+    public function getImages(): ObjectStorage
     {
         return $this->images;
     }
 
-    public function setImages(\SplObjectStorage $images): void
+    public function setImages(ObjectStorage $images): void
     {
         $this->images = $images;
     }
@@ -243,22 +244,22 @@ class Project extends AbstractEntity
         $this->txMaps2Uid = $txMaps2Uid;
     }
 
-    public function getFiles(): \SplObjectStorage
+    public function getFiles(): ObjectStorage
     {
         return $this->files;
     }
 
-    public function setFiles(\SplObjectStorage $files): void
+    public function setFiles(ObjectStorage $files): void
     {
         $this->files = $files;
     }
 
-    public function getLinks(): \SplObjectStorage
+    public function getLinks(): ObjectStorage
     {
         return $this->links;
     }
 
-    public function setLinks(\SplObjectStorage $links): void
+    public function setLinks(ObjectStorage $links): void
     {
         $this->links = $links;
     }
@@ -278,7 +279,16 @@ class Project extends AbstractEntity
         /** @var Category $areaOfActivity */
         foreach ($this->areaOfActivity as $areaOfActivity) {
             $parentCategory = $areaOfActivity->getParent();
-            if ($parentCategory->getUid() === $extConf->getRootCategory()) {
+            if (
+                (
+                    $parentCategory instanceof Category
+                    && $parentCategory->getUid() === $extConf->getRootCategory()
+                )
+                || (
+                    $parentCategory === null
+                    && $extConf->getRootCategory() === 0
+                )
+            ) {
                 $areaOfActivities[$areaOfActivity->getUid()] = $areaOfActivity;
                 continue;
             }
@@ -289,14 +299,23 @@ class Project extends AbstractEntity
             $areaOfActivity = $persistedAreaOfActivity = $target->getParent();
             $parentCategory = $areaOfActivity->getParent();
 
-            if ($parentCategory->getUid() === $extConf->getRootCategory()) {
+            if (
+                (
+                    $parentCategory instanceof Category
+                    && $parentCategory->getUid() === $extConf->getRootCategory()
+                )
+                || (
+                    $parentCategory === null
+                    && $extConf->getRootCategory() === 0
+                )
+            ) {
                 // Override $persistedAreaOfActivity, if exists
                 if (array_key_exists($areaOfActivity->getUid(), $areaOfActivities)) {
                     $persistedAreaOfActivity = $areaOfActivities[$areaOfActivity->getUid()];
                 }
 
                 $persistedAreaOfActivity->addTarget($target);
-                $areaOfActivities[$areaOfActivity->getUid()] = $persistedAreaOfActivity;
+                $areaOfActivities[$persistedAreaOfActivity->getUid()] = $persistedAreaOfActivity;
             }
         }
         return $areaOfActivities;
@@ -322,7 +341,7 @@ class Project extends AbstractEntity
         return $areaOfActivities;
     }
 
-    public function setAreaOfActivity(\SplObjectStorage $areaOfActivity): void
+    public function setAreaOfActivity(ObjectStorage $areaOfActivity): void
     {
         $this->areaOfActivity = $areaOfActivity;
     }
