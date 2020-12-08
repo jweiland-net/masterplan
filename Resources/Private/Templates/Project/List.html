@@ -3,7 +3,7 @@
 			xmlns:mp="http://typo3.org/ns/JWeiland/Masterplan/ViewHelpers"
 			data-namespace-typo3-fluid="true">
 
-<f:layout name="Default"/>
+<f:layout name="Default" />
 
 <f:section name="main">
 	<aside class="floatright grid_4">
@@ -58,9 +58,9 @@
 										</dd>
 										<dd>
 											<f:if condition="{project.areaOfActivity}">
-												<f:translate key="tx_masterplan_domain_model_project.area_of_activity"/>:
-												<f:for each="{mp:getAreasOfActivity(areasOfActivity: project.areaOfActivity)}" as="activity">
-													<br/>{activity.title}
+												{f:translate(key: 'tx_masterplan_domain_model_project.area_of_activity')}:
+												<f:for each="{project.areaOfActivity}" as="activity">
+													<br>{activity.title}
 												</f:for>
 											</f:if>
 										</dd>
@@ -73,7 +73,7 @@
 			</f:then>
 			<f:else>
 				<div class="noResults">
-					<f:translate key="noResults"/>
+					{f:translate(key: 'noResults')}
 				</div>
 			</f:else>
 		</f:if>

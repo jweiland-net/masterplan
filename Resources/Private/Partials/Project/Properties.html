@@ -5,21 +5,22 @@
 
 <div class="grid_6 floatleft">
 	<div class="gridright">
-		<f:render partial="Project/Images" arguments="{images: project.images}"/>
+		<f:render partial="Project/Images" arguments="{images: project.images}" />
 		<f:format.html>{project.description}</f:format.html>
 		<f:format.html>{project.furtherInformations}</f:format.html>
-		<f:if condition="{project.areaOfActivities}">
+		<f:if condition="{project.areaOfActivity}">
 			<h3>{f:translate(key: 'tx_masterplan_domain_model_project.area_of_activity')}:</h3>
 			<ul class="extul">
-				<f:for each="{project.areaOfActivities}" as="areaOfActivity">
-					<li>{areaOfActivity.title}
+				<f:for each="{project.areaOfActivity}" as="areaOfActivity">
+					<li>{areaOfActivity.title}</li>
 						<f:if condition="{areaOfActivity.targets}">
-							<ul class="extul">
-								<li><strong>{f:translate(key: 'targets')}:</strong></li>
-								<f:for each="{areaOfActivity.targets}" as="target">
-									<li>{target.title}</li>
-								</f:for>
-							</ul>
+							<li><strong>{f:translate(key: 'targets')}:</strong>
+								<ul class="extul">
+									<f:for each="{areaOfActivity.targets}" as="target">
+										<li>{target.title}</li>
+									</f:for>
+								</ul>
+							</li>
 						</f:if>
 					</li>
 				</f:for>
@@ -32,13 +33,18 @@
 	<div class="gridleft clearfix rulerbefore4">
 		<dl class="extdl clearfix rulerafter">
 			<dd class="floatleft noborder{f:if(condition: project.txMaps2Uid, then: ' grid_8', else: '')}">
-				<b><f:translate key="tx_masterplan_domain_model_project.number"/>:</b><br/>{project.number}
+				<strong>{f:translate(key: 'tx_masterplan_domain_model_project.number')}:</strong><br>{project.number}
 			</dd>
 			<f:if condition="{project.txMaps2Uid}">
 				<dd class="grid_4 floatleft noborder">
 					<figure>
-						<f:link.action action="show" pageUid="{settings.pidOfLocationPage}" controller="Location" arguments="{project: project}">
-							<f:image class="floatright" src="EXT:masterplan/Resources/Public/Icons/thumbmaps.png" alt="{f:translate(key: 'altTextMapImg')}"/>
+						<f:link.action action="show"
+													 pageUid="{settings.pidOfLocationPage}"
+													 controller="Location"
+													 arguments="{project: project}">
+							<f:image class="floatright"
+											 src="EXT:masterplan/Resources/Public/Icons/thumbmaps.png"
+											 alt="{f:translate(key: 'altTextMapImg')}" />
 						</f:link.action>
 					</figure>
 				</dd>
@@ -53,7 +59,7 @@
 			<f:if condition="{project.organisationseinheiten}">
 				<f:for each="{project.organisationseinheiten}" as="organisationseinheit">
 					<f:if condition="{organisationseinheit.name}">
-						<dt><f:translate key="tx_masterplan_domain_model_project.organisationseinheiten" />:</dt>
+						<dt>{f:translate(key: 'tx_masterplan_domain_model_project.organisationseinheiten')}:</dt>
 						<dd>{organisationseinheit.name}</dd>
 					</f:if>
 				</f:for>
@@ -61,23 +67,25 @@
 		</dl>
 
 		<dl class="extdl">
-			<dt><f:translate key="tx_masterplan_domain_model_project.citizen_participation"/>:</dt>
+			<dt>{f:translate(key: 'tx_masterplan_domain_model_project.citizen_participation')}:</dt>
 			<dd>
 				<f:translate key="tx_masterplan_domain_model_project.citizen_participation.{f:if(condition: project.citizenParticipation, then: 'yes', else: 'no')}"/>
 			</dd>
 		</dl>
 		<f:if condition="{project.files}">
 			<dl class="extdl">
-				<dt><f:translate key="tx_masterplan_domain_model_project.files"/>:</dt>
+				<dt>{f:translate(key: 'tx_masterplan_domain_model_project.files')}:</dt>
 				<f:for each="{project.files}" as="file">
-					<dd><span aria-hidden="true" class="icon-download"></span><a href="{file.originalResource.publicUrl}" target="_blank">{file.originalResource.originalFile.name}</a></dd>
+					<dd>
+						<span aria-hidden="true" class="icon-download"></span>
+						<a href="{file.originalResource.publicUrl}" target="_blank">{file.originalResource.originalFile.name}</a>
+					</dd>
 				</f:for>
 			</dl>
 		</f:if>
 		<f:if condition="{project.links}">
 			<dl class="extdl">
-				<dt><f:translate key="tx_masterplan_domain_model_project.links"/>:
-				</dt>
+				<dt>{f:translate(key: 'tx_masterplan_domain_model_project.links')}:</dt>
 				<f:for each="{project.links}" as="link">
 					<dd>
 						<f:link.external uri="{link.link}" target="_blank">{link.title}</f:link.external>

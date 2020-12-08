@@ -14,6 +14,7 @@ use JWeiland\Masterplan\Domain\Model\Category;
 use JWeiland\Masterplan\Domain\Model\Project;
 use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Test case.
@@ -87,7 +88,7 @@ class ProjectTest extends FunctionalTestCase
 
         $areaOfActivity2->addTarget($target);
 
-        $objectStorage = new \SplObjectStorage();
+        $objectStorage = new ObjectStorage();
         $objectStorage->attach($areaOfActivity1);
         $objectStorage->attach($areaOfActivity2);
 

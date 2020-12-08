@@ -12,6 +12,7 @@ namespace JWeiland\Masterplan\Tests\Functional\Domain\Model;
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Masterplan\Domain\Model\Project;
 use Nimut\TestingFramework\TestCase\UnitTestCase;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Test case.
@@ -336,7 +337,7 @@ class ProjectTest extends UnitTestCase
     public function getImagesInitiallyReturnsObjectStorage()
     {
         self::assertEquals(
-            new \SplObjectStorage(),
+            new ObjectStorage(),
             $this->subject->getImages()
         );
     }
@@ -346,7 +347,7 @@ class ProjectTest extends UnitTestCase
      */
     public function setImagesSetsImages()
     {
-        $instance = new \SplObjectStorage();
+        $instance = new ObjectStorage();
         $this->subject->setImages($instance);
 
         self::assertSame(
@@ -467,7 +468,7 @@ class ProjectTest extends UnitTestCase
     public function getFilesInitiallyReturnsObjectStorage()
     {
         self::assertEquals(
-            new \SplObjectStorage(),
+            new ObjectStorage(),
             $this->subject->getFiles()
         );
     }
@@ -477,7 +478,7 @@ class ProjectTest extends UnitTestCase
      */
     public function setFilesSetsFiles()
     {
-        $instance = new \SplObjectStorage();
+        $instance = new ObjectStorage();
         $this->subject->setFiles($instance);
 
         self::assertSame(
@@ -492,7 +493,7 @@ class ProjectTest extends UnitTestCase
     public function getLinksInitiallyReturnsObjectStorage()
     {
         self::assertEquals(
-            new \SplObjectStorage(),
+            new ObjectStorage(),
             $this->subject->getLinks()
         );
     }
@@ -502,7 +503,7 @@ class ProjectTest extends UnitTestCase
      */
     public function setLinksSetsLinks()
     {
-        $instance = new \SplObjectStorage();
+        $instance = new ObjectStorage();
         $this->subject->setLinks($instance);
 
         self::assertSame(
