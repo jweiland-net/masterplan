@@ -13,16 +13,15 @@
 			<ul class="extul">
 				<f:for each="{project.areaOfActivity}" as="areaOfActivity">
 					<li>{areaOfActivity.title}</li>
-						<f:if condition="{areaOfActivity.targets}">
-							<li><strong>{f:translate(key: 'targets')}:</strong>
-								<ul class="extul">
-									<f:for each="{areaOfActivity.targets}" as="target">
-										<li>{target.title}</li>
-									</f:for>
-								</ul>
-							</li>
-						</f:if>
-					</li>
+					<f:if condition="{areaOfActivity.targets}">
+						<li><strong>{f:translate(key: 'targets')}:</strong>
+							<ul class="extul">
+								<f:for each="{areaOfActivity.targets}" as="target">
+									<li>{target.title}</li>
+								</f:for>
+							</ul>
+						</li>
+					</f:if>
 				</f:for>
 			</ul>
 		</f:if>
