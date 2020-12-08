@@ -69,20 +69,24 @@ class ProjectTest extends FunctionalTestCase
         $extConf->setRootCategory(1);
 
         $rootCategory = new Category();
+        $rootCategory->initializeObject();
         $rootCategory->_setProperty('uid', 1);
         $rootCategory->setTitle('Root');
 
         $areaOfActivity1 = new Category();
+        $areaOfActivity1->initializeObject();
         $areaOfActivity1->_setProperty('uid', 2);
         $areaOfActivity1->setTitle('jweiland.net');
         $areaOfActivity1->setParent($rootCategory);
 
         $areaOfActivity2 = new Category();
+        $areaOfActivity2->initializeObject();
         $areaOfActivity2->_setProperty('uid', 3);
         $areaOfActivity2->setTitle('Cars');
         $areaOfActivity2->setParent($rootCategory);
 
         $target = new Category();
+        $target->initializeObject();
         $target->_setProperty('uid', 4);
         $target->setTitle('Target');
 
