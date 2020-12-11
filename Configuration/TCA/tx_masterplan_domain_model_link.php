@@ -143,22 +143,20 @@ return [
             'l10n_display' => 'defaultAsReadonly'
         ],
         'title' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_link.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,required',
             ],
         ],
         'link' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_link.link',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputLink',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,required',
             ],
         ],
         'project' => [
