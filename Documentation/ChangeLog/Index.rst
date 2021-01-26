@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 3.0.2**
+
+- Add addQueryStringMethod to f:widget.paginate
+
 **Version 3.0.1**
 
 - Set title as required, as it is required for path_segment generation
