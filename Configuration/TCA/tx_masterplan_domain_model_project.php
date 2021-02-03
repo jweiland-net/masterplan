@@ -171,7 +171,7 @@ return [
                     ],
                 ],
                 'fallbackCharacter' => '-',
-                'eval' => 'uniqueInSite',
+                'eval' => 'unique',
                 'default' => ''
             ]
         ],
