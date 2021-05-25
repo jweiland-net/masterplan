@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 3.0.4**
+
+- Move SlugHelper from constructor argument into getSlugHelper()
+
 **Version 3.0.2**
 
 - Add addQueryStringMethod to f:widget.paginate

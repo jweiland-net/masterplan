@@ -19,35 +19,27 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class PathSegmentHelper
 {
-    /**
-     * @var SlugHelper
-     */
-    protected $slugHelper;
-
-    public function __construct(SlugHelper $slugHelper = null)
-    {
-        if ($slugHelper === null) {
-            // Add uid to slug, to prevent duplicates
-            $config = $GLOBALS['TCA']['tx_masterplan_domain_model_project']['columns']['path_segment']['config'];
-            $config['generatorOptions']['fields'] = ['title', 'uid'];
-
-            $slugHelper = GeneralUtility::makeInstance(
-                SlugHelper::class,
-                'tx_masterplan_domain_model_project',
-                'path_segment',
-                $config
-            );
-        }
-        $this->slugHelper = $slugHelper;
-    }
-
     public function generatePathSegment(
         array $baseRecord,
         int $pid
     ): string {
-        return $this->slugHelper->generate(
+        return $this->getSlugHelper()->generate(
             $baseRecord,
             $pid
+        );
+    }
+
+    protected function getSlugHelper(): SlugHelper
+    {
+        // Add uid to slug, to prevent duplicates
+        $config = $GLOBALS['TCA']['tx_masterplan_domain_model_project']['columns']['path_segment']['config'];
+        $config['generatorOptions']['fields'] = ['title', 'uid'];
+
+        return GeneralUtility::makeInstance(
+            SlugHelper::class,
+            'tx_masterplan_domain_model_project',
+            'path_segment',
+            $config
         );
     }
 }

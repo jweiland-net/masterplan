@@ -5,6 +5,11 @@ Updating
 
 If you update EXT:masterplan to a newer version, please read this section carefully!
 
+Update to Version 3.0.4
+-----------------------
+
+We have changed some method arguments, please flush cache in InstallTool
+
 Update to Version 3.0.0
 -----------------------
 
