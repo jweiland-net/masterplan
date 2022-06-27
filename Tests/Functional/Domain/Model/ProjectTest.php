@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the package jweiland/masterplan.
  *
@@ -33,14 +35,14 @@ class ProjectTest extends FunctionalTestCase
         'typo3conf/ext/masterplan'
     ];
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
         $this->subject = new Project();
     }
 
-    public function tearDown()
+    protected function tearDown(): void
     {
         unset(
             $this->subject
@@ -52,7 +54,7 @@ class ProjectTest extends FunctionalTestCase
     /**
      * @test
      */
-    public function getAreaOfActivityInitiallyReturnsEmptyArray()
+    public function getAreaOfActivityInitiallyReturnsEmptyArray(): void
     {
         self::assertSame(
             [],
@@ -63,7 +65,7 @@ class ProjectTest extends FunctionalTestCase
     /**
      * @test
      */
-    public function setAreaOfActivitySetsAreaOfActivity()
+    public function setAreaOfActivitySetsAreaOfActivity(): void
     {
         $extConf = GeneralUtility::makeInstance(ExtConf::class);
         $extConf->setRootCategory(1);
