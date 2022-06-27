@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the package jweiland/masterplan.
  *
@@ -12,6 +14,7 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Repository;
 use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
@@ -24,6 +27,8 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
  */
 class CategoryRepositoryTest extends FunctionalTestCase
 {
+    use ProphecyTrait;
+
     /**
      * @var CategoryRepository
      */
@@ -41,7 +46,7 @@ class CategoryRepositoryTest extends FunctionalTestCase
         'typo3conf/ext/masterplan'
     ];
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -58,7 +63,7 @@ class CategoryRepositoryTest extends FunctionalTestCase
         $this->subject->injectPersistenceManager($this->persistenceManagerProphecy->reveal());
     }
 
-    public function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
 
@@ -71,7 +76,7 @@ class CategoryRepositoryTest extends FunctionalTestCase
     /**
      * @test
      */
-    public function categoriesAreSortedByTitleAsDefault()
+    public function categoriesAreSortedByTitleAsDefault(): void
     {
         $expectedResult = [
             'title' => QueryInterface::ORDER_ASCENDING

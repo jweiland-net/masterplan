@@ -6,12 +6,12 @@ $EM_CONF['masterplan'] = [
     'author' => 'Stefan Froemken',
     'author_email' => 'projects@jweiland.net',
     'state' => 'stable',
-    'version' => '3.0.4',
+    'version' => '4.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.0-10.4.99',
+            'typo3' => '10.4.29-11.5.99',
             'maps2' => '9.3.0-0.0.0',
-            'service_bw2' => '4.0.0-4.99.99'
+            'service_bw2' => '5.0.0-0.0.0'
         ],
         'conflicts' => [],
         'suggests' => [],
