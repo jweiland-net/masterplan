@@ -38,37 +38,37 @@
 		<f:if condition="{projects}">
 			<f:then>
 				<div class="list scroll-container gridright">
-					<f:widget.paginate objects="{projects}" as="paginatedProjects" configuration="{addQueryStringMethod: 'POST,GET', itemsPerPage: settings.pageBrowser.itemsPerPage, insertAbove: settings.pageBrowser.insertAbove, insertBelow: settings.pageBrowser.insertBelow, maximumNumberOfLinks: settings.pageBrowser.maximumNumberOfLinks}">
-						<f:for each="{paginatedProjects}" as="project">
-							<div class="marginbottom scroll-item clearfix">
-								<div class="grid_10 floatleft rulerafter">
-									<h2 class="noborder nomargin">
-										<f:link.action pageUid="{settings.pidOfDetailPage}" action="show" arguments="{project: project}">
-											{project.title}
-										</f:link.action>
-									</h2>
-									<dl class="nomargin">
-										<dd>
-											<f:translate key="tx_masterplan_domain_model_project.start_date"/>: {project.startDate}
-										</dd>
-										<dd>
-											<f:translate key="tx_masterplan_domain_model_project.citizen_participation"/>:
-											<f:translate
-											key="tx_masterplan_domain_model_project.citizen_participation.{f:if(condition: project.citizenParticipation, then: 'yes', else: 'no')}"/>
-										</dd>
-										<dd>
-											<f:if condition="{project.areaOfActivity}">
-												{f:translate(key: 'tx_masterplan_domain_model_project.area_of_activity')}:
-												<f:for each="{project.areaOfActivity}" as="activity">
-													<br>{activity.title}
-												</f:for>
-											</f:if>
-										</dd>
-									</dl>
-								</div>
+					<f:for each="{projects}" as="project">
+						<div class="marginbottom scroll-item clearfix">
+							<div class="grid_10 floatleft rulerafter">
+								<h2 class="noborder nomargin">
+									<f:link.action pageUid="{settings.pidOfDetailPage}" action="show" arguments="{project: project}">
+										{project.title}
+									</f:link.action>
+								</h2>
+								<dl class="nomargin">
+									<dd>
+										<f:translate key="tx_masterplan_domain_model_project.start_date"/>: {project.startDate}
+									</dd>
+									<dd>
+										<f:translate key="tx_masterplan_domain_model_project.citizen_participation"/>:
+										<f:translate
+														key="tx_masterplan_domain_model_project.citizen_participation.{f:if(condition: project.citizenParticipation, then: 'yes', else: 'no')}"/>
+									</dd>
+									<dd>
+										<f:if condition="{project.areaOfActivity}">
+											{f:translate(key: 'tx_masterplan_domain_model_project.area_of_activity')}:
+											<f:for each="{project.areaOfActivity}" as="activity">
+												<br>{activity.title}
+											</f:for>
+										</f:if>
+									</dd>
+								</dl>
 							</div>
-						</f:for>
-					</f:widget.paginate>
+						</div>
+					</f:for>
+					<f:render partial="Component/Pagination"
+										arguments="{pagination: pagination, paginator: paginator, actionName: actionName}" />
 				</div>
 			</f:then>
 			<f:else>

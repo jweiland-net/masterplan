@@ -6,3 +6,9 @@ services:
 
   JWeiland\Masterplan\:
     resource: '../Classes/*'
+
+  # Register EventListeners for controller actions incl. Fluid variables
+  JWeiland\Masterplan\EventListener\AddPaginatorEventListener:
+    tags:
+    - name: event.listener
+      event: JWeiland\Masterplan\Event\PostProcessFluidVariablesEvent
