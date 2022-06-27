@@ -10,6 +10,8 @@ ChangeLog
 **Version 4.0.0**
 
 - Remove TYPO3 9 compatibility
+- Add Events to all Controller Actions
+- Add Event Listener to add Pagination
 
 **Version 3.0.4**
 
