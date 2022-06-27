@@ -12,12 +12,11 @@ declare(strict_types=1);
 namespace JWeiland\Masterplan\Controller;
 
 use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * The main controller to transfer location records from DB to View
  */
-class LocationController extends ActionController
+class LocationController extends AbstractController
 {
     /**
      * @var ProjectRepository
@@ -37,7 +36,8 @@ class LocationController extends ActionController
      */
     public function showAction(int $project)
     {
-        $projectObject = $this->projectRepository->findByIdentifier($project);
-        $this->view->assign('project', $projectObject);
+        $this->postProcessAndAssignFluidVariables([
+            'project' => $this->projectRepository->findByIdentifier($project)
+        ]);
     }
 }

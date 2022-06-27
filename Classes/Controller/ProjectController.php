@@ -14,12 +14,11 @@ namespace JWeiland\Masterplan\Controller;
 use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * The main controller to show and list projects
  */
-class ProjectController extends ActionController
+class ProjectController extends AbstractController
 {
     /**
      * @var ProjectRepository
@@ -63,7 +62,7 @@ class ProjectController extends ActionController
      */
     public function listAction(int $areaOfActivity = 0, string $sortBy = 'title', string $direction = 'asc'): void
     {
-        $this->view->assignMultiple([
+        $this->postProcessAndAssignFluidVariables([
             'projects' => $this->projectRepository->findAllSorted($areaOfActivity, $sortBy, $direction),
             'areaOfActivities' => $this->categoryRepository->getAreaOfActivities(),
             'areaOfActivity' => $areaOfActivity,
@@ -77,7 +76,8 @@ class ProjectController extends ActionController
      */
     public function showAction(int $project): void
     {
-        $projectObject = $this->projectRepository->findByIdentifier($project);
-        $this->view->assign('project', $projectObject);
+        $this->postProcessAndAssignFluidVariables([
+            'project' => $this->projectRepository->findByIdentifier($project),
+        ]);
     }
 }
