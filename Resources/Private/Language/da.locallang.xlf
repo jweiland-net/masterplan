@@ -3,121 +3,121 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2014-06-16T10:21:45Z" product-name="masterplan" target-language="da">
     <header/>
     <body>
-      <trans-unit id="tx_masterplan_domain_model_project">
+      <trans-unit id="tx_masterplan_domain_model_project" approved="yes">
         <source>Project</source>
-        <target state="needs-translation">Project</target>
+        <target state="final">Projekt</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.title">
+      <trans-unit id="tx_masterplan_domain_model_project.title" approved="yes">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="final">Titel</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.number">
+      <trans-unit id="tx_masterplan_domain_model_project.number" approved="yes">
         <source>Number</source>
-        <target state="needs-translation">Number</target>
+        <target state="final">Nummer</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.contact_person">
+      <trans-unit id="tx_masterplan_domain_model_project.contact_person" approved="yes">
         <source>Contact Person</source>
-        <target state="needs-translation">Contact Person</target>
+        <target state="final">Kontaktperson</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.organisationseinheiten">
+      <trans-unit id="tx_masterplan_domain_model_project.organisationseinheiten" approved="yes">
         <source>Organisationseinheiten</source>
-        <target state="needs-translation">Organisationseinheiten</target>
+        <target state="final">Organisatorisk enhed</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.start_date">
+      <trans-unit id="tx_masterplan_domain_model_project.start_date" approved="yes">
         <source>Start Date</source>
-        <target state="needs-translation">Start Date</target>
+        <target state="final">Start dato</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.end_date">
+      <trans-unit id="tx_masterplan_domain_model_project.end_date" approved="yes">
         <source>End Date</source>
-        <target state="needs-translation">End Date</target>
+        <target state="final">Slutdato</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.costs">
+      <trans-unit id="tx_masterplan_domain_model_project.costs" approved="yes">
         <source>Costs</source>
-        <target state="needs-translation">Costs</target>
+        <target state="final">Omkostning</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation">
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation" approved="yes">
         <source>Citizen Participation</source>
-        <target state="needs-translation">Citizen Participation</target>
+        <target state="final">Borgerdeltagelse</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation.yes">
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation.yes" approved="yes">
         <source>Yes</source>
-        <target state="needs-translation">Yes</target>
+        <target state="final">Ja</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation.no">
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation.no" approved="yes">
         <source>Not provided</source>
-        <target state="needs-translation">Not provided</target>
+        <target state="final">Ikke angivet</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.images">
+      <trans-unit id="tx_masterplan_domain_model_project.images" approved="yes">
         <source>Images</source>
-        <target state="needs-translation">Images</target>
+        <target state="final">Billeder</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.description">
+      <trans-unit id="tx_masterplan_domain_model_project.description" approved="yes">
         <source>Description</source>
-        <target state="needs-translation">Description</target>
+        <target state="final">Beskrivelse</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.further_informations">
+      <trans-unit id="tx_masterplan_domain_model_project.further_informations" approved="yes">
         <source>Further Informations</source>
-        <target state="needs-translation">Further Informations</target>
+        <target state="final">Yderligere information</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.area_of_activity">
+      <trans-unit id="tx_masterplan_domain_model_project.area_of_activity" approved="yes">
         <source>Area of Activity</source>
-        <target state="needs-translation">Area of Activity</target>
+        <target state="final">Aktivitetsareal</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.tx_maps2_uid">
+      <trans-unit id="tx_masterplan_domain_model_project.tx_maps2_uid" approved="yes">
         <source>Tx Maps2 Uid</source>
-        <target state="needs-translation">Tx Maps2 Uid</target>
+        <target state="final">Tx Maps2 Uid</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.files">
+      <trans-unit id="tx_masterplan_domain_model_project.files" approved="yes">
         <source>Files</source>
-        <target state="needs-translation">Files</target>
+        <target state="final">Filer</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.links">
+      <trans-unit id="tx_masterplan_domain_model_project.links" approved="yes">
         <source>Links</source>
-        <target state="needs-translation">Links</target>
+        <target state="final">Links</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_link">
+      <trans-unit id="tx_masterplan_domain_model_link" approved="yes">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="final">Link</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_link.title">
+      <trans-unit id="tx_masterplan_domain_model_link.title" approved="yes">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="final">Titel</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_link.link">
+      <trans-unit id="tx_masterplan_domain_model_link.link" approved="yes">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="final">Link</target>
       </trans-unit>
-      <trans-unit id="backToList">
+      <trans-unit id="backToList" approved="yes">
         <source>Back to list</source>
-        <target state="needs-translation">Back to list</target>
+        <target state="final">Tilbage til liste</target>
       </trans-unit>
-      <trans-unit id="backToDetails">
+      <trans-unit id="backToDetails" approved="yes">
         <source>Back to detail view</source>
-        <target state="needs-translation">Back to detail view</target>
+        <target state="final">Tilbage til detaljevisning</target>
       </trans-unit>
-      <trans-unit id="targets">
+      <trans-unit id="targets" approved="yes">
         <source>Targets</source>
-        <target state="needs-translation">Targets</target>
+        <target state="final">Mål</target>
       </trans-unit>
-      <trans-unit id="noResults">
+      <trans-unit id="noResults" approved="yes">
         <source>No results</source>
-        <target state="needs-translation">No results</target>
+        <target state="final">Ingen resultater</target>
       </trans-unit>
-      <trans-unit id="asc">
+      <trans-unit id="asc" approved="yes">
         <source>Ascending</source>
-        <target state="needs-translation">Ascending</target>
+        <target state="final">Stigende</target>
       </trans-unit>
-      <trans-unit id="desc">
+      <trans-unit id="desc" approved="yes">
         <source>Descending</source>
-        <target state="needs-translation">Descending</target>
+        <target state="final">Faldende</target>
       </trans-unit>
-      <trans-unit id="sortBy">
+      <trans-unit id="sortBy" approved="yes">
         <source>Sort by</source>
-        <target state="needs-translation">Sort by</target>
+        <target state="final">Sortér efter</target>
       </trans-unit>
-      <trans-unit id="ordering">
+      <trans-unit id="ordering" approved="yes">
         <source>Ordering</source>
-        <target state="needs-translation">Ordering</target>
+        <target state="final">Sortering</target>
       </trans-unit>
     </body>
   </file>
