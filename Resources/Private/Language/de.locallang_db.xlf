@@ -1,111 +1,108 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-16T10:21:45Z" product-name="masterplan">
-		<header/>
-		<body>
-			<trans-unit id="plugin.title">
-				<source>Masterplan</source>
-				<target>Masterplan</target>
-			</trans-unit>
-
-			<trans-unit id="plugin.masterplan.title">
-				<source>Masterplan</source>
-				<target>Masterplan</target>
-			</trans-unit>
-			<trans-unit id="plugin.masterplan.description">
-				<source>Inserts a project overview. Website visitors can see current projects and its costs.</source>
-				<target>Einbindung einer Projektübersicht. Webseitenbesucher können sich damit über aktuelle Projekte und deren Kosten informieren.</target>
-			</trans-unit>
-
-			<trans-unit id="tx_masterplan_domain_model_project">
-				<source>Project</source>
-				<target>Projekt</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.title">
-				<source>Title</source>
-				<target>Projekttitel</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.path_segment">
-				<source>Segment for URL</source>
-				<target>Abschnitt für URL</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.number">
-				<source>Number</source>
-				<target>Projektnummer</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.contact_person">
-				<source>Contact Person</source>
-				<target>Ansprechpartner/in</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.organisationseinheiten">
-				<source>Organisationseinheiten</source>
-				<target>Fachamt (Organisationseinheit)</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.start_date">
-				<source>Start Date</source>
-				<target>Projektstart</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.end_date">
-				<source>End Date</source>
-				<target>Projektende</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.costs">
-				<source>Costs</source>
-				<target>Projektkosten</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.citizen_participation">
-				<source>Citizen Participation</source>
-				<target>Bürgerbeteiligung</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.citizen_participation.yes">
-				<source>Yes</source>
-				<target>Ja</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.citizen_participation.no">
-				<source>Not provided</source>
-				<target>Nicht vorgesehen</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.images">
-				<source>Images</source>
-				<target>Bilder</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.description">
-				<source>Description</source>
-				<target>Beschreibung</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.further_informations">
-				<source>Further Informations</source>
-				<target>Weitere Informationen</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.area_of_activity">
-				<source>Area of Activity</source>
-				<target>Handlungsfeld</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.tx_maps2_uid">
-				<source>Map</source>
-				<target>Kartenausschnitt</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.files">
-				<source>Files</source>
-				<target>Datei(en)</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_project.links">
-				<source>Links</source>
-				<target>Links</target>
-			</trans-unit>
-
-			<trans-unit id="tx_masterplan_domain_model_link">
-				<source>Link</source>
-				<target>Link</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_link.title">
-				<source>Title</source>
-				<target>Titel</target>
-			</trans-unit>
-			<trans-unit id="tx_masterplan_domain_model_link.link">
-				<source>Link</source>
-				<target>Link</target>
-			</trans-unit>
-		</body>
-	</file>
+  <file source-language="en" datatype="plaintext" original="messages" date="2014-06-16T10:21:45Z" product-name="masterplan" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="plugin.title" approved="yes">
+        <source>Masterplan</source>
+        <target state="final">Masterplan</target>
+      </trans-unit>
+      <trans-unit id="plugin.masterplan.title" approved="yes">
+        <source>Masterplan</source>
+        <target state="final">Masterplan</target>
+      </trans-unit>
+      <trans-unit id="plugin.masterplan.description" approved="yes">
+        <source>Inserts a project overview. Website visitors can see current projects and its costs.</source>
+        <target state="final">Fügt einen Projektüberblick ein. Besucher der Website können aktuelle Projekte und deren Kosten sehen.</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project" approved="yes">
+        <source>Project</source>
+        <target state="final">Projekt</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.path_segment" approved="yes">
+        <source>Segment for URL</source>
+        <target state="final">Segment für URL</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.number" approved="yes">
+        <source>Number</source>
+        <target state="final">Nummer</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.contact_person" approved="yes">
+        <source>Contact Person</source>
+        <target state="final">Ansprechpartner</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.organisationseinheiten" approved="yes">
+        <source>Organisationseinheiten</source>
+        <target state="final">Organisationseinheiten</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.start_date" approved="yes">
+        <source>Start Date</source>
+        <target state="final">Startdatum</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.end_date" approved="yes">
+        <source>End Date</source>
+        <target state="final">Enddatum</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.costs" approved="yes">
+        <source>Costs</source>
+        <target state="final">Kosten</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation" approved="yes">
+        <source>Citizen Participation</source>
+        <target state="final">Bürgerbeteiligung</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation.yes" approved="yes">
+        <source>Yes</source>
+        <target state="final">Ja</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation.no" approved="yes">
+        <source>Not provided</source>
+        <target state="final">Nicht angegeben</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.images" approved="yes">
+        <source>Images</source>
+        <target state="final">Bilder</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.description" approved="yes">
+        <source>Description</source>
+        <target state="final">Beschreibung</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.further_informations" approved="yes">
+        <source>Further Informations</source>
+        <target state="final">Weitere Informationen</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.area_of_activity" approved="yes">
+        <source>Area of Activity</source>
+        <target state="final">Handlungsfeld(er)</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.tx_maps2_uid" approved="yes">
+        <source>Tx Maps2 Uid</source>
+        <target state="final">Tx Maps2 Uid</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.files" approved="yes">
+        <source>Files</source>
+        <target state="final">Dateien</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.links" approved="yes">
+        <source>Links</source>
+        <target state="final">Links</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_link" approved="yes">
+        <source>Link</source>
+        <target state="final">Link</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_link.title" approved="yes">
+        <source>Title</source>
+        <target state="final">Titel</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_link.link" approved="yes">
+        <source>Link</source>
+        <target state="final">Link</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
