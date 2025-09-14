@@ -1,10 +1,15 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use JWeiland\Maps2\Tca\Maps2Registry;
 call_user_func(function () {
-    $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-        \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+    $extensionConfiguration = GeneralUtility::makeInstance(
+        ExtensionConfiguration::class
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
+    ExtensionManagementUtility::makeCategorizable(
         'masterplan',
         'tx_masterplan_domain_model_project',
         'area_of_activity',
@@ -19,8 +24,8 @@ call_user_func(function () {
     );
 
     // Add tx_maps2_uid column to project table
-    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('maps2')) {
-        \JWeiland\Maps2\Tca\Maps2Registry::getInstance()->add(
+    if (ExtensionManagementUtility::isLoaded('maps2')) {
+        Maps2Registry::getInstance()->add(
             'masterplan',
             'tx_masterplan_domain_model_project'
         );

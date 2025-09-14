@@ -1,8 +1,10 @@
 <?php
 declare(strict_types=1);
 
+use JWeiland\Masterplan\Domain\Model\Category;
+
 return [
-    \JWeiland\Masterplan\Domain\Model\Category::class => [
+    Category::class => [
         'tableName' => 'sys_category'
     ]
 ];

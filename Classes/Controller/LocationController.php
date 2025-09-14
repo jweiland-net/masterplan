@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Controller;
 
+use Psr\Http\Message\ResponseInterface;
 use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
 
 /**
@@ -34,10 +35,11 @@ class LocationController extends AbstractController
     /**
      * @param int $project
      */
-    public function showAction(int $project)
+    public function showAction(int $project): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'project' => $this->projectRepository->findByIdentifier($project)
         ]);
+        return $this->htmlResponse();
     }
 }

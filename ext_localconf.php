@@ -1,42 +1,34 @@
 <?php
-if (!defined('TYPO3_MODE')) {
+
+if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use JWeiland\Masterplan\Controller\LocationController;
+use JWeiland\Masterplan\Updater\MasterplanSlugUpdater;
+use JWeiland\Pfprojects\Controller\ProjectController;
+
 call_user_func(static function () {
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'JWeiland.masterplan',
+    ExtensionUtility::configurePlugin(
+        'Masterplan',
         'Masterplan',
         [
-            'Project' => 'list, show',
-            'Location' => 'show'
+            ProjectController::class => 'list, show',
+            LocationController::class => 'show'
         ],
         // non-cacheable actions
         [
-            'Project' => '',
+            ProjectController::class => '',
         ]
     );
 
-    // Register SVG Icon Identifier
-    $svgIcons = [
-        'ext-masterplan-masterplan-wizard-icon' => 'plugin_wizard.svg',
-    ];
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-        \TYPO3\CMS\Core\Imaging\IconRegistry::class
-    );
-    foreach ($svgIcons as $identifier => $fileName) {
-        $iconRegistry->registerIcon(
-            $identifier,
-            \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-            ['source' => 'EXT:masterplan/Resources/Public/Icons/' . $fileName]
-        );
-    }
-
     // Add masterplan plugin to new element wizard
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    ExtensionManagementUtility::addPageTSConfig(
         '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:masterplan/Configuration/TSconfig/ContentElementWizard.txt">'
     );
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['masterplanUpdateSlug']
-        = \JWeiland\Masterplan\Updater\MasterplanSlugUpdater::class;
+        = MasterplanSlugUpdater::class;
 });

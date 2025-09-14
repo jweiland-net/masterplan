@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -21,15 +22,15 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
 {
     /**
      * @var Category|null
-     * @Extbase\ORM\Lazy
      */
+    #[Lazy]
     protected $parent;
 
     /**
      * Target is not part of persistence.
      * It will be filled manually over projects->getAreaOfActivity
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     * @var ObjectStorage
      */
     protected $targets;
 

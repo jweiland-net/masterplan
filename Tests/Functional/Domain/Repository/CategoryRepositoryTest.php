@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Tests\Unit\Domain\Repository;
 
+use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
-use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 use Prophecy\Argument;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;

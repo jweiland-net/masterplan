@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Controller;
 
+use Psr\Http\Message\ResponseInterface;
 use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
@@ -57,10 +58,10 @@ class ProjectController extends AbstractController
      * @param int $areaOfActivity
      * @param string $sortBy
      * @param string $direction
-     * @Extbase\Validate(param="sortBy", validator="RegularExpression", options={"regularExpression": "/title|start_date|citizen_participation|area_of_activity/"})
-     * @Extbase\Validate(param="direction", validator="RegularExpression", options={"regularExpression": "/asc|desc/"})
      */
-    public function listAction(int $areaOfActivity = 0, string $sortBy = 'title', string $direction = 'asc'): void
+    #[Extbase\Validate(['param' => 'sortBy', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/title|start_date|citizen_participation|area_of_activity/']])]
+    #[Extbase\Validate(['param' => 'direction', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/asc|desc/']])]
+    public function listAction(int $areaOfActivity = 0, string $sortBy = 'title', string $direction = 'asc'): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'projects' => $this->projectRepository->findAllSorted($areaOfActivity, $sortBy, $direction),
@@ -69,15 +70,17 @@ class ProjectController extends AbstractController
             'sortBy' => $sortBy,
             'direction' => $direction,
         ]);
+        return $this->htmlResponse();
     }
 
     /**
      * @param int $project
      */
-    public function showAction(int $project): void
+    public function showAction(int $project): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'project' => $this->projectRepository->findByIdentifier($project),
         ]);
+        return $this->htmlResponse();
     }
 }

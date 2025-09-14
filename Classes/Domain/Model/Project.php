@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Domain\Model;
 
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Masterplan\Configuration\ExtConf;
 use JWeiland\ServiceBw2\Utility\ModelUtility;
@@ -72,7 +73,7 @@ class Project extends AbstractEntity
     protected $citizenParticipation = false;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
      */
     protected $images;
 
@@ -87,22 +88,22 @@ class Project extends AbstractEntity
     protected $furtherInformations = '';
 
     /**
-     * @var \JWeiland\Maps2\Domain\Model\PoiCollection
+     * @var PoiCollection
      */
     protected $txMaps2Uid;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
      */
     protected $files;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Masterplan\Domain\Model\Link>
+     * @var ObjectStorage<Link>
      */
     protected $links;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Masterplan\Domain\Model\Category>
+     * @var ObjectStorage<Category>
      */
     protected $areaOfActivity;
 

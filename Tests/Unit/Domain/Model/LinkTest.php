@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
 
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use JWeiland\Masterplan\Domain\Model\Link;
-use Nimut\TestingFramework\TestCase\UnitTestCase;
 
 /**
  * Test case.
@@ -20,7 +20,7 @@ use Nimut\TestingFramework\TestCase\UnitTestCase;
 class LinkTest extends UnitTestCase
 {
     /**
-     * @var \JWeiland\Masterplan\Domain\Model\Link
+     * @var Link
      */
     protected $subject;
 
