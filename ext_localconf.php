@@ -21,7 +21,8 @@ call_user_func(static function () {
         // non-cacheable actions
         [
             ProjectController::class => '',
-        ]
+        ],
+        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
     );
 
     // Add masterplan plugin to new element wizard
