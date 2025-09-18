@@ -49,7 +49,7 @@ For commercial support, please contact us at [support@jweiland.net](support@jwei
 
 [extension-monthly-downloads]: https://poser.pugx.org/jweiland/masterplan/d/monthly?style=for-the-badge
 
-[extension-ter-url]: https://extensions.typo3.org/extension/daycarecenters/
+[extension-ter-url]: https://extensions.typo3.org/extension/masterplan/
 
 [extension-packagist-url]: https://packagist.org/packages/jweiland/masterplan/
 
