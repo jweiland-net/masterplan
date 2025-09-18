@@ -19,21 +19,19 @@ use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
  */
 class LocationController extends AbstractController
 {
-    /**
-     * @var ProjectRepository
-     */
-    protected $projectRepository;
+    protected ProjectRepository $projectRepository;
 
     /**
      * @param ProjectRepository $projectRepository
      */
-    public function injectProjectRepository(ProjectRepository $projectRepository)
+    public function injectProjectRepository(ProjectRepository $projectRepository): void
     {
         $this->projectRepository = $projectRepository;
     }
 
     /**
      * @param int $project
+     * @return ResponseInterface
      */
     public function showAction(int $project): ResponseInterface
     {

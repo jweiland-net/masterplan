@@ -21,15 +21,9 @@ use TYPO3\CMS\Extbase\Annotation as Extbase;
  */
 class ProjectController extends AbstractController
 {
-    /**
-     * @var ProjectRepository
-     */
-    protected $projectRepository;
+    protected ProjectRepository $projectRepository;
 
-    /**
-     * @var CategoryRepository
-     */
-    protected $categoryRepository;
+    protected CategoryRepository $categoryRepository;
 
     public function __construct(
         ProjectRepository $projectRepository,
@@ -58,6 +52,8 @@ class ProjectController extends AbstractController
      * @param int $areaOfActivity
      * @param string $sortBy
      * @param string $direction
+     *
+     * @return ResponseInterface
      */
     #[Extbase\Validate(['param' => 'sortBy', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/title|start_date|citizen_participation|area_of_activity/']])]
     #[Extbase\Validate(['param' => 'direction', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/asc|desc/']])]
@@ -75,6 +71,7 @@ class ProjectController extends AbstractController
 
     /**
      * @param int $project
+     * @return ResponseInterface
      */
     public function showAction(int $project): ResponseInterface
     {

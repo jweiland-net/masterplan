@@ -12,19 +12,19 @@ declare(strict_types=1);
 namespace JWeiland\Masterplan\Domain\Model;
 
 use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
-use TYPO3\CMS\Extbase\Annotation as Extbase;
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Domain model for categories.
  */
-class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
+class Category extends AbstractEntity
 {
     /**
      * @var Category|null
      */
     #[Lazy]
-    protected $parent;
+    protected ?Category $parent;
 
     /**
      * Target is not part of persistence.
@@ -32,14 +32,14 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
      *
      * @var ObjectStorage
      */
-    protected $targets;
+    protected ObjectStorage $targets;
 
     /**
      * SF: The "target" property is not part of persistence and will therefore not be filled by DataMapper
      * with an ObjectStorage. Further DataMapper prevents calling the constructor of domain models, that's why we
      * have to initialize the target property manually here.
      */
-    public function initializeObject()
+    public function initializeObject(): void
     {
         $this->targets = new ObjectStorage();
     }

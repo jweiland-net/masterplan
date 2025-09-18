@@ -25,11 +25,6 @@ call_user_func(static function () {
         ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
     );
 
-    // Add masterplan plugin to new element wizard
-    ExtensionManagementUtility::addPageTSConfig(
-        '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:masterplan/Configuration/TSconfig/ContentElementWizard.txt">'
-    );
-
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['masterplanUpdateSlug']
         = MasterplanSlugUpdater::class;
 });

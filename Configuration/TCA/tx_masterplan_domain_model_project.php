@@ -231,11 +231,11 @@ return [
         'images' => [
             'exclude' => true,
             'label' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_project.images',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'images',
-                ['maxitems' => 5],
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-            ),
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 5,
+                'allowed' => 'common-image-types'
+            ],
         ],
         'description' => [
             'exclude' => true,
@@ -262,12 +262,11 @@ return [
         'files' => [
             'exclude' => true,
             'label' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_project.files',
-            'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
-                'files',
-                ['maxitems' => 5],
-                '',
-                'php,exe'
-            ),
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 6,
+                'allowed' => 'php,exe'
+            ],
         ],
         'links' => [
             'exclude' => true,
@@ -278,6 +277,6 @@ return [
                 'foreign_field' => 'project',
                 'foreign_label' => 'title',
             ]
-        ]
-    ]
+        ],
+    ],
 ];

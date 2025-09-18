@@ -24,68 +24,36 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  */
 class Project extends AbstractEntity
 {
-    /**
-     * @var string
-     */
-    protected $title = '';
+    protected string $title = '';
 
-    /**
-     * @var string
-     */
-    protected $pathSegment = '';
+    protected string $pathSegment = '';
 
-    /**
-     * @var string
-     */
-    protected $number = '';
+    protected string $number = '';
 
-    /**
-     * @var string
-     */
-    protected $contactPerson = '';
+    protected string $contactPerson = '';
 
     /**
      * Initially a string, but will be converted to an array with records when
      * calling getter the first time!
-     *
-     * @var string
      */
-    protected $organisationseinheiten = '';
+    protected string $organisationseinheiten = '';
 
-    /**
-     * @var string
-     */
-    protected $startDate = '';
+    protected string $startDate = '';
 
-    /**
-     * @var string
-     */
-    protected $endDate = '';
+    protected string $endDate = '';
 
-    /**
-     * @var string
-     */
-    protected $costs = '';
+    protected string $costs = '';
 
-    /**
-     * @var bool
-     */
-    protected $citizenParticipation = false;
+    protected bool $citizenParticipation = false;
 
     /**
      * @var ObjectStorage<FileReference>
      */
-    protected $images;
+    protected ObjectStorage $images;
 
-    /**
-     * @var string
-     */
-    protected $description = '';
+    protected string $description = '';
 
-    /**
-     * @var string
-     */
-    protected $furtherInformations = '';
+    protected string $furtherInformations = '';
 
     /**
      * @var PoiCollection
@@ -95,17 +63,17 @@ class Project extends AbstractEntity
     /**
      * @var ObjectStorage<FileReference>
      */
-    protected $files;
+    protected ObjectStorage $files;
 
     /**
      * @var ObjectStorage<Link>
      */
-    protected $links;
+    protected ObjectStorage $links;
 
     /**
      * @var ObjectStorage<Category>
      */
-    protected $areaOfActivity;
+    protected ObjectStorage $areaOfActivity;
 
     public function __construct()
     {
