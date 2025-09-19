@@ -12,7 +12,6 @@ if (!defined('TYPO3')) {
 }
 
 use JWeiland\Masterplan\Controller\LocationController;
-use JWeiland\Masterplan\Updater\MasterplanSlugUpdater;
 use JWeiland\Pfprojects\Controller\ProjectController;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
@@ -30,7 +29,4 @@ call_user_func(static function () {
         ],
         ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
     );
-
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['masterplanUpdateSlug']
-        = MasterplanSlugUpdater::class;
 });
