@@ -20,11 +20,13 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  */
 class Category extends AbstractEntity
 {
+    protected string $title;
+
     /**
      * @var Category|null
      */
     #[Lazy]
-    protected ?Category $parent;
+    protected ?Category $parent = null;
 
     /**
      * Target is not part of persistence.
@@ -62,5 +64,25 @@ class Category extends AbstractEntity
     public function removeTarget(Category $target): void
     {
         $this->targets->detach($target);
+    }
+
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
+
+    public function getParent(): ?Category
+    {
+        return $this->parent;
+    }
+
+    public function setParent(?Category $parent): void
+    {
+        $this->parent = $parent;
     }
 }
