@@ -1,7 +1,14 @@
 <?php
 
+/*
+ * This file is part of the package jweiland/masterplan.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
 use JWeiland\ServiceBw2\Utility\TCAUtility;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_project',
@@ -19,7 +26,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'title,number,contact_person,citizen_participation,description,further_informations',
-        'iconfile' => 'EXT:masterplan/Resources/Public/Icons/tx_masterplan_domain_model_project.svg'
+        'iconfile' => 'EXT:masterplan/Resources/Public/Icons/tx_masterplan_domain_model_project.svg',
     ],
     'types' => [
         '1' => [
@@ -27,7 +34,7 @@ return [
             contact_person, organisationseinheiten, --palette--;;startEndDate, costs, citizen_participation,
             images, description, further_informations, files, links,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
-            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access',
         ],
     ],
     'palettes' => [
@@ -36,13 +43,13 @@ return [
         'startEndDate' => ['showitem' => 'start_date, end_date'],
         'access' => [
             'showitem' => 'starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
-        ]
+        ],
     ],
     'columns' => [
         'sys_language_uid' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => ['type' => 'language']
+            'config' => ['type' => 'language'],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -53,18 +60,18 @@ return [
                 'items' => [
                     [
                         'label' => '',
-                        'value' => 0
-                    ]
+                        'value' => 0,
+                    ],
                 ],
                 'foreign_table' => 'tx_masterplan_domain_model_project',
                 'foreign_table_where' => 'AND tx_masterplan_domain_model_project.pid=###CURRENT_PID### AND tx_masterplan_domain_model_project.sys_language_uid IN (-1,0)',
-                'default' => 0
-            ]
+                'default' => 0,
+            ],
         ],
         'l10n_source' => [
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'hidden' => [
             'exclude' => true,
@@ -76,34 +83,34 @@ return [
                     [
                         'label' => '',
                         1 => '',
-                        'invertStateDisplay' => true
-                    ]
+                        'invertStateDisplay' => true,
+                    ],
                 ],
-            ]
+            ],
         ],
         'cruser_id' => [
             'label' => 'cruser_id',
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'pid' => [
             'label' => 'pid',
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'crdate' => [
             'label' => 'crdate',
             'config' => [
                 'type' => 'passthrough',
-            ]
+            ],
         ],
         'tstamp' => [
             'label' => 'tstamp',
             'config' => [
                 'type' => 'passthrough',
-            ]
+            ],
         ],
         'starttime' => [
             'exclude' => true,
@@ -112,10 +119,10 @@ return [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'eval' => 'datetime,int',
-                'default' => 0
+                'default' => 0,
             ],
             'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'endtime' => [
             'exclude' => true,
@@ -126,11 +133,11 @@ return [
                 'eval' => 'datetime,int',
                 'default' => 0,
                 'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
-                ]
+                    'upper' => mktime(0, 0, 0, 1, 1, 2038),
+                ],
             ],
             'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
+            'l10n_display' => 'defaultAsReadonly',
         ],
         'title' => [
             'exclude' => true,
@@ -139,7 +146,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
-                'required' => true
+                'required' => true,
             ],
         ],
         'path_segment' => [
@@ -154,13 +161,13 @@ return [
                     'prefixParentPageSlug' => false,
                     'fieldSeparator' => '-',
                     'replacements' => [
-                        '/' => '-'
+                        '/' => '-',
                     ],
                 ],
                 'fallbackCharacter' => '-',
                 'eval' => 'unique',
-                'default' => ''
-            ]
+                'default' => '',
+            ],
         ],
         'number' => [
             'exclude' => true,
@@ -168,7 +175,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 15,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'contact_person' => [
@@ -177,13 +184,13 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 15,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'organisationseinheiten' => [
             'exclude' => true,
             'label' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_project.organisationseinheiten',
-            'config' => TCAUtility::getOrganisationseinheitenFieldTCAConfig(['maxitems' => 1])
+            'config' => TCAUtility::getOrganisationseinheitenFieldTCAConfig(['maxitems' => 1]),
         ],
         'start_date' => [
             'exclude' => true,
@@ -207,7 +214,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 15,
-                'eval' => 'trim'
+                'eval' => 'trim',
             ],
         ],
         'citizen_participation' => [
@@ -218,15 +225,15 @@ return [
                 'items' => [
                     [
                         'label' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_project.citizen_participation.yes',
-                        'value' => 1
+                        'value' => 1,
                     ],
                     [
                         'label' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_project.citizen_participation.no',
-                        'value' => 0
+                        'value' => 0,
                     ],
                 ],
-                'default' => 0
-            ]
+                'default' => 0,
+            ],
         ],
         'images' => [
             'exclude' => true,
@@ -234,7 +241,7 @@ return [
             'config' => [
                 'type' => 'file',
                 'maxitems' => 5,
-                'allowed' => 'common-image-types'
+                'allowed' => 'common-image-types',
             ],
         ],
         'description' => [
@@ -265,7 +272,7 @@ return [
             'config' => [
                 'type' => 'file',
                 'maxitems' => 6,
-                'allowed' => 'php,exe'
+                'allowed' => 'php,exe',
             ],
         ],
         'links' => [
@@ -276,7 +283,7 @@ return [
                 'foreign_table' => 'tx_masterplan_domain_model_link',
                 'foreign_field' => 'project',
                 'foreign_label' => 'title',
-            ]
+            ],
         ],
     ],
 ];

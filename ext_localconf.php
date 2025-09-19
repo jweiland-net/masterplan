@@ -1,14 +1,20 @@
 <?php
 
+/*
+ * This file is part of the package jweiland/masterplan.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
 if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 use JWeiland\Masterplan\Controller\LocationController;
 use JWeiland\Masterplan\Updater\MasterplanSlugUpdater;
 use JWeiland\Pfprojects\Controller\ProjectController;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 call_user_func(static function () {
     ExtensionUtility::configurePlugin(
@@ -16,7 +22,7 @@ call_user_func(static function () {
         'Masterplan',
         [
             ProjectController::class => 'list, show',
-            LocationController::class => 'show'
+            LocationController::class => 'show',
         ],
         // non-cacheable actions
         [

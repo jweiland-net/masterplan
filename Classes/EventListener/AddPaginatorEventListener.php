@@ -26,7 +26,7 @@ class AddPaginatorEventListener extends AbstractControllerEventListener
     protected $allowedControllerActions = [
         'Project' => [
             'list',
-        ]
+        ],
     ];
 
     public function __invoke(PostProcessFluidVariablesEvent $event): void
@@ -35,7 +35,7 @@ class AddPaginatorEventListener extends AbstractControllerEventListener
             $paginator = new QueryResultPaginator(
                 $event->getFluidVariables()['projects'],
                 $this->getCurrentPage($event),
-                $this->getItemsPerPage($event)
+                $this->getItemsPerPage($event),
             );
 
             $event->addFluidVariable('actionName', $event->getActionName());
@@ -53,7 +53,7 @@ class AddPaginatorEventListener extends AbstractControllerEventListener
             // See: AbstractPaginator::setCurrentPageNumber()
             $currentPage = MathUtility::forceIntegerInRange(
                 (int)$event->getRequest()->getArgument('currentPage'),
-                1
+                1,
             );
         }
 

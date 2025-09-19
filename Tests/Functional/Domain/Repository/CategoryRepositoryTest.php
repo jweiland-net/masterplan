@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Tests\Unit\Domain\Repository;
 
-use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use Prophecy\Argument;
 use Prophecy\PhpUnit\ProphecyTrait;
@@ -21,6 +20,7 @@ use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\CMS\Extbase\Persistence\Generic\Query;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 /**
  * Test case.
@@ -43,7 +43,7 @@ class CategoryRepositoryTest extends FunctionalTestCase
      * @var array
      */
     protected $testExtensionsToLoad = [
-        'typo3conf/ext/masterplan'
+        'typo3conf/ext/masterplan',
     ];
 
     protected function setUp(): void
@@ -69,7 +69,7 @@ class CategoryRepositoryTest extends FunctionalTestCase
 
         unset(
             $this->subject,
-            $this->persistenceManagerProphecy
+            $this->persistenceManagerProphecy,
         );
     }
 
@@ -79,11 +79,11 @@ class CategoryRepositoryTest extends FunctionalTestCase
     public function categoriesAreSortedByTitleAsDefault(): void
     {
         $expectedResult = [
-            'title' => QueryInterface::ORDER_ASCENDING
+            'title' => QueryInterface::ORDER_ASCENDING,
         ];
         self::assertSame(
             $expectedResult,
-            $this->subject->createQuery()->getOrderings()
+            $this->subject->createQuery()->getOrderings(),
         );
     }
 }

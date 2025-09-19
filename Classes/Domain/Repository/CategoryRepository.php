@@ -22,7 +22,7 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 class CategoryRepository extends Repository
 {
     protected $defaultOrderings = [
-        'title' => QueryInterface::ORDER_ASCENDING
+        'title' => QueryInterface::ORDER_ASCENDING,
     ];
 
     /**

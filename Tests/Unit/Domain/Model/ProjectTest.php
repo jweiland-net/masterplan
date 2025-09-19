@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
 
-use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Masterplan\Domain\Model\Project;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**
  * Test case.
@@ -34,7 +34,7 @@ class ProjectTest extends UnitTestCase
     protected function tearDown(): void
     {
         unset(
-            $this->subject
+            $this->subject,
         );
     }
 
@@ -45,7 +45,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertSame(
             '',
-            $this->subject->getTitle()
+            $this->subject->getTitle(),
         );
     }
 
@@ -58,7 +58,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             'foo bar',
-            $this->subject->getTitle()
+            $this->subject->getTitle(),
         );
     }
 
@@ -69,7 +69,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertSame(
             '',
-            $this->subject->getNumber()
+            $this->subject->getNumber(),
         );
     }
 
@@ -82,7 +82,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             'foo bar',
-            $this->subject->getNumber()
+            $this->subject->getNumber(),
         );
     }
 
@@ -93,7 +93,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertSame(
             '',
-            $this->subject->getContactPerson()
+            $this->subject->getContactPerson(),
         );
     }
 
@@ -106,7 +106,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             'foo bar',
-            $this->subject->getContactPerson()
+            $this->subject->getContactPerson(),
         );
     }
 
@@ -117,7 +117,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertSame(
             '',
-            $this->subject->getStartDate()
+            $this->subject->getStartDate(),
         );
     }
 
@@ -130,7 +130,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             'foo bar',
-            $this->subject->getStartDate()
+            $this->subject->getStartDate(),
         );
     }
 
@@ -141,7 +141,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertSame(
             '',
-            $this->subject->getEndDate()
+            $this->subject->getEndDate(),
         );
     }
 
@@ -154,7 +154,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             'foo bar',
-            $this->subject->getEndDate()
+            $this->subject->getEndDate(),
         );
     }
 
@@ -165,7 +165,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertSame(
             '',
-            $this->subject->getCosts()
+            $this->subject->getCosts(),
         );
     }
 
@@ -178,7 +178,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             'foo bar',
-            $this->subject->getCosts()
+            $this->subject->getCosts(),
         );
     }
 
@@ -188,7 +188,7 @@ class ProjectTest extends UnitTestCase
     public function getCitizenParticipationInitiallyReturnsFalse(): void
     {
         self::assertFalse(
-            $this->subject->isCitizenParticipation()
+            $this->subject->isCitizenParticipation(),
         );
     }
 
@@ -199,7 +199,7 @@ class ProjectTest extends UnitTestCase
     {
         $this->subject->setCitizenParticipation(true);
         self::assertTrue(
-            $this->subject->isCitizenParticipation()
+            $this->subject->isCitizenParticipation(),
         );
     }
 
@@ -210,7 +210,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertEquals(
             new ObjectStorage(),
-            $this->subject->getImages()
+            $this->subject->getImages(),
         );
     }
 
@@ -224,7 +224,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             $instance,
-            $this->subject->getImages()
+            $this->subject->getImages(),
         );
     }
 
@@ -235,7 +235,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertSame(
             '',
-            $this->subject->getDescription()
+            $this->subject->getDescription(),
         );
     }
 
@@ -248,7 +248,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             'foo bar',
-            $this->subject->getDescription()
+            $this->subject->getDescription(),
         );
     }
 
@@ -259,7 +259,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertSame(
             '',
-            $this->subject->getFurtherInformations()
+            $this->subject->getFurtherInformations(),
         );
     }
 
@@ -272,7 +272,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             'foo bar',
-            $this->subject->getFurtherInformations()
+            $this->subject->getFurtherInformations(),
         );
     }
 
@@ -294,7 +294,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             $instance,
-            $this->subject->getTxMaps2Uid()
+            $this->subject->getTxMaps2Uid(),
         );
     }
 
@@ -305,7 +305,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertEquals(
             new ObjectStorage(),
-            $this->subject->getFiles()
+            $this->subject->getFiles(),
         );
     }
 
@@ -319,7 +319,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             $instance,
-            $this->subject->getFiles()
+            $this->subject->getFiles(),
         );
     }
 
@@ -330,7 +330,7 @@ class ProjectTest extends UnitTestCase
     {
         self::assertEquals(
             new ObjectStorage(),
-            $this->subject->getLinks()
+            $this->subject->getLinks(),
         );
     }
 
@@ -344,7 +344,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             $instance,
-            $this->subject->getLinks()
+            $this->subject->getLinks(),
         );
     }
 }

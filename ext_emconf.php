@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * This file is part of the package jweiland/masterplan.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
 $EM_CONF['masterplan'] = [
     'title' => 'Masterplan',
     'description' => 'Masterplan',
@@ -11,7 +19,7 @@ $EM_CONF['masterplan'] = [
         'depends' => [
             'typo3' => '13.4.0-13.4.99',
             'maps2' => '12.0.0-0.0.0',
-            'service_bw2' => '8.0.0-0.0.0'
+            'service_bw2' => '8.0.0-0.0.0',
         ],
         'conflicts' => [],
         'suggests' => [],

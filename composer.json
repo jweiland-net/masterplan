@@ -49,12 +49,14 @@
 		}
 	},
 	"config": {
-		"vendor-dir": ".Build/vendor",
 		"allow-plugins": {
 			"typo3/cms-composer-installers": true,
 			"typo3/class-alias-loader": true,
 			"ergebnis/composer-normalize": true
-		}
+		},
+		"bin-dir": ".Build/bin",
+		"sort-packages": true,
+		"vendor-dir": ".Build/vendor"
 	},
 	"extra": {
 		"typo3/cms": {

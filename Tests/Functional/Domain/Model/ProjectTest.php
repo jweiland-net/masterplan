@@ -11,12 +11,12 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Tests\Functional\Domain\Model;
 
-use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 use JWeiland\Masterplan\Configuration\ExtConf;
 use JWeiland\Masterplan\Domain\Model\Category;
 use JWeiland\Masterplan\Domain\Model\Project;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 /**
  * Test case.
@@ -32,7 +32,7 @@ class ProjectTest extends FunctionalTestCase
      * @var array
      */
     protected $testExtensionsToLoad = [
-        'typo3conf/ext/masterplan'
+        'typo3conf/ext/masterplan',
     ];
 
     protected function setUp(): void
@@ -45,7 +45,7 @@ class ProjectTest extends FunctionalTestCase
     protected function tearDown(): void
     {
         unset(
-            $this->subject
+            $this->subject,
         );
 
         parent::tearDown();
@@ -58,7 +58,7 @@ class ProjectTest extends FunctionalTestCase
     {
         self::assertSame(
             [],
-            $this->subject->getAreaOfActivity()
+            $this->subject->getAreaOfActivity(),
         );
     }
 
@@ -103,9 +103,9 @@ class ProjectTest extends FunctionalTestCase
         self::assertEquals(
             [
                 2 => $areaOfActivity1,
-                3 => $areaOfActivity2
+                3 => $areaOfActivity2,
             ],
-            $this->subject->getAreaOfActivity()
+            $this->subject->getAreaOfActivity(),
         );
     }
 }

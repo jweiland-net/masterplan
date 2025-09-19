@@ -11,11 +11,11 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Domain\Model;
 
-use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Masterplan\Configuration\ExtConf;
 use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -326,7 +326,7 @@ class Project extends AbstractEntity
         return [
             'uid' => $this->getUid(),
             'pid' => $this->getPid(),
-            'title' => $this->getTitle()
+            'title' => $this->getTitle(),
         ];
     }
 }

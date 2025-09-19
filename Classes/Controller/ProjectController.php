@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Controller;
 
-use Psr\Http\Message\ResponseInterface;
 use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 
 /**
@@ -27,7 +27,7 @@ class ProjectController extends AbstractController
 
     public function __construct(
         ProjectRepository $projectRepository,
-        CategoryRepository $categoryRepository
+        CategoryRepository $categoryRepository,
     ) {
         $this->projectRepository = $projectRepository;
         $this->categoryRepository = $categoryRepository;
