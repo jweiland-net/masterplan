@@ -11,12 +11,8 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Tests\Functional\Domain\Model;
 
-use JWeiland\Masterplan\Configuration\ExtConf;
-use JWeiland\Masterplan\Domain\Model\Category;
 use JWeiland\Masterplan\Domain\Model\Project;
 use PHPUnit\Framework\Attributes\Test;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 /**
