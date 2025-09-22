@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Controller;
 
+use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
 use Psr\Http\Message\ResponseInterface;
 
@@ -19,15 +20,10 @@ use Psr\Http\Message\ResponseInterface;
  */
 class LocationController extends AbstractController
 {
-    protected ProjectRepository $projectRepository;
-
-    /**
-     * @param ProjectRepository $projectRepository
-     */
-    public function injectProjectRepository(ProjectRepository $projectRepository): void
-    {
-        $this->projectRepository = $projectRepository;
-    }
+    public function __construct(
+        protected readonly ProjectRepository $projectRepository,
+        protected readonly CategoryRepository $categoryRepository,
+    ) {}
 
     /**
      * @param int $project

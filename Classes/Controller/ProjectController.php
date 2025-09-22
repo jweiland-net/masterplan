@@ -21,17 +21,10 @@ use TYPO3\CMS\Extbase\Annotation as Extbase;
  */
 class ProjectController extends AbstractController
 {
-    protected ProjectRepository $projectRepository;
-
-    protected CategoryRepository $categoryRepository;
-
     public function __construct(
-        ProjectRepository $projectRepository,
-        CategoryRepository $categoryRepository,
-    ) {
-        $this->projectRepository = $projectRepository;
-        $this->categoryRepository = $categoryRepository;
-    }
+        protected readonly ProjectRepository $projectRepository,
+        protected readonly CategoryRepository $categoryRepository,
+    ) {}
 
     public function initializeAction(): void
     {
