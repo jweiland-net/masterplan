@@ -5,8 +5,7 @@ mod.wizards.newContentElement.wizardItems.plugins {
       title = LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:plugin.masterplan.title
       description = LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:plugin.masterplan.description
       tt_content_defValues {
-        CType = list
-        list_type = masterplan_masterplan
+        CType = masterplan_masterplan
       }
     }
   }
