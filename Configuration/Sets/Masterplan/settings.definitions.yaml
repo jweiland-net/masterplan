@@ -41,13 +41,13 @@ settings:
   masterplan.pidOfListPage:
     label: 'Pid of List Page'
     category: 'masterplan.pages'
-    description: 'Page UID with events2 plugin to show list of events'
+    description: 'Page UID of List Page'
     type: int
     default: 0
   masterplan.pidOfDetailPage:
     label: 'Pid of Detail Page'
     category: 'masterplan.pages'
-    description: 'Page UID with events2 plugin to show list of events'
+    description: 'Page UID of Detail Page'
     type: int
     default: 0
   masterplan.pidOfLocationPage:
