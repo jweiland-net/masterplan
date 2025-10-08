@@ -6,7 +6,7 @@
 [![Monthly Downloads][extension-monthly-downloads]][extension-packagist-url]
 [![TYPO3 13.4][TYPO3-shield]][TYPO3-13-url]
 
-![Build Status](https://github.com/jweiland-net/jw_forms/workflows/CI/badge.svg)
+![Build Status](https://github.com/jweiland-net/masterplan/actions/workflows/ci.yml/badge.svg)
 
 With masterplan you can create and show projects you're currently working on and show detail information
 onto your website. You can define start- and end date, add some pictures or additional files for download.
