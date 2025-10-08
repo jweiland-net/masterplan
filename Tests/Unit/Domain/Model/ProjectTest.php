@@ -13,18 +13,16 @@ namespace JWeiland\Masterplan\Tests\Unit\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Masterplan\Domain\Model\Project;
-use Nimut\TestingFramework\TestCase\UnitTestCase;
+use PHPUnit\Framework\Attributes\Test;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**
  * Test case.
  */
 class ProjectTest extends UnitTestCase
 {
-    /**
-     * @var Project
-     */
-    protected $subject;
+    protected Project $subject;
 
     protected function setUp(): void
     {
@@ -34,189 +32,157 @@ class ProjectTest extends UnitTestCase
     protected function tearDown(): void
     {
         unset(
-            $this->subject
+            $this->subject,
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTitleInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getTitle()
+            $this->subject->getTitle(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setTitleSetsTitle(): void
     {
         $this->subject->setTitle('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getTitle()
+            $this->subject->getTitle(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNumberInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getNumber()
+            $this->subject->getNumber(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setNumberSetsNumber(): void
     {
         $this->subject->setNumber('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getNumber()
+            $this->subject->getNumber(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getContactPersonInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getContactPerson()
+            $this->subject->getContactPerson(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setContactPersonSetsContactPerson(): void
     {
         $this->subject->setContactPerson('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getContactPerson()
+            $this->subject->getContactPerson(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getStartDateInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getStartDate()
+            $this->subject->getStartDate(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setStartDateSetsStartDate(): void
     {
         $this->subject->setStartDate('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getStartDate()
+            $this->subject->getStartDate(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getEndDateInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getEndDate()
+            $this->subject->getEndDate(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setEndDateSetsEndDate(): void
     {
         $this->subject->setEndDate('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getEndDate()
+            $this->subject->getEndDate(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getCostsInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getCosts()
+            $this->subject->getCosts(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setCostsSetsCosts(): void
     {
         $this->subject->setCosts('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getCosts()
+            $this->subject->getCosts(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getCitizenParticipationInitiallyReturnsFalse(): void
     {
         self::assertFalse(
-            $this->subject->isCitizenParticipation()
+            $this->subject->isCitizenParticipation(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setCitizenParticipationSetsCitizenParticipation(): void
     {
         $this->subject->setCitizenParticipation(true);
         self::assertTrue(
-            $this->subject->isCitizenParticipation()
+            $this->subject->isCitizenParticipation(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getImagesInitiallyReturnsObjectStorage(): void
     {
         self::assertEquals(
             new ObjectStorage(),
-            $this->subject->getImages()
+            $this->subject->getImages(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setImagesSetsImages(): void
     {
         $instance = new ObjectStorage();
@@ -224,69 +190,57 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             $instance,
-            $this->subject->getImages()
+            $this->subject->getImages(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getDescriptionInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getDescription()
+            $this->subject->getDescription(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setDescriptionSetsDescription(): void
     {
         $this->subject->setDescription('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getDescription()
+            $this->subject->getDescription(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFurtherInformationsInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
-            $this->subject->getFurtherInformations()
+            $this->subject->getFurtherInformations(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setFurtherInformationsSetsFurtherInformations(): void
     {
         $this->subject->setFurtherInformations('foo bar');
 
         self::assertSame(
             'foo bar',
-            $this->subject->getFurtherInformations()
+            $this->subject->getFurtherInformations(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTxMaps2UidInitiallyReturnsNull(): void
     {
         self::assertNull($this->subject->getTxMaps2Uid());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setTxMaps2UidSetsTxMaps2Uid(): void
     {
         $instance = new PoiCollection();
@@ -294,24 +248,20 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             $instance,
-            $this->subject->getTxMaps2Uid()
+            $this->subject->getTxMaps2Uid(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFilesInitiallyReturnsObjectStorage(): void
     {
         self::assertEquals(
             new ObjectStorage(),
-            $this->subject->getFiles()
+            $this->subject->getFiles(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setFilesSetsFiles(): void
     {
         $instance = new ObjectStorage();
@@ -319,24 +269,20 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             $instance,
-            $this->subject->getFiles()
+            $this->subject->getFiles(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLinksInitiallyReturnsObjectStorage(): void
     {
         self::assertEquals(
             new ObjectStorage(),
-            $this->subject->getLinks()
+            $this->subject->getLinks(),
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function setLinksSetsLinks(): void
     {
         $instance = new ObjectStorage();
@@ -344,7 +290,7 @@ class ProjectTest extends UnitTestCase
 
         self::assertSame(
             $instance,
-            $this->subject->getLinks()
+            $this->subject->getLinks(),
         );
     }
 }

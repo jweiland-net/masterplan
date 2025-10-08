@@ -9,40 +9,32 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace JWeiland\Masterplan\Updater;
+namespace JWeiland\Masterplan\Update;
 
+use Doctrine\DBAL\Exception;
 use JWeiland\Masterplan\Helper\PathSegmentHelper;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
  * Updater to fill empty slug columns of project records
  */
+#[UpgradeWizard('masterplan_masterplanSlugUpdater')]
 class MasterplanSlugUpdater implements UpgradeWizardInterface
 {
-    /**
-     * @var string
-     */
-    protected $tableName = 'tx_masterplan_domain_model_project';
+    protected string $tableName = 'tx_masterplan_domain_model_project';
 
-    /**
-     * @var string
-     */
-    protected $fieldName = 'path_segment';
+    protected string $fieldName = 'path_segment';
 
-    /**
-     * @var PathSegmentHelper
-     */
-    protected $pathSegmentHelper;
-
-    public function __construct(PathSegmentHelper $pathSegmentHelper = null)
-    {
-        $this->pathSegmentHelper = $pathSegmentHelper ?? GeneralUtility::makeInstance(PathSegmentHelper::class);
-    }
+    public function __construct(
+        private readonly PathSegmentHelper $pathSegmentHelper,
+        private readonly ConnectionPool $connectionPool,
+    ) {}
 
     /**
      * Return the identifier for this wizard
@@ -65,28 +57,24 @@ class MasterplanSlugUpdater implements UpgradeWizardInterface
         return 'Update empty slug column "path_segment" of project records with an URI compatible version of the project title';
     }
 
+    /**
+     * @throws Exception
+     */
     public function updateNecessary(): bool
     {
-        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable($this->tableName);
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable($this->tableName);
         $queryBuilder->getRestrictions()->removeAll();
         $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
 
         $amountOfRecordsWithEmptySlug = $queryBuilder
             ->count('*')
-            ->from($this->tableName)
-            ->where(
-                $queryBuilder->expr()->orX(
-                    $queryBuilder->expr()->eq(
-                        $this->fieldName,
-                        $queryBuilder->createNamedParameter('', Connection::PARAM_STR)
-                    ),
-                    $queryBuilder->expr()->isNull(
-                        $this->fieldName
-                    )
-                )
-            )
-            ->execute()
-            ->fetchColumn(0);
+            ->from($this->tableName)->where($queryBuilder->expr()->or($queryBuilder->expr()->eq(
+                $this->fieldName,
+                $queryBuilder->createNamedParameter('', Connection::PARAM_STR),
+            ), $queryBuilder->expr()->isNull(
+                $this->fieldName,
+            )))->executeQuery()
+            ->fetchOne();
 
         return (bool)$amountOfRecordsWithEmptySlug;
     }
@@ -98,40 +86,33 @@ class MasterplanSlugUpdater implements UpgradeWizardInterface
      */
     public function executeUpdate(): bool
     {
-        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable($this->tableName);
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable($this->tableName);
         $queryBuilder->getRestrictions()->removeAll();
         $queryBuilder->getRestrictions()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
 
         $statement = $queryBuilder
             ->select('uid', 'pid', 'title')
-            ->from($this->tableName)
-            ->where(
-                $queryBuilder->expr()->orX(
-                    $queryBuilder->expr()->eq(
-                        $this->fieldName,
-                        $queryBuilder->createNamedParameter('', Connection::PARAM_STR)
-                    ),
-                    $queryBuilder->expr()->isNull(
-                        $this->fieldName
-                    )
-                )
-            )
-            ->execute();
+            ->from($this->tableName)->where($queryBuilder->expr()->or($queryBuilder->expr()->eq(
+                $this->fieldName,
+                $queryBuilder->createNamedParameter('', Connection::PARAM_STR),
+            ), $queryBuilder->expr()->isNull(
+                $this->fieldName,
+            )))->executeQuery();
 
-        $connection = $this->getConnectionPool()->getConnectionForTable($this->tableName);
-        while ($recordToUpdate = $statement->fetch()) {
+        $connection = $this->connectionPool->getConnectionForTable($this->tableName);
+        while ($recordToUpdate = $statement->fetchOne()) {
             if ((string)$recordToUpdate['title'] !== '') {
                 $connection->update(
                     $this->tableName,
                     [
                         $this->fieldName => $this->pathSegmentHelper->generatePathSegment(
                             $recordToUpdate,
-                            (int)$recordToUpdate['pid']
-                        )
+                            (int)$recordToUpdate['pid'],
+                        ),
                     ],
                     [
-                        'uid' => (int)$recordToUpdate['uid']
-                    ]
+                        'uid' => (int)$recordToUpdate['uid'],
+                    ],
                 );
             }
         }
@@ -145,12 +126,7 @@ class MasterplanSlugUpdater implements UpgradeWizardInterface
     public function getPrerequisites(): array
     {
         return [
-            DatabaseUpdatedPrerequisite::class
+            DatabaseUpdatedPrerequisite::class,
         ];
-    }
-
-    protected function getConnectionPool(): ConnectionPool
-    {
-        return GeneralUtility::makeInstance(ConnectionPool::class);
     }
 }

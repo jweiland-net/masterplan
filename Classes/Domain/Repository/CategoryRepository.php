@@ -14,14 +14,15 @@ namespace JWeiland\Masterplan\Domain\Repository;
 use JWeiland\Masterplan\Configuration\ExtConf;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Our own Repository for Categories (sys_category) because we need another sorting
  */
-class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository
+class CategoryRepository extends Repository
 {
     protected $defaultOrderings = [
-        'title' => QueryInterface::ORDER_ASCENDING
+        'title' => QueryInterface::ORDER_ASCENDING,
     ];
 
     /**

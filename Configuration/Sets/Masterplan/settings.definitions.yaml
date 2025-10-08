@@ -1,0 +1,130 @@
+categories:
+  masterplan:
+    label: 'masterplan'
+  masterplan.templates:
+    label: 'Templates'
+    parent: masterplan
+  masterplan.pages:
+    label: 'Pages'
+    parent: masterplan
+  masterplan.settings:
+    label: 'Settings'
+    parent: masterplan
+  masterplan.media:
+    label: 'Media'
+    parent: masterplan
+settings:
+  masterplan.templateRootPath:
+    label: 'Templates'
+    category: masterplan.templates
+    description: 'Path to template root'
+    type: string
+    default: 'EXT:masterplan/Resources/Private/Templates/'
+  masterplan.partialRootPath:
+    label: 'Partials'
+    category: masterplan.templates
+    description: 'Path to partial root'
+    type: string
+    default: 'EXT:masterplan/Resources/Private/Partials/'
+  masterplan.layoutRootPath:
+    label: 'Layouts'
+    category: masterplan.templates
+    description: 'Path to layout root'
+    type: string
+    default: 'EXT:masterplan/Resources/Private/Layouts/'
+  masterplan.storagePid:
+    label: 'Default storage PID'
+    category: masterplan.settings
+    description: 'Folder that stores all POIs'
+    type: int
+    default: 0
+  masterplan.pidOfListPage:
+    label: 'Pid of List Page'
+    category: 'masterplan.pages'
+    description: 'Page UID of List Page'
+    type: int
+    default: 0
+  masterplan.pidOfDetailPage:
+    label: 'Pid of Detail Page'
+    category: 'masterplan.pages'
+    description: 'Page UID of Detail Page'
+    type: int
+    default: 0
+  masterplan.pidOfLocationPage:
+    label: 'List Page'
+    category: 'masterplan.pages'
+    description: 'Page UID with masterplan plugin to show list of records'
+    type: int
+    default: 0
+  masterplan.list.image.width:
+    label: 'List Image width'
+    category: masterplan.media
+    description: ''
+    type: string
+    default: '64c'
+  masterplan.list.image.height:
+    label: 'List Image height'
+    category: masterplan.media
+    description: ''
+    type: string
+    default: '64c'
+  masterplan.list.image.minWidth:
+    label: 'List Image minimum width'
+    category: masterplan.media
+    description: ''
+    type: string
+    default: '64'
+  masterplan.list.image.minHeight:
+    label: 'List Image minimum height'
+    category: masterplan.media
+    description: ''
+    type: string
+    default: '64'
+  masterplan.list.image.maxWidth:
+    label: 'List Image maximum width'
+    category: masterplan.media
+    description: ''
+    type: string
+    default: '64'
+  masterplan.list.image.maxHeight:
+    label: 'List Image maximum height'
+    category: masterplan.media
+    description: ''
+    type: string
+    default: '64'
+  masterplan.show.image.width:
+    label: 'Show action Image width'
+    category: masterplan.media
+    description: ''
+    type: string
+    default: '100c'
+  masterplan.show.image.height:
+    label: 'Show action Image height'
+    category: masterplan.media
+    description: ''
+    type: string
+    default: '100c'
+  masterplan.pageBrowser.itemsPerPage:
+    label: 'Items per page for pagination'
+    category: masterplan.settings
+    description: 'Number of results that needs to be shown on listing page'
+    type: int
+    default: 15
+  masterplan.pageBrowser.insertAbove:
+    label: 'Items per page for pagination'
+    category: masterplan.settings
+    description: 'Number of results that needs to be shown on listing page'
+    type: bool
+    default: true
+  masterplan.pageBrowser.insertBelow:
+    label: 'Items per page for pagination'
+    category: masterplan.settings
+    description: 'Number of results that needs to be shown on listing page'
+    type: bool
+    default: false
+  masterplan.pageBrowser.maximumNumberOfLinks:
+    label: 'Items per page for pagination'
+    category: masterplan.settings
+    description: 'Number of results that needs to be shown on listing page'
+    type: int
+    default: 10

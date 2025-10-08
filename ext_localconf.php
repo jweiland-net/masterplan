@@ -1,42 +1,32 @@
 <?php
-if (!defined('TYPO3_MODE')) {
+
+/*
+ * This file is part of the package jweiland/masterplan.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
+if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
+use JWeiland\Masterplan\Controller\LocationController;
+use JWeiland\Pfprojects\Controller\ProjectController;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
 call_user_func(static function () {
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'JWeiland.masterplan',
+    ExtensionUtility::configurePlugin(
+        'Masterplan',
         'Masterplan',
         [
-            'Project' => 'list, show',
-            'Location' => 'show'
+            ProjectController::class => 'list, show',
+            LocationController::class => 'show',
         ],
         // non-cacheable actions
         [
-            'Project' => '',
-        ]
+            ProjectController::class => '',
+        ],
+        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
     );
-
-    // Register SVG Icon Identifier
-    $svgIcons = [
-        'ext-masterplan-masterplan-wizard-icon' => 'plugin_wizard.svg',
-    ];
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-        \TYPO3\CMS\Core\Imaging\IconRegistry::class
-    );
-    foreach ($svgIcons as $identifier => $fileName) {
-        $iconRegistry->registerIcon(
-            $identifier,
-            \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-            ['source' => 'EXT:masterplan/Resources/Public/Icons/' . $fileName]
-        );
-    }
-
-    // Add masterplan plugin to new element wizard
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:masterplan/Configuration/TSconfig/ContentElementWizard.txt">'
-    );
-
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['masterplanUpdateSlug']
-        = \JWeiland\Masterplan\Updater\MasterplanSlugUpdater::class;
 });

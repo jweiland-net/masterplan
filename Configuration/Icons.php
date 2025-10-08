@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /*
  * This file is part of the package jweiland/masterplan.
  *
@@ -9,10 +7,8 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-use JWeiland\Masterplan\Domain\Model\Category;
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
 return [
-    Category::class => [
-        'tableName' => 'sys_category',
-    ],
+    'ext-masterplan-masterplan-wizard-icon' => ['provider' => SvgIconProvider::class, 'source' => 'EXT:masterplan/Resources/Public/Icons/plugin_wizard.svg'],
 ];

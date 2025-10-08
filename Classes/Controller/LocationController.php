@@ -11,33 +11,29 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Controller;
 
+use JWeiland\Masterplan\Domain\Repository\CategoryRepository;
 use JWeiland\Masterplan\Domain\Repository\ProjectRepository;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * The main controller to transfer location records from DB to View
  */
 class LocationController extends AbstractController
 {
-    /**
-     * @var ProjectRepository
-     */
-    protected $projectRepository;
-
-    /**
-     * @param ProjectRepository $projectRepository
-     */
-    public function injectProjectRepository(ProjectRepository $projectRepository)
-    {
-        $this->projectRepository = $projectRepository;
-    }
+    public function __construct(
+        protected readonly ProjectRepository $projectRepository,
+        protected readonly CategoryRepository $categoryRepository,
+    ) {}
 
     /**
      * @param int $project
+     * @return ResponseInterface
      */
-    public function showAction(int $project)
+    public function showAction(int $project): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
-            'project' => $this->projectRepository->findByIdentifier($project)
+            'project' => $this->projectRepository->findByIdentifier($project),
         ]);
+        return $this->htmlResponse();
     }
 }

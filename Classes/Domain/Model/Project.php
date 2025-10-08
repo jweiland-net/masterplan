@@ -15,6 +15,7 @@ use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Masterplan\Configuration\ExtConf;
 use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -23,88 +24,56 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  */
 class Project extends AbstractEntity
 {
-    /**
-     * @var string
-     */
-    protected $title = '';
+    protected string $title = '';
 
-    /**
-     * @var string
-     */
-    protected $pathSegment = '';
+    protected string $pathSegment = '';
 
-    /**
-     * @var string
-     */
-    protected $number = '';
+    protected string $number = '';
 
-    /**
-     * @var string
-     */
-    protected $contactPerson = '';
+    protected string $contactPerson = '';
 
     /**
      * Initially a string, but will be converted to an array with records when
      * calling getter the first time!
-     *
-     * @var string
      */
-    protected $organisationseinheiten = '';
+    protected string $organisationseinheiten = '';
+
+    protected string $startDate = '';
+
+    protected string $endDate = '';
+
+    protected string $costs = '';
+
+    protected bool $citizenParticipation = false;
 
     /**
-     * @var string
+     * @var ObjectStorage<FileReference>
      */
-    protected $startDate = '';
+    protected ObjectStorage $images;
+
+    protected string $description = '';
+
+    protected string $furtherInformations = '';
 
     /**
-     * @var string
-     */
-    protected $endDate = '';
-
-    /**
-     * @var string
-     */
-    protected $costs = '';
-
-    /**
-     * @var bool
-     */
-    protected $citizenParticipation = false;
-
-    /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     */
-    protected $images;
-
-    /**
-     * @var string
-     */
-    protected $description = '';
-
-    /**
-     * @var string
-     */
-    protected $furtherInformations = '';
-
-    /**
-     * @var \JWeiland\Maps2\Domain\Model\PoiCollection
+     * @var PoiCollection
      */
     protected $txMaps2Uid;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
      */
-    protected $files;
+    protected ObjectStorage $files;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Masterplan\Domain\Model\Link>
+     * @var ObjectStorage<Link>
      */
-    protected $links;
+    protected ObjectStorage $links;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Masterplan\Domain\Model\Category>
+     * @var ObjectStorage<Category>
      */
-    protected $areaOfActivity;
+    protected ObjectStorage $areaOfActivity;
 
     public function __construct()
     {
@@ -357,7 +326,7 @@ class Project extends AbstractEntity
         return [
             'uid' => $this->getUid(),
             'pid' => $this->getPid(),
-            'title' => $this->getTitle()
+            'title' => $this->getTitle(),
         ];
     }
 }

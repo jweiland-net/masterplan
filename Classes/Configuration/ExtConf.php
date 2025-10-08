@@ -11,42 +11,48 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Configuration;
 
+use Symfony\Component\DependencyInjection\Attribute\Autoconfigure;
+use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException;
+use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\SingletonInterface;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * This class will streamline the values from extension manager configuration
  */
-class ExtConf implements SingletonInterface
+#[Autoconfigure(constructor: 'create')]
+readonly class ExtConf implements SingletonInterface
 {
-    /**
-     * @var int
-     */
-    protected $rootCategory = 0;
+    private const EXT_KEY = 'masterplan';
 
-    public function __construct()
+    private const DEFAULT_SETTINGS = [
+        'rootCategory' => 0,
+    ];
+
+    public function __construct(
+        private int $rootCategory = 0,
+    ) {}
+
+    public static function create(ExtensionConfiguration $extensionConfiguration): static
     {
-        // get global configuration
-        $extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('masterplan');
-        if (is_array($extConf) && count($extConf)) {
-            // call setter method foreach configuration entry
-            foreach ($extConf as $key => $value) {
-                $methodName = 'set' . ucfirst($key);
-                if (method_exists($this, $methodName)) {
-                    $this->$methodName((string)$value);
-                }
-            }
+        $extensionSettings = self::DEFAULT_SETTINGS;
+
+        // overwrite default extension settings with values from EXT_CONF
+        try {
+            $extensionSettings = array_merge(
+                $extensionSettings,
+                $extensionConfiguration->get(self::EXT_KEY),
+            );
+        } catch (ExtensionConfigurationExtensionNotConfiguredException|ExtensionConfigurationPathDoesNotExistException) {
         }
+
+        return new self(
+            rootCategory: (int)($extensionSettings['rootCategory'] ?? 0),
+        );
     }
 
     public function getRootCategory(): int
     {
         return $this->rootCategory;
-    }
-
-    public function setRootCategory($rootCategory)
-    {
-        $this->rootCategory = (int)$rootCategory;
     }
 }

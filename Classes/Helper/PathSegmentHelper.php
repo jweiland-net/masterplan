@@ -21,11 +21,11 @@ class PathSegmentHelper
 {
     public function generatePathSegment(
         array $baseRecord,
-        int $pid
+        int $pid,
     ): string {
         return $this->getSlugHelper()->generate(
             $baseRecord,
-            $pid
+            $pid,
         );
     }
 
@@ -39,7 +39,7 @@ class PathSegmentHelper
             SlugHelper::class,
             'tx_masterplan_domain_model_project',
             'path_segment',
-            $config
+            $config,
         );
     }
 }
