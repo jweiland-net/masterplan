@@ -1,0 +1,44 @@
+plugin.tx_masterplan {
+  view {
+    templateRootPaths.100 = {$plugin.tx_masterplan.view.templateRootPath ?? $masterplan.templateRootPath}
+    partialRootPaths.100 = {$plugin.tx_masterplan.view.partialRootPath ?? $masterplan.partialRootPath}
+    layoutRootPaths.100 = {$plugin.tx_masterplan.view.layoutRootPath ?? $masterplan.layoutRootPath}
+  }
+
+  persistence.storagePid = {$plugin.tx_masterplan.persistence.storagePid ?? $masterplan.storagePid}
+
+  settings {
+    pidOfListPage = {$plugin.tx_masterplan.settings.pidOfListPage ?? $masterplan.pidOfListPage}
+    pidOfDetailPage = {$plugin.tx_masterplan.settings.pidOfDetailPage $masterplan.pidOfDetailPage}
+    pidOfLocationPage = {$plugin.tx_masterplan.settings.pidOfLocationPage $masterplan.pidOfLocationPage}
+
+    list {
+      image {
+        width = {$plugin.tx_masterplan.settings.list.image.width ?? $masterplan.list.image.width}
+        height = {$plugin.tx_masterplan.settings.list.image.height ?? $masterplan.list.image.height}
+        minWidth = {$plugin.tx_masterplan.settings.list.image.minWidth ?? $masterplan.list.image.minWidth}
+        maxWidth = {$plugin.tx_masterplan.settings.list.image.maxWidth ?? $masterplan.list.image.maxWidth}
+        minHeight = {$plugin.tx_masterplan.settings.list.image.minHeight ?? $masterplan.list.image.minHeight}
+        maxHeight = {$plugin.tx_masterplan.settings.list.image.maxHeight ?? $masterplan.list.image.maxHeight}
+      }
+    }
+
+    show {
+      image {
+        width = {$plugin.tx_masterplan.settings.show.image.width ?? $masterplan.show.image.width}
+        height = {$plugin.tx_masterplan.settings.show.image.height ?? $masterplan.show.image.height}
+      }
+    }
+
+    pageBrowser {
+      itemsPerPage = {$plugin.tx_masterplan.settings.pageBrowser.itemsPerPage ?? $masterplan.pageBrowser.itemsPerPage}
+      insertAbove = {$plugin.tx_masterplan.settings.pageBrowser.insertAbove ?? $masterplan.pageBrowser.insertAbove}
+      insertBelow = {$plugin.tx_masterplan.settings.pageBrowser.insertBelow ?? $masterplan.pageBrowser.insertBelow}
+      maximumNumberOfLinks = {$plugin.tx_masterplan.settings.pageBrowser.maximumNumberOfLinks ??$masterplan.pageBrowser.maximumNumberOfLinks}
+    }
+  }
+
+  features {
+    requireCHashArgumentForActionArguments = 0
+  }
+}

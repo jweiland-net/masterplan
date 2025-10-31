@@ -17,4 +17,7 @@ ExtensionUtility::registerPlugin(
     'Masterplan',
     'Masterplan',
     'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:plugin.masterplan.title',
+    'masterplan_masterplan',
+    'plugins',
+    'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:plugin.masterplan.description',
 );

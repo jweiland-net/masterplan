@@ -8,7 +8,7 @@ ChangeLog
 =========
 
 **Version 6.0.1**
-
+- [TASK] SiteSets Configuration fixes
 - [BUGFIX] Fixed invalid Controller action combination
 
 **Version 6.0.0**
