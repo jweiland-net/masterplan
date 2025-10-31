@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 6.0.1**
+
+- [BUGFIX] Fixed invalid Controller action combination
+
 **Version 6.0.0**
 
 - TYPO3 13 LTS Compatibility Fixes
