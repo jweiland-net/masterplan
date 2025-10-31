@@ -1,0 +1,59 @@
+plugin.tx_masterplan {
+  view {
+    # cat=plugin.tx_masterplan/file; type=string; label=Path to template root (FE)
+    templateRootPath = EXT:masterplan/Resources/Private/Templates/
+    # cat=plugin.tx_masterplan/file; type=string; label=Path to template partials (FE)
+    partialRootPath = EXT:masterplan/Resources/Private/Partials/
+    # cat=plugin.tx_masterplan/file; type=string; label=Path to template layouts (FE)
+    layoutRootPath = EXT:masterplan/Resources/Private/Layouts/
+  }
+  persistence {
+    # cat=plugin.tx_masterplan//a; type=string; label=Default storage PID
+    storagePid =
+  }
+  settings {
+    # cat=plugin.tx_masterplan//b; type=int+; label=PID of list page
+    pidOfListPage =
+    # cat=plugin.tx_masterplan//c; type=int+; label=PID of detail page
+    pidOfDetailPage =
+    # cat=plugin.tx_masterplan//d; type=int+; label=PID of location page
+    pidOfLocationPage =
+
+    list {
+      image {
+        # cat=plugin.tx_masterplan/listing-page/dims; type=string; label=Listing Page Image Width
+        width = 50c
+        # cat=plugin.tx_masterplan/listing-page/dims; type=string; label=Listing Page Image Height
+        height = 50c
+        # cat=plugin.tx_masterplan/listing-page/dims; type=string; label=Listing Page Image Min Width
+        minWidth = 50c
+        # cat=plugin.tx_masterplan/listing-page/dims; type=string; label=Listing Page Image Max Width
+        maxWidth = 50c
+        # cat=plugin.tx_masterplan/listing-page/dims; type=string; label=Listing Page Image Min Height
+        minHeight = 50c
+        # cat=plugin.tx_masterplan/listing-page/dims; type=string; label=Listing Page Image Max Height
+        maxHeight = 50c
+      }
+    }
+
+    show {
+      image {
+        # cat=plugin.tx_masterplan/detail-page/dims; type=string; label=Detail Page Image Width
+        width = 240c
+        # cat=plugin.tx_masterplan/detail-page/dims; type=string; label=Detail Page Image Height
+        height = 180c
+      }
+    }
+
+    pageBrowser {
+      # cat=plugin.tx_masterplan/pagebrowser/dims; type=int+; label=Items per page: How many items should be displayed on one page
+      itemsPerPage = 15
+      # cat=plugin.tx_masterplan/pagebrowser/enable; type=boolean; label=insert above: Should pagebrowser be displayed on top of the list
+      insertAbove = 1
+      # cat=plugin.tx_masterplan/pagebrowser/enable; type=boolean; label=insert below: Should pagebrowser be displayed at bottom of the list
+      insertBelow = 0
+      # cat=plugin.tx_masterplan/pagebrowser/dims; type=int+; label=max number of links: Define maximum amount of pages which should be displayed
+      maximumNumberOfLinks = 5
+    }
+  }
+}
