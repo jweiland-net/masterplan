@@ -59,6 +59,7 @@ class ProjectController extends AbstractController
             'sortBy' => $sortBy,
             'direction' => $direction,
         ]);
+
         return $this->htmlResponse();
     }
 
@@ -71,6 +72,7 @@ class ProjectController extends AbstractController
         $this->postProcessAndAssignFluidVariables([
             'project' => $this->projectRepository->findByIdentifier($project),
         ]);
+
         return $this->htmlResponse();
     }
 }

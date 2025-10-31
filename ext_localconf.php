@@ -12,7 +12,7 @@ if (!defined('TYPO3')) {
 }
 
 use JWeiland\Masterplan\Controller\LocationController;
-use JWeiland\Pfprojects\Controller\ProjectController;
+use JWeiland\Masterplan\Controller\ProjectController;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 call_user_func(static function () {
