@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 6.0.3**
+
+- [BUGFIX] Removed Lazy Load for Category property
+
 **Version 6.0.2**
 
 - [BUGFIX] Fixed Property Type issues
