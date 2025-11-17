@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace JWeiland\Masterplan\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -25,7 +24,6 @@ class Category extends AbstractEntity
     /**
      * @var Category|null
      */
-    #[Lazy]
     protected ?Category $parent = null;
 
     /**
