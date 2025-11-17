@@ -36,7 +36,7 @@ class Project extends AbstractEntity
      * Initially a string, but will be converted to an array with records when
      * calling getter the first time!
      */
-    protected string $organisationseinheiten = '';
+    protected array|string $organisationseinheiten = '';
 
     protected string $startDate = '';
 
