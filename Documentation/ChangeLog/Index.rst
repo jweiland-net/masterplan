@@ -7,51 +7,65 @@
 ChangeLog
 =========
 
-**Version 6.0.3**
+Version 6.0.4
+=============
 
-- [BUGFIX] Removed Lazy Load for Category property
+*   [BUGFIX] Remove deprecated usage of SoftRef parser: images
 
-**Version 6.0.2**
+Version 6.0.3
+=============
 
-- [BUGFIX] Fixed Property Type issues
+*   [BUGFIX] Removed Lazy Load for Category property
 
-**Version 6.0.1**
+Version 6.0.2
+=============
 
-- [TASK] SiteSets Configuration fixes
-- [BUGFIX] Fixed invalid Controller action combination
+*   [BUGFIX] Fixed Property Type issues
 
-**Version 6.0.0**
+Version 6.0.1
+=============
 
-- TYPO3 13 LTS Compatibility Fixes
-- Remove old version compatibilities
+*   [TASK] SiteSets Configuration fixes
+*   [BUGFIX] Fixed invalid Controller action combination
 
-**Version 4.0.0**
+Version 6.0.0
+=============
 
-- Remove TYPO3 9 compatibility
-- Add Events to all Controller Actions
-- Add Event Listener to add Pagination
+*   TYPO3 13 LTS Compatibility Fixes
+*   Remove old version compatibilities
 
-**Version 3.0.4**
+Version 4.0.0
+=============
 
-- Move SlugHelper from constructor argument into getSlugHelper()
+*   Remove TYPO3 9 compatibility
+*   Add Events to all Controller Actions
+*   Add Event Listener to add Pagination
 
-**Version 3.0.2**
+Version 3.0.4
+=============
 
-- Add addQueryStringMethod to f:widget.paginate
+*   Move SlugHelper from constructor argument into getSlugHelper()
 
-**Version 3.0.1**
+Version 3.0.2
+=============
 
-- Set title as required, as it is required for path_segment generation
+*   Add addQueryStringMethod to f:widget.paginate
 
-**Version 3.0.0**
+Version 3.0.1
+=============
 
-- Removed TYPO3 8 compatibility
-- Add TYPO3 10 compatibility
-- Removed all masterplan ViewHelpers
-- Wrapped all templates in HTML namespace
-- New SVG icons for extension and tables
-- Implement new structure of areaOfActivities
-- Better structure of TCA for backend
-- Repair filtering projects in ProjectRepository
-- Add path_segment for Slugs incl. UpgradeWizard
-- Add new documentation
+*   Set title as required, as it is required for path_segment generation
+
+Version 3.0.0
+=============
+
+*   Removed TYPO3 8 compatibility
+*   Add TYPO3 10 compatibility
+*   Removed all masterplan ViewHelpers
+*   Wrapped all templates in HTML namespace
+*   New SVG icons for extension and tables
+*   Implement new structure of areaOfActivities
+*   Better structure of TCA for backend
+*   Repair filtering projects in ProjectRepository
+*   Add path_segment for Slugs incl. UpgradeWizard
+*   Add new documentation
