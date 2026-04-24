@@ -13,6 +13,7 @@ categories:
   masterplan.media:
     label: 'Media'
     parent: masterplan
+
 settings:
   masterplan.templateRootPath:
     label: 'Templates'
