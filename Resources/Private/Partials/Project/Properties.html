@@ -58,15 +58,6 @@
             <f:render partial="Project/Field" arguments="{value: '{project.endDate}', languageField: 'end_date'}"/>
             <f:render partial="Project/Field" arguments="{value: '{project.costs}', languageField: 'costs'}"/>
             <f:render partial="Project/Field" arguments="{value: project.contactPerson, languageField: 'contact_person'}"/>
-
-            <f:if condition="{project.organisationseinheiten}">
-                <f:for each="{project.organisationseinheiten}" as="organisationseinheit">
-                    <f:if condition="{organisationseinheit.name}">
-                        <dt>{f:translate(key: 'tx_masterplan_domain_model_project.organisationseinheiten')}:</dt>
-                        <dd>{organisationseinheit.name}</dd>
-                    </f:if>
-                </f:for>
-            </f:if>
         </dl>
 
         <dl class="extdl">

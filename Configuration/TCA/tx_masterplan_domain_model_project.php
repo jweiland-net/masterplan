@@ -31,7 +31,7 @@ return [
     'types' => [
         '1' => [
             'showitem' => '--palette--;;languageHidden, --palette--;;titleNumber, path_segment,
-            contact_person, organisationseinheiten, --palette--;;startEndDate, costs, citizen_participation,
+            contact_person, --palette--;;startEndDate, costs, citizen_participation,
             images, description, further_informations, files, links,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,area_of_activity,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,
@@ -94,11 +94,6 @@ return [
                 'size' => 15,
                 'eval' => 'trim',
             ],
-        ],
-        'organisationseinheiten' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_project.organisationseinheiten',
-            'config' => TCAUtility::getOrganisationseinheitenFieldTCAConfig(['maxitems' => 1]),
         ],
         'start_date' => [
             'exclude' => true,

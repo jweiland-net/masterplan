@@ -32,12 +32,6 @@ class Project extends AbstractEntity
 
     protected string $contactPerson = '';
 
-    /**
-     * Initially a string, but will be converted to an array with records when
-     * calling getter the first time!
-     */
-    protected array|string $organisationseinheiten = '';
-
     protected string $startDate = '';
 
     protected string $endDate = '';
@@ -121,16 +115,6 @@ class Project extends AbstractEntity
     public function setContactPerson(string $contactPerson): void
     {
         $this->contactPerson = $contactPerson;
-    }
-
-    public function getOrganisationseinheiten(): array
-    {
-        return $this->organisationseinheiten = ModelUtility::getOrganisationseinheiten($this->organisationseinheiten);
-    }
-
-    public function setOrganisationseinheiten(array $organisationseinheiten): void
-    {
-        $this->organisationseinheiten = $organisationseinheiten;
     }
 
     public function getStartDate(): string
