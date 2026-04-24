@@ -14,9 +14,6 @@ namespace JWeiland\Masterplan\Controller;
 use JWeiland\Masterplan\Event\PostProcessFluidVariablesEvent;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
-/**
- * The main controller to transfer location records from DB to View
- */
 abstract class AbstractController extends ActionController
 {
     protected function postProcessAndAssignFluidVariables(array $variables = []): void
