@@ -1,18 +1,18 @@
 <html lang="en"
-			xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-			xmlns:maps2="http://typo3.org/ns/JWeiland/Maps2/ViewHelpers"
-			data-namespace-typo3-fluid="true">
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:maps2="http://typo3.org/ns/JWeiland/Maps2/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 
 <f:if condition="{project.txMaps2Uid}">
-	<maps2:widget.poiCollection poiCollection="{project.txMaps2Uid}"
-															override="{settings: {mapWidth: '100%', mapHeight: '300', 'zoom': '14'}}" />
+    <maps2:widget.poiCollection poiCollection="{project.txMaps2Uid}"
+                                override="{settings: {mapWidth: '100%', mapHeight: '300', 'zoom': '14'}}"/>
 
-	<f:link.action action="show"
-								 controller="Project"
-								 arguments="{project: project}"
-								 pageUid="{settings.pidOfListPage}">
-		{f:translate(key: 'backToDetails')}
-	</f:link.action>
-	<br>
+    <f:link.action action="show"
+                   controller="Project"
+                   arguments="{project: project}"
+                   pageUid="{settings.pidOfListPage}">
+        {f:translate(key: 'backToDetails')}
+    </f:link.action>
+    <br>
 </f:if>
 </html>
