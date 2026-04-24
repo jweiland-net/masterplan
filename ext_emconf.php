@@ -9,7 +9,7 @@
 
 $EM_CONF['masterplan'] = [
     'title' => 'Masterplan',
-    'description' => 'Masterplan',
+    'description' => 'Show projects with details, dates, images, and downloads.',
     'category' => 'plugin',
     'author' => 'Stefan Froemken, Hoja Mustaffa Abdul Latheef',
     'author_email' => 'projects@jweiland.net',
