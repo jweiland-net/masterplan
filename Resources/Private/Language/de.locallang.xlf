@@ -3,7 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-16T10:21:45Z" product-name="masterplan">
 		<header/>
 		<body>
-
 			<trans-unit id="tx_masterplan_domain_model_project">
 				<source>Project</source>
 				<target>Projekt</target>
@@ -122,7 +121,6 @@
 				<source>Ordering</source>
 				<target>Sortieren nach</target>
 			</trans-unit>
-
 		</body>
 	</file>
 </xliff>
