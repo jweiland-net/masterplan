@@ -20,16 +20,12 @@ interface ControllerActionEventInterface
     /**
      * Get the controller name.
      * It's just "Masterplan". It's not the full class name.
-     *
-     * @return string
      */
     public function getControllerName(): string;
 
     /**
      * Get the action name without appended "Action".
      * It's just "list" or "show"
-     *
-     * @return string
      */
     public function getActionName(): string;
 
