@@ -13,7 +13,6 @@ namespace JWeiland\Masterplan\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Masterplan\Configuration\ExtConf;
-use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;

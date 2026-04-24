@@ -58,6 +58,5 @@ Masterplan
    Installation/Index
    Configuration/Index
    AdministratorManual/Index
-   KnownProblems/Index
    ChangeLog/Index
    Links

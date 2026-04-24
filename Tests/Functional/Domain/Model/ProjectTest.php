@@ -25,7 +25,6 @@ class ProjectTest extends FunctionalTestCase
     protected array $testExtensionsToLoad = [
         'jweiland/masterplan',
         'jweiland/maps2',
-        'jweiland/service-bw2',
     ];
 
     protected array $coreExtensionsToLoad = [

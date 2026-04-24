@@ -7,8 +7,6 @@
  * LICENSE file that was distributed with this source code.
  */
 
-use JWeiland\ServiceBw2\Utility\TCAUtility;
-
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_project',
