@@ -24,8 +24,7 @@ class ProjectController extends AbstractController
     public function __construct(
         protected readonly ProjectRepository $projectRepository,
         protected readonly CategoryRepository $categoryRepository,
-    ) {
-    }
+    ) {}
 
     public function initializeAction(): void
     {
