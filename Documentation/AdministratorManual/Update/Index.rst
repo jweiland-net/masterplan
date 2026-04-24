@@ -6,6 +6,13 @@ Updating
 
 If you update EXT:masterplan to a newer version, please read this section carefully!
 
+Update to Version 7.0.0
+=======================
+
+We have removed the hard dependency to `service_bw2`. That way we have removed
+the column `organisationseinheiten` and all it's programming in domain
+model, templates and location file.
+
 Update to Version 4.0.0
 =======================
 
