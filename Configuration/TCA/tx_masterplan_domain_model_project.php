@@ -180,7 +180,7 @@ return [
             'config' => [
                 'type' => 'file',
                 'maxitems' => 6,
-                'allowed' => 'php,exe',
+                'allowed' => 'pdf',
             ],
         ],
         'links' => [
