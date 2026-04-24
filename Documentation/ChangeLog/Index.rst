@@ -6,6 +6,34 @@
 ChangeLog
 =========
 
+Version 7.0.0
+=============
+
+*   [TASK] Improve formatting and consistency in documentation
+*   [TASK] Standardize include directive paths in documentation
+*   [TASK] Remove dependency on EXT:service_bw2
+*   [TASK] Remove Organisationseinheiten from project configuration
+*   [TASK] Update allowed file type in TCA configuration
+*   [TASK] Update plugin icon and remove unused TSconfig
+*   [TASK] Add missing newline at EOF in ext_conf_template.txt
+*   [TASK] Update .editorconfig for consistent formatting
+*   [TASK] Fix Fluid template indentation
+*   [TASK] Remove redundant blank lines in language files
+*   [TASK] Fix formatting in ProjectController annotations
+*   [TASK] Remove redundant class PHPDoc block
+*   [TASK] Remove redundant PHPDoc annotations
+*   [TASK] Fix formatting in settings.definitions.yaml
+*   [DOCS] Fix line break in README.md
+*   [TASK] Remove redundant call_user_func wrapper
+*   [TASK] Format Icons.php for improved readability
+*   [TASK] Update extension descriptions in metadata files
+*   [TASK] Refactor runTests script for improved functionality
+*   [TASK] Refactor PHP-CS-Fixer configuration structure
+*   [TASK] Remove PHP-CS-Fixer configuration file
+*   [TASK] Add area_of_activity field to project TCA
+*   [TASK] Remove unused fields from database schema
+*   [TASK] Remove unused localization and system fields
+
 Version 6.0.5
 =============
 
