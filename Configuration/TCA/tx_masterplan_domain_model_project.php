@@ -33,6 +33,7 @@ return [
             'showitem' => '--palette--;;languageHidden, --palette--;;titleNumber, path_segment,
             contact_person, organisationseinheiten, --palette--;;startEndDate, costs, citizen_participation,
             images, description, further_informations, files, links,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,area_of_activity,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access',
         ],
@@ -190,6 +191,13 @@ return [
                 'foreign_table' => 'tx_masterplan_domain_model_link',
                 'foreign_field' => 'project',
                 'foreign_label' => 'title',
+            ],
+        ],
+        'area_of_activity' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:masterplan/Resources/Private/Language/locallang_db.xlf:tx_masterplan_domain_model_project.area_of_activity',
+            'config' => [
+                'type' => 'category',
             ],
         ],
     ],
