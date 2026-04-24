@@ -21,9 +21,6 @@ class Category extends AbstractEntity
 {
     protected string $title;
 
-    /**
-     * @var Category|null
-     */
     protected ?Category $parent = null;
 
     /**

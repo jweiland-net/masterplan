@@ -25,15 +25,12 @@ class LocationController extends AbstractController
         protected readonly CategoryRepository $categoryRepository,
     ) {}
 
-    /**
-     * @param int $project
-     * @return ResponseInterface
-     */
     public function showAction(int $project): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'project' => $this->projectRepository->findByIdentifier($project),
         ]);
+
         return $this->htmlResponse();
     }
 }
