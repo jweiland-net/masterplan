@@ -24,7 +24,8 @@ class ProjectController extends AbstractController
     public function __construct(
         protected readonly ProjectRepository $projectRepository,
         protected readonly CategoryRepository $categoryRepository,
-    ) {}
+    ) {
+    }
 
     public function initializeAction(): void
     {
@@ -41,8 +42,20 @@ class ProjectController extends AbstractController
         }
     }
 
-    #[Extbase\Validate(['param' => 'sortBy', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/title|start_date|citizen_participation|area_of_activity/']])]
-    #[Extbase\Validate(['param' => 'direction', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/asc|desc/']])]
+    #[Extbase\Validate([
+        'param' => 'sortBy',
+        'validator' => 'RegularExpression',
+        'options' => [
+            'regularExpression' => '/title|start_date|citizen_participation|area_of_activity/',
+        ],
+    ])]
+    #[Extbase\Validate([
+        'param' => 'direction',
+        'validator' => 'RegularExpression',
+        'options' => [
+            'regularExpression' => '/asc|desc/',
+        ],
+    ])]
     public function listAction(int $areaOfActivity = 0, string $sortBy = 'title', string $direction = 'asc'): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
