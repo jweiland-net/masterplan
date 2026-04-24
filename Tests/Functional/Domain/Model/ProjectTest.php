@@ -27,10 +27,6 @@ class ProjectTest extends FunctionalTestCase
         'jweiland/maps2',
     ];
 
-    protected array $coreExtensionsToLoad = [
-        'typo3/cms-scheduler',
-    ];
-
     protected function setUp(): void
     {
         parent::setUp();
