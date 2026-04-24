@@ -15,18 +15,15 @@ use JWeiland\Masterplan\Controller\LocationController;
 use JWeiland\Masterplan\Controller\ProjectController;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
-call_user_func(static function () {
-    ExtensionUtility::configurePlugin(
-        'Masterplan',
-        'Masterplan',
-        [
-            ProjectController::class => 'list, show',
-            LocationController::class => 'show',
-        ],
-        // non-cacheable actions
-        [
-            ProjectController::class => '',
-        ],
-        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
-    );
-});
+ExtensionUtility::configurePlugin(
+    'Masterplan',
+    'Masterplan',
+    [
+        ProjectController::class => 'list, show',
+        LocationController::class => 'show',
+    ],
+    [
+        ProjectController::class => '',
+    ],
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
+);
