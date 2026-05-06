@@ -19,10 +19,6 @@
         <source>Contact Person</source>
         <target state="final">Ansprechpartner</target>
       </trans-unit>
-      <trans-unit id="tx_masterplan_domain_model_project.organisationseinheiten" approved="yes">
-        <source>Organisationseinheiten</source>
-        <target state="final">Organisationseinheiten</target>
-      </trans-unit>
       <trans-unit id="tx_masterplan_domain_model_project.start_date" approved="yes">
         <source>Start Date</source>
         <target state="final">Startdatum</target>
