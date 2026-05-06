@@ -13,7 +13,6 @@ namespace JWeiland\Masterplan\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use JWeiland\Masterplan\Configuration\ExtConf;
-use JWeiland\ServiceBw2\Utility\ModelUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -31,12 +30,6 @@ class Project extends AbstractEntity
     protected string $number = '';
 
     protected string $contactPerson = '';
-
-    /**
-     * Initially a string, but will be converted to an array with records when
-     * calling getter the first time!
-     */
-    protected array|string $organisationseinheiten = '';
 
     protected string $startDate = '';
 
@@ -121,16 +114,6 @@ class Project extends AbstractEntity
     public function setContactPerson(string $contactPerson): void
     {
         $this->contactPerson = $contactPerson;
-    }
-
-    public function getOrganisationseinheiten(): array
-    {
-        return $this->organisationseinheiten = ModelUtility::getOrganisationseinheiten($this->organisationseinheiten);
-    }
-
-    public function setOrganisationseinheiten(array $organisationseinheiten): void
-    {
-        $this->organisationseinheiten = $organisationseinheiten;
     }
 
     public function getStartDate(): string

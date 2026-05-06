@@ -25,11 +25,6 @@ class ProjectTest extends FunctionalTestCase
     protected array $testExtensionsToLoad = [
         'jweiland/masterplan',
         'jweiland/maps2',
-        'jweiland/service-bw2',
-    ];
-
-    protected array $coreExtensionsToLoad = [
-        'typo3/cms-scheduler',
     ];
 
     protected function setUp(): void

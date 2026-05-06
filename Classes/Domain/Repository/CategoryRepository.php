@@ -27,8 +27,6 @@ class CategoryRepository extends Repository
 
     /**
      * Returns the child categories (area of activities) of configured root category
-     *
-     * @return array
      */
     public function getAreaOfActivities(): array
     {

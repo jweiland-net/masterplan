@@ -8,8 +8,7 @@
 
 ![Build Status](https://github.com/jweiland-net/masterplan/actions/workflows/ci.yml/badge.svg)
 
-With masterplan you can create and show projects you're currently working on and show detail information
-onto your website. You can define start- and end date, add some pictures or additional files for download.
+With masterplan you can create and show projects you're currently working on and show detail information onto your website. You can define start- and end date, add some pictures or additional files for download.
 
 ## 1 Usage
 

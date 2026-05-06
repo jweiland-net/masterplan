@@ -41,15 +41,20 @@ class ProjectController extends AbstractController
         }
     }
 
-    /**
-     * @param int $areaOfActivity
-     * @param string $sortBy
-     * @param string $direction
-     *
-     * @return ResponseInterface
-     */
-    #[Extbase\Validate(['param' => 'sortBy', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/title|start_date|citizen_participation|area_of_activity/']])]
-    #[Extbase\Validate(['param' => 'direction', 'validator' => 'RegularExpression', 'options' => ['regularExpression' => '/asc|desc/']])]
+    #[Extbase\Validate([
+        'param' => 'sortBy',
+        'validator' => 'RegularExpression',
+        'options' => [
+            'regularExpression' => '/title|start_date|citizen_participation|area_of_activity/',
+        ],
+    ])]
+    #[Extbase\Validate([
+        'param' => 'direction',
+        'validator' => 'RegularExpression',
+        'options' => [
+            'regularExpression' => '/asc|desc/',
+        ],
+    ])]
     public function listAction(int $areaOfActivity = 0, string $sortBy = 'title', string $direction = 'asc'): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
@@ -63,10 +68,6 @@ class ProjectController extends AbstractController
         return $this->htmlResponse();
     }
 
-    /**
-     * @param int $project
-     * @return ResponseInterface
-     */
     public function showAction(int $project): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([

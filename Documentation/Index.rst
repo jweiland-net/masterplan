@@ -1,63 +1,56 @@
-.. include:: Includes.txt
+..  include:: /Includes.rst.txt
 
+..  _start:
 
-.. Every manual should have a start label for cross-referencing to
-.. start page. Do not remove this!
-
-.. _start:
-
-=============================================================
+==========
 Masterplan
-=============================================================
+==========
 
-.. only:: html
+..  only:: html
 
-   :Classification:
-      masterplan
+    :Classification:
+        masterplan
 
-   :Version:
-      |release|
+    :Version:
+        |release|
 
-   :Language:
-      en
+    :Language:
+        en
 
-   :Description:
-      Manual covering TYPO3 extension masterplan
+    :Description:
+        Manual covering TYPO3 extension masterplan
 
-   :Keywords:
-      project, a-z, navigation
+    :Keywords:
+        project, a-z, navigation
 
-   :Copyright:
-      2013-2019
+    :Copyright:
+        2013-2019
 
-   :Author:
-      Stefan Froemken
+    :Author:
+        Stefan Froemken
 
-   :Email:
-      projects@jweiland.net
+    :Email:
+        projects@jweiland.net
 
-   :License:
-      This document is published under the Open Publication License
-      available from http://www.opencontent.org/openpub/
+    :License:
+        This document is published under the Open Publication License
+        available from http://www.opencontent.org/openpub/
 
-   :Rendered:
-      |today|
+    :Rendered:
+        |today|
 
-   The content of this document is related to TYPO3,
-   a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
+    The content of this document is related to TYPO3,
+    a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
+
+    **Table of Contents**
+
+..  toctree::
+    :maxdepth: 3
 
 
-   **Table of Contents**
-
-.. toctree::
-   :maxdepth: 3
-
-
-   Introduction/Index
-   User/Index
-   Installation/Index
-   Configuration/Index
-   AdministratorManual/Index
-   KnownProblems/Index
-   ChangeLog/Index
-   Links
+    Introduction/Index
+    User/Index
+    Installation/Index
+    Configuration/Index
+    AdministratorManual/Index
+    ChangeLog/Index

@@ -1,7 +1,7 @@
 {
 	"name": "jweiland/masterplan",
 	"type": "typo3-cms-extension",
-	"description": "masterplan",
+	"description": "Masterplan - Show projects with details, dates, images, and downloads.",
 	"license": "GPL-2.0-or-later",
 	"keywords": ["typo3", "TYPO3 CMS", "masterplan"],
 	"homepage": "https://jweiland.net",
@@ -24,8 +24,7 @@
 	},
 	"require": {
 		"typo3/cms-core": "^13.4.0",
-		"jweiland/maps2": ">=12.0.0",
-		"jweiland/service-bw2": ">=8.0"
+		"jweiland/maps2": ">=12.0.0"
 	},
 	"require-dev": {
 		"ergebnis/composer-normalize": "^2.44",

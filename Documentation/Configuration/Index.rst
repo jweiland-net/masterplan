@@ -1,7 +1,6 @@
-.. include:: ../Includes.txt
+..  include:: /Includes.rst.txt
 
-
-.. _configuration:
+..  _configuration:
 
 =============
 Configuration
@@ -16,35 +15,35 @@ Give a minimal example or a typical example.
 Minimal Example
 ===============
 
-- It is necessary to include static template `Masterplan (masterplan)`
+*   It is necessary to include static template `Masterplan (masterplan)`
 
 We prefer to set a Storage PID with help of TypoScript Constants:
 
-.. code-block:: none
+..  code-block:: none
 
-   plugin.tx_masterplan.persistence {
+    plugin.tx_masterplan.persistence {
       # Define Storage PID where project records are located
       storagePid = 4
-   }
+    }
 
-.. _configuration-typoscript:
+..  _configuration-typoscript:
 
 TypoScript Setup Reference
 ==========================
 
 
-.. _pidOfDetailPage:
+..  _pidOfDetailPage:
 
 pidOfDetailPage
 ---------------
 
 Example: plugin.tx_masterplan.settings.pidOfDetailPage = 4
 
-If you want, you can change the links in project listing to link to another page UID.
-By default the detail view uses current page.
+If you want, you can change the links in project listing to link to another
+page UID. By default the detail view uses current page.
 
 
-.. _pidOfListPage:
+..  _pidOfListPage:
 
 pidOfListPage
 -------------
@@ -55,7 +54,7 @@ If you have defined a detail page you may link back to the list page.
 By default the link back to list view used the current page.
 
 
-.. _pidOfLocationPage:
+..  _pidOfLocationPage:
 
 pidOfLocationPage
 -----------------
@@ -66,7 +65,7 @@ You can assign a PoiCollection of EXT:maps2 to a project. Choose a page UID
 where the maps2 plugin is located.
 
 
-.. _list:
+..  _list:
 
 list
 ----
@@ -79,7 +78,7 @@ Currently not implemented in Template, but if you want, you can use this
 setting to show one or more images with a defined width and height.
 
 
-.. _show:
+..  _show:
 
 show
 ----
@@ -92,7 +91,7 @@ If you want, you can use this setting to show one or more images
 with a defined width and height.
 
 
-.. _pageBrowser:
+..  _pageBrowser:
 
 pageBrowser
 -----------
@@ -114,10 +113,12 @@ Insert page browser above list of project records
 
 **insertBelow**
 
-Insert page browser below list of project records. I remember a bug in TYPO3 CMS. So I can not guarantee
-that this option will work.
+Insert page browser below list of project records. I remember a bug
+in TYPO3 CMS. So I can not guarantee that this option will work.
 
 **maximumNumberOfLinks**
 
-If you have many project records it makes sense to reduce the amount of pages in page browser to a fixed maximum
-value. Instead of 1, 2, 3, 4, 5, 6, 7, 8 you will get 1, 2, 3...8, 9 if you have configured this option to 5.
+If you have many project records it makes sense to reduce the amount of pages
+in page browser to a fixed maximum value. Instead
+of 1, 2, 3, 4, 5, 6, 7, 8 you will get 1, 2, 3...8, 9 if you have configured
+this option to 5.

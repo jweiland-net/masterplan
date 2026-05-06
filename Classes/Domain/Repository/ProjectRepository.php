@@ -30,14 +30,17 @@ class ProjectRepository extends Repository
             $sortBy = GeneralUtility::underscoredToLowerCamelCase($sortBy);
             $sortBy = $sortBy === 'areaOfActivity' ? 'areaOfActivity.title' : $sortBy;
             $query = $this->createQuery();
+
             // reduce result to a given area of activity
             if ($areaOfActivity > 0) {
                 $query->matching($query->contains('areaOfActivity', $areaOfActivity));
             }
+
             $query->setOrderings([$sortBy => strtoupper($direction)]);
         } else {
             return $this->findAll();
         }
+
         return $query->execute();
     }
 }
