@@ -81,39 +81,39 @@
       </trans-unit>
       <trans-unit id="tx_masterplan_domain_model_link.link">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="translated">Hivatkozás</target>
       </trans-unit>
       <trans-unit id="backToList">
         <source>Back to list</source>
-        <target state="needs-translation">Back to list</target>
+        <target state="translated">Vissza a listához</target>
       </trans-unit>
       <trans-unit id="backToDetails">
         <source>Back to detail view</source>
-        <target state="needs-translation">Back to detail view</target>
+        <target state="translated">Vissza a részletes nézethez</target>
       </trans-unit>
       <trans-unit id="targets">
         <source>Targets</source>
-        <target state="needs-translation">Targets</target>
+        <target state="translated">Célok</target>
       </trans-unit>
       <trans-unit id="noResults">
         <source>No results</source>
-        <target state="needs-translation">No results</target>
+        <target state="translated">Nincs eredmény</target>
       </trans-unit>
       <trans-unit id="asc">
         <source>Ascending</source>
-        <target state="needs-translation">Ascending</target>
+        <target state="translated">Növekvő</target>
       </trans-unit>
       <trans-unit id="desc">
         <source>Descending</source>
-        <target state="needs-translation">Descending</target>
+        <target state="translated">Csökkenő</target>
       </trans-unit>
       <trans-unit id="sortBy">
         <source>Sort by</source>
-        <target state="needs-translation">Sort by</target>
+        <target state="translated">Rendezés</target>
       </trans-unit>
       <trans-unit id="ordering">
         <source>Ordering</source>
-        <target state="needs-translation">Ordering</target>
+        <target state="translated">Sorrend</target>
       </trans-unit>
     </body>
   </file>
