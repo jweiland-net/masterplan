@@ -5,15 +5,15 @@
     <body>
       <trans-unit id="plugin.title">
         <source>Masterplan</source>
-        <target state="needs-translation">Masterplan</target>
+        <target state="translated">Masterplan</target>
       </trans-unit>
       <trans-unit id="plugin.masterplan.title">
         <source>Masterplan</source>
-        <target state="needs-translation">Masterplan</target>
+        <target state="translated">Masterplan</target>
       </trans-unit>
       <trans-unit id="plugin.masterplan.description">
         <source>Inserts a project overview. Website visitors can see current projects and its costs.</source>
-        <target state="needs-translation">Inserts a project overview. Website visitors can see current projects and its costs.</target>
+        <target state="translated">Projekt-áttekintést szúr be. A weboldal látogatói megtekinthetik az aktuális projekteket és azok költségeit.</target>
       </trans-unit>
       <trans-unit id="tx_masterplan_domain_model_project">
         <source>Project</source>
@@ -25,7 +25,7 @@
       </trans-unit>
       <trans-unit id="tx_masterplan_domain_model_project.path_segment">
         <source>Segment for URL</source>
-        <target state="needs-translation">Segment for URL</target>
+        <target state="translated">Szegmens az URL-hez</target>
       </trans-unit>
       <trans-unit id="tx_masterplan_domain_model_project.number">
         <source>Number</source>
@@ -89,7 +89,7 @@
       </trans-unit>
       <trans-unit id="tx_masterplan_domain_model_link">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="translated">Hivatkozás</target>
       </trans-unit>
       <trans-unit id="tx_masterplan_domain_model_link.title">
         <source>Title</source>
@@ -97,7 +97,7 @@
       </trans-unit>
       <trans-unit id="tx_masterplan_domain_model_link.link">
         <source>Link</source>
-        <target state="needs-translation">Link</target>
+        <target state="translated">Hivatkozás</target>
       </trans-unit>
     </body>
   </file>
