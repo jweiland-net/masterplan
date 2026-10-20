@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2014-06-16T10:21:45Z" product-name="masterplan" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="plugin.title">
+        <source>Masterplan</source>
+        <target>crwdns308284:0crwdne308284:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.masterplan.title">
+        <source>Masterplan</source>
+        <target>crwdns308286:0crwdne308286:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.masterplan.description">
+        <source>Inserts a project overview. Website visitors can see current projects and its costs.</source>
+        <target>crwdns308288:0crwdne308288:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project">
+        <source>Project</source>
+        <target>crwdns308290:0crwdne308290:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.title">
+        <source>Title</source>
+        <target>crwdns308292:0crwdne308292:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.path_segment">
+        <source>Segment for URL</source>
+        <target>crwdns308294:0crwdne308294:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.number">
+        <source>Number</source>
+        <target>crwdns308296:0crwdne308296:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.contact_person">
+        <source>Contact Person</source>
+        <target>crwdns308298:0crwdne308298:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.start_date">
+        <source>Start Date</source>
+        <target>crwdns308302:0crwdne308302:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.end_date">
+        <source>End Date</source>
+        <target>crwdns308304:0crwdne308304:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.costs">
+        <source>Costs</source>
+        <target>crwdns308306:0crwdne308306:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation">
+        <source>Citizen Participation</source>
+        <target>crwdns308308:0crwdne308308:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation.yes">
+        <source>Yes</source>
+        <target>crwdns308310:0crwdne308310:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation.no">
+        <source>Not provided</source>
+        <target>crwdns308312:0crwdne308312:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.images">
+        <source>Images</source>
+        <target>crwdns308314:0crwdne308314:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.description">
+        <source>Description</source>
+        <target>crwdns308316:0crwdne308316:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.further_informations">
+        <source>Further Informations</source>
+        <target>crwdns308318:0crwdne308318:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.area_of_activity">
+        <source>Area of Activity</source>
+        <target>crwdns308320:0crwdne308320:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.tx_maps2_uid">
+        <source>Tx Maps2 Uid</source>
+        <target>crwdns308322:0crwdne308322:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.files">
+        <source>Files</source>
+        <target>crwdns308324:0crwdne308324:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.links">
+        <source>Links</source>
+        <target>crwdns308326:0crwdne308326:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_link">
+        <source>Link</source>
+        <target>crwdns308328:0crwdne308328:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_link.title">
+        <source>Title</source>
+        <target>crwdns308330:0crwdne308330:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_link.link">
+        <source>Link</source>
+        <target>crwdns308332:0crwdne308332:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
