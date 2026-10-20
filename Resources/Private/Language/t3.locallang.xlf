@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2014-06-16T10:21:45Z" product-name="masterplan" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="tx_masterplan_domain_model_project">
+        <source>Project</source>
+        <target>crwdns308226:0crwdne308226:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.title">
+        <source>Title</source>
+        <target>crwdns308228:0crwdne308228:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.number">
+        <source>Number</source>
+        <target>crwdns308230:0crwdne308230:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.contact_person">
+        <source>Contact Person</source>
+        <target>crwdns308232:0crwdne308232:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.start_date">
+        <source>Start Date</source>
+        <target>crwdns308236:0crwdne308236:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.end_date">
+        <source>End Date</source>
+        <target>crwdns308238:0crwdne308238:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.costs">
+        <source>Costs</source>
+        <target>crwdns308240:0crwdne308240:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation">
+        <source>Citizen Participation</source>
+        <target>crwdns308242:0crwdne308242:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation.yes">
+        <source>Yes</source>
+        <target>crwdns308244:0crwdne308244:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.citizen_participation.no">
+        <source>Not provided</source>
+        <target>crwdns308246:0crwdne308246:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.images">
+        <source>Images</source>
+        <target>crwdns308248:0crwdne308248:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.description">
+        <source>Description</source>
+        <target>crwdns308250:0crwdne308250:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.further_informations">
+        <source>Further Informations</source>
+        <target>crwdns308252:0crwdne308252:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.area_of_activity">
+        <source>Area of Activity</source>
+        <target>crwdns308254:0crwdne308254:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.tx_maps2_uid">
+        <source>Tx Maps2 Uid</source>
+        <target>crwdns308256:0crwdne308256:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.files">
+        <source>Files</source>
+        <target>crwdns308258:0crwdne308258:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_project.links">
+        <source>Links</source>
+        <target>crwdns308260:0crwdne308260:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_link">
+        <source>Link</source>
+        <target>crwdns308262:0crwdne308262:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_link.title">
+        <source>Title</source>
+        <target>crwdns308264:0crwdne308264:0</target>
+      </trans-unit>
+      <trans-unit id="tx_masterplan_domain_model_link.link">
+        <source>Link</source>
+        <target>crwdns308266:0crwdne308266:0</target>
+      </trans-unit>
+      <trans-unit id="backToList">
+        <source>Back to list</source>
+        <target>crwdns308268:0crwdne308268:0</target>
+      </trans-unit>
+      <trans-unit id="backToDetails">
+        <source>Back to detail view</source>
+        <target>crwdns308270:0crwdne308270:0</target>
+      </trans-unit>
+      <trans-unit id="targets">
+        <source>Targets</source>
+        <target>crwdns308272:0crwdne308272:0</target>
+      </trans-unit>
+      <trans-unit id="noResults">
+        <source>No results</source>
+        <target>crwdns308274:0crwdne308274:0</target>
+      </trans-unit>
+      <trans-unit id="asc">
+        <source>Ascending</source>
+        <target>crwdns308276:0crwdne308276:0</target>
+      </trans-unit>
+      <trans-unit id="desc">
+        <source>Descending</source>
+        <target>crwdns308278:0crwdne308278:0</target>
+      </trans-unit>
+      <trans-unit id="sortBy">
+        <source>Sort by</source>
+        <target>crwdns308280:0crwdne308280:0</target>
+      </trans-unit>
+      <trans-unit id="ordering">
+        <source>Ordering</source>
+        <target>crwdns308282:0crwdne308282:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
